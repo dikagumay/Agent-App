@@ -1,0 +1,123 @@
+<ion-content class="has-header-tabs">
+  <div class="card" flex>
+    <form name="formPilihProduk" class="default-form pad-top-0">
+      <div class="dual-column" layout="row" layout-xs="column">
+        <div class="first-column marg-right-md-10" flex="50" flex-xs="100">
+          <div class="form-group marg-bot-0 second-column" flex-xs="100" flex="50">
+            <label class="label-checked marg-top-min-10">Pilih Template</label>
+            <md-input-container class="md-icon-float md-block">
+              <md-icon aria-label="person" class="material-icons marg-left-5 marg-top-5"><i class="pru-icons pf-icon-pru-icon_notepad"></i></md-icon>
+              <div class="form-group marg-bot-0 icon-check">
+                <md-radio-group ng-model="profileTertanggung.subStandard" class="inline-radio-button">
+                  <md-radio-button value="ya" class="md-primary">Ya</md-radio-button>
+                  <md-radio-button value="tidak">No</md-radio-button>
+                </md-radio-group>
+              </div>
+            </md-input-container>
+          </div>
+          <md-input-container class="md-icon-float md-block marg-bot-0" flex-gt-sm>
+            <label class="font-grey">Template yang dipilih</label>
+            <md-icon aria-label="person" class="material-icons"><i class="pru-icons pf-icon-pru-icon_notepad"></i></md-icon>
+            <md-select ng-model="polis.work">
+              <md-option value="none">None</md-option>
+            </md-select>
+            <div class="md-errors-spacer"></div>
+          </md-input-container>
+          <md-input-container class="md-icon-float md-block">
+            <label>Nomor SPAJ/Polis</label>
+            <md-icon aria-label="person" class="material-icons"><i class="pru-icons pf-icon-pru-icon_agreement"></i></md-icon>
+            <input ng-model="pilihProduk.nospaj" type="text" required>
+            <div ng-messages="noSpaj.nospaj.$error">
+              <div ng-message="required">Harus diisi.</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-icon-float md-block">
+            <label>Jenis Produk</label>
+            <md-icon aria-label="person" class="material-icons"><i class="pru-icons pf-icon-pru-icon_contract"></i></md-icon>
+            <input ng-model="pilihProduk.jenisProduk" type="text" required>
+            <div ng-messages="formPillihProduk.jenisProduk.$error">
+              <div ng-message="required">Harus diisi.</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-icon-float md-block">
+            <label>Nama Produk</label>
+            <md-icon aria-label="person" class="material-icons"><i class="pru-icons pf-icon-pru-icon_contract"></i></md-icon>
+            <input ng-model="pilihProduk.name" type="text" required>
+            <div ng-messages="pilihProduk.name.$error">
+              <div ng-message="required">Harus diisi.</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-icon-float md-block marg-bot-0">
+            <label>Frekuensi Pembayaran</label>     
+            <md-icon aria-label="person" class="material-icons"><i class="pru-icons pf-icon-pru-icon_money"></i></md-icon>
+            <input  value="{{pilihProduk.pembayaranFrekuensi}}" type="text" required>
+            <div ng-messages="pilihProduk.frekuensiPembayaran.$error">
+              <div ng-message="required">Harus diisi.</div>
+            </div>
+            <div class="form-group marg-bot-20 marg-top-10 icon-check marg-left-0">
+              <md-radio-group ng-model="pilihProduk.pembayaranFrekuensi" class="marg-bot-10" layout="row">
+                <md-radio-button ng-value="'Bulanan'" flex-xs="60" flex="50" class="md-primary small">Bulanan</md-radio-button>
+                <md-radio-button ng-value="'Tiga Bulanan'" flex-xs="40" flex="50" class="small"> Tiga Bulanan </md-radio-button>
+              </md-radio-group>
+              <md-radio-group ng-model="pilihProduk.pembayaranFrekuensi" class="" layout="row">
+                <md-radio-button ng-value="'Setengah Tahunan'" flex-xs="60" flex="50" class="md-primary small">Setengah Tahunan</md-radio-button>
+                <md-radio-button ng-value="'Tahunan'" flex-xs="40" flex="50" class="small"> Tahunan </md-radio-button>
+              </md-radio-group>
+            </div>
+          </md-input-container>   
+        </div>
+        <div class="first-column marg-right-md-10" flex="50" flex-xs="100">
+          <v-accordion multiple class="vAccordion--default custom-pru">
+            <v-pane expanded="true">
+              <v-pane-header class="header-icon">
+                <md-icon aria-label="person" class="material-icons font-white">&#xE7FD;</md-icon> Alokasi Dana 
+              </v-pane-header>
+              <v-pane-content>
+              <div class="sub-lists accordion-body  pad-bot-20 pad-left-10 pad-right-10">
+                <div layout="row" class="marg-top-10 marg-bot-10">
+                  <div flex-xs="30">
+                    <i class="icon ion-edit h6 font-gray"></i> <span class="font-red font-size-10 marg-right-20">SELESAI</span>
+                  </div>
+                  <div flex>
+                    <i class="icon ion-android-person-add h6 font-gray"></i> <span class="font-red font-size-10">TAMBAH</span>
+                  </div>
+                  <div flex class="text-right">
+                    <i class="icon ion-ios-trash h6 font-gray"></i> <span class="font-red font-size-10">HAPUS</span>
+                  </div>
+                </div>
+                <div layout="row" ng-repeat="item in dataALokasiDana.alokasiDanaFilled" class="marg-top-10">
+                  <div flex="10" class="pad-top-5">
+                    <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="item.checked" md-colors="red"></md-checkbox>
+                  </div>
+                  <div flex>
+                    <label class="label-middle pad-right-5">{{item.label}}</label>
+                  </div>
+                  <div flex="25">
+                    <md-input-container class="md-icon-float input-little-box-dropdown md-block marg-0" flex-gt-sm>
+                      <md-select ng-model="item.data.val1">
+                        <md-option value="{{item.data.val1}}">{{item.data.val1}}</md-option>
+                        <md-option value=2>2</md-option>
+                      </md-select>
+                    </md-input-container>
+                  </div>
+                </div>
+                <div layout="row" class="marg-top-10">
+                  <div flex="50">
+                    <h5 class=""><a class="font-red text-uppercase" href="">Reset semua</a></h5>
+                  </div>
+                  <div flex>
+                    <h5 class="text-right"><a class="text-uppercase" href="">total alokasi 100%</a></h5>
+                  </div>
+                </div> 
+              </div>
+              </v-pane-content>
+            </v-pane>
+          </v-accordion>
+          <div class="form-group pad-left-10 pad-right-10">
+            <button class="button button-block button-assertive next-tab" type="submit">Lanjut</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</ion-content>

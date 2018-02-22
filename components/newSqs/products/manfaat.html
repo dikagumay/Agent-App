@@ -1,0 +1,310 @@
+<div class="calc-container card pad-0 marg-top-0 marg-bot-0 bg-light-gray-ebebeb">
+  <div class="pull-left width-100 calc-wrapper" ng-class="{'hide-active': calcHide}">
+    <span class="width-100 b-border-white pull-left marg-bot-10"> 
+      <div class="block-container b-border-none marg-bot-0"> 
+        <div>
+          <span class="display-inline-block width-50">
+            <h6 class="font-gray marg-bot-5">Minimum Uang Pertanggungan</h6>
+            <h4 class="mup-font marg-top-0" ng-init="manfaat.minimumUangPertanggungan = manfaat.minimumUangPertanggungan || 0" >{{manfaat.minimumUangPertanggungan | currency:"Rp ":2}}</h4>
+          </span>
+          <span class="pull-right width-50">
+            <h6 class="font-gray marg-bot-5 text-right">Maksimum Uang Pertanggungan</h6>
+            <h4 class="mup-font marg-top-0 text-right" ng-init="manfaat.maksimumUangPertanggungan = manfaat.maksimumUangPertanggungan || 0">{{manfaat.maksimumUangPertanggungan | currency:"Rp ":2}}</h4>
+          </span>
+        </div>
+      </div>
+    </span>
+    <span class="width-100 pull-left b-border-white-md marg-bot-10"> 
+      <div class="block-container b-border-none marg-bot-0"> 
+        <div class="content-header pad-0 marg-top-5 marg-bot-5 marg-left-0">
+          <span class="display-inline-block width-60 pad-left-10 bg-gray">
+            <h6 class="font-gray marg-bot-5 font-white marg-top-5">Premi Unaplied</h6>
+            <h4 ng-init="manfaat.premiUnapplied = manfaat.premiUnapplied || 0" class="font-size-16 marg-top-0 font-white marg-bot-5">{{manfaat.premiUnapplied | currency:"Rp ":2}}</h4>
+          </span>
+          <span class="pull-right text-right width-40 font-white bg-red text-center">
+            <h5 class="font-white marg-top-15 marg-bot-17">HITUNG</h5>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>
+  <a href="" class="pull-left width-100 bg-light-gray-ebebeb" ng-click="calcHide = !calcHide">
+    <h6 class="font-red text-center text-uppercase">
+      <span ng-if="calcHide == false">Tutup Kalkulator</span>
+      <span ng-if="calcHide == true">Hitung</span>
+    </h6>
+  </a>
+</div>
+<ion-content class="has-header-tabs" ng-cloak>
+  <div class="has-calc" ng-class="{'hide-active': calcHide}">
+    <form name="formManfaat" class="default-form">
+      <div class="card pad-0 marg-top-0 pad-top-20">
+        <div class="pull-left width-100">
+          <span class="width-100 pull-left b-border-none"> 
+            <div class="block-container b-border-none marg-bot-0"> 
+              <h4 class="marg-bot-0">
+                <span ng-init="manfaat.jenisProduk = manfaat.jenisProduk || 'Jenis Produk'" class="pru-logo-text" ng-bind-html="manfaat.jenisProduk"></span>
+              </h4>
+              <md-input-container class="md-block marg-bot-0 no-error-spacer"> 
+                <label>Besar Premi Tahunan</label> 
+                <input  ng-model="manfaat.besarPremiTahunan" type="text"> 
+              </md-input-container> 
+              <h4 class="marg-top-0 marg-bot-5 pru-logo-text">Premi <em class="font-100">Top Up</em> Berkala</h4>
+              <h4 class="marg-top-0 pru-logo-text">PRU<em class="font-100">saver</em></h4>
+              <md-input-container class="md-block marg-bot-30">
+                <label>Total Premi (sesuai frekuensi pembayaran)</label> 
+                <input ng-model="manfaat.totalPremi" type="text"> 
+              </md-input-container>
+              <md-input-container class="md-block marg-bot-0"> 
+                <label class="white-space-normal">Rencana Masa Pembayaran yang dikehendaki Nasabah (dalam Tahun)</label> 
+                <input  ng-model="manfaat.rencanaPembayaran" type="number"> 
+              </md-input-container> 
+            </div>
+          </span>
+          <span class="width-100 pull-left b-border-white"> 
+            <div class="block-container b-border-none marg-bot-0"> 
+              <md-input-container class="md-block marg-top-0" flex-gt-sm> 
+                <label>Alternatif Rencana Pembayaran</label> 
+                <md-select ng-model="manfaat.alternatifRencanaPembayaran"> 
+                  <md-option value="99">99</md-option> 
+                </md-select> 
+              </md-input-container> 
+              <h4 class="marg-bot-0">Halaman Ringkasan Manfaat, Asumsi Nilai Tunai di Masa Depan:</h4>
+              <div class="marg-top-10">
+                <span class="display-inline-block width-30"> 
+                  <md-input-container class="marg-0 md-block width-100"> 
+                    <label>Usia 1</label>
+                    <md-select ng-model="manfaat.halamanRingkasan.tahun1" aria-label=""> 
+                      <md-option value="1">1</md-option> 
+                      <md-option value="2">2</md-option> 
+                      <md-option value="45">45</md-option> 
+                    </md-select> 
+                    <div class="md-errors-spacer"></div> 
+                  </md-input-container> 
+                </span> 
+                <span class="display-inline-block width-30"> 
+                  <md-input-container class="marg-0 md-block width-100"> 
+                    <label>Usia 2</label>
+                    <md-select ng-model="manfaat.halamanRingkasan.tahun2" aria-label=""> 
+                      <md-option value="1">1</md-option> 
+                      <md-option value="2">2</md-option> 
+                      <md-option value="55">55</md-option> 
+                    </md-select> 
+                    <div class="md-errors-spacer"></div> 
+                  </md-input-container> 
+                </span> 
+                <span class="display-inline-block width-30"> 
+                  <md-input-container class="marg-0 md-block width-100"> 
+                    <label>Usia 3</label>
+                    <md-select ng-model="manfaat.halamanRingkasan.tahun3" aria-label=""> 
+                      <md-option value="1">1</md-option> 
+                      <md-option value="2">2</md-option> 
+                      <md-option value="65">65</md-option> 
+                    </md-select> 
+                    <div class="md-errors-spacer"></div> 
+                  </md-input-container> 
+                </span> 
+              </div>
+            </div>
+          </span>
+          <div class="pull-left width-100 marg-bot-10">
+            <span class="width-100 pull-left b-border-white"> 
+              <div class="block-container b-border-none marg-bot-0"> 
+                <div class="content-header text-uppercase pad-left-15"> 
+                  <i class="ion ion-person marg-right-10"></i> 
+                  Manfaat 
+                  <i class="ion ion-plus pull-right font-white h4 marg-0"></i> 
+                </div> 
+              </div>
+            </span>
+            <span class="width-100 pull-left b-border-white"> 
+              <div class="block-container b-border-none marg-bot-0"> 
+                <div class="marg-top-10 pad-left-10"> 
+                  <!-- <a href="" ng-model="editTakenBenefit" ng-click="editTakenBenefitAction($event, editTakenBenefit)"> 
+                    <i class="icon ion-edit h6 font-gray"></i>  
+                    <span class="font-red font-size-10 marg-right-20"> 
+                      <span ng-if="editTakenBenefit === false">EDIT</span> 
+                      <span ng-if="editTakenBenefit === true">SELESAI</span> 
+                    </span> 
+                  </a>  -->
+                  <a href="" ng-click="addBenefitModal($event)" class="text-center pull-left width-100"> 
+                    <span class="font-red font-size-10 text-uppercase">Pilih Manfaat</span> 
+                  </a> 
+                  <!-- <a href="" class="pull-right" ng-if="deleteTakenBenefit === true && editTakenBenefit === true" ng-click="deleteTakenBenefitAction()">
+                    <i class="icon ion-ios-trash h5 font-gray"></i>  
+                    <span class="font-red font-size-10 marg-right-20"> 
+                      <span>HAPUS</span> 
+                    </span> 
+                  </a> --> 
+                </div> 
+              </div>
+            </span>
+          </div>
+          <div class="pull-left width-100 marg-bot-0">
+            <span class="width-100 pull-left" ng-repeat="item in takenBenefits"> 
+              <div ng-init="openSublist[item.id] = true" ng-class="{'b-border-gray': openSublist[item.id] == false }" class="block-container marg-bot-0 pad-sides-10">
+                <div class="h5 header-cordion-tab">
+                  <md-checkbox ng-show="editTakenBenefit == true" ng-model="takenBenefitCheckbox[item.id]" ng-change="addDeleteTakenBenefitItem(item, takenBenefitCheckbox[item.id])" md-no-ink aria-label="Checkbox No Ink" class="marg-0"> 
+                    <span class="pru-logo-text" ng-bind-html="item.name"></span> 
+                  </md-checkbox> 
+                  <span ng-show="editTakenBenefit == false" class="pru-logo-text display-block width-95" ng-bind-html="item.name"></span> 
+                  <i class="icon ion-arrow-down-b font-size-16 pull-right font-red rotate-0 icon-cordion-tab" ng-click="openSublist[item.id] = !openSublist[item.id]" ng-class="{'rotate-0':openSublist[item.id] == true, 'rotate-180':openSublist[item.id] != true}">
+                  </i>
+                </div>
+                <div class="marg-left-30">
+                  <div ng-show="openSublist[item.id] == false">
+                    <md-input-container class="md-block marg-bot-0" ng-if="item.input_1 == true"> 
+                      <label>Masa Pertanggungan (Sampai Usia)</label>
+                      <md-select ng-init="manfaat.alternatifRencanaPembayaran = manfaat.alternatifRencanaPembayaran|| 1" ng-model="manfaat.alternatifRencanaPembayaran" aria-label=""> 
+                        <md-option value="1">Pilih</md-option> 
+                        <md-option value="2">2</md-option> 
+                        <md-option value="99">99</md-option> 
+                      </md-select> 
+                    </md-input-container> 
+                    <md-input-container class="md-block marg-bot-0 no-error-spacer" ng-if="item.input_2 == true">
+                      <label>Uang Pertanggungan</label> 
+                      <input ng-init="manfaat.totalPremi = manfaat.totalPremi || 'Rp 0.00'" ng-model="manfaat.totalPremi" type="text"> 
+                    </md-input-container> 
+                    <md-input-container class="md-block marg-bot-0 no-error-spacer b-border-none" ng-if="item.input_3 == true"> 
+                      <label>Premi Tahunan</label> 
+                      <input ng-init="manfaat.totalPremi = manfaat.totalPremi || 'Rp 0.00'" ng-model="manfaat.totalPremi" type="text"> 
+                    </md-input-container> 
+                  </div>
+                </div>
+              </div>
+            </span>
+          </div>
+          <div class="pull-left width-100">
+            <span class="width-100 pull-left"> 
+              <div class="block-container marg-bot-0 pad-sides-10 b-border-none">
+                <h5 class="font-gray pru-logo-text">
+                  Apakah Anda sudah memiliki Manfaat <strong>PRU</strong><em>hospital & surgical?</em>
+                </h5> 
+                  <md-radio-group ng-model="manfaat.pruHospitalSurgical" class="inline-radio-button"> 
+                    <md-radio-button value="ya" class="md-primary">Ya</md-radio-button> 
+                    <md-radio-button value="tidak"> Tidak </md-radio-button> 
+                  </md-radio-group>
+              </div>
+            </span>
+            <span class="width-100 pull-left"> 
+              <div class="block-container marg-bot-0 pad-sides-10 b-border-none">
+                <md-input-container class="md-block marg-0"> 
+                  <label class="font-gray">Nomor Polis</label> 
+                  <input ng-model="manfaat.nomorPolis" type="text">
+                  <div class="md-errors-spacer"></div> 
+                </md-input-container> 
+              </div>
+            </span>
+          </div>
+          <div class="pull-left width-100">
+            <span class="width-100 pull-left b-border-white"> 
+              <div class="block-container b-border-none marg-bot-0"> 
+                <div class="content-header text-uppercase pad-left-15"> 
+                  <i class="ion ion-person marg-right-10"></i> 
+                  Top Up 
+                  <i class="ion ion-plus pull-right font-white h4 marg-0"></i> 
+                </div> 
+              </div>
+            </span>
+            <span class="width-100 pull-left b-border-white"> 
+              <div class="block-container b-border-none marg-bot-0"> 
+                <div class="marg-top-10 pad-left-10"> 
+                  <a href=""  class="text-center pull-left width-100" ng-click="addNewTopup()"> 
+                    <span class="font-red font-size-10 text-uppercase">tambah top up</span> 
+                  </a>  
+                </div> 
+              </div>
+            </span>
+            <div class="pull-left width-100">
+              <span class="width-100 pull-left" ng-repeat="topup in manfaatTopup"> 
+                <div class="block-container marg-bot-0 b-border-gray pad-sides-10" ng-class="{'b-border-none':openSublistTopUp == true}">
+                  <h5>TOP UP {{topup.id}}<i class="icon ion-arrow-down-b font-size-16 pull-right font-red" ng-click="openSublistTopUp = !openSublistTopUp" ng-class="{'rotate-180':openSublistTopUp == true, 'rotate-0':openSublistTopUp != true}"></i></h5>
+                  <div class="marg-left-30" ng-show="openSublistTopUp == true">
+                    <span class="display-inline-block width-49">
+                      <md-input-container class="md-block marg-bot-0 no-error-spacer"> 
+                        <label>Tahun Polis Sejak</label> 
+                        <input ng-model="topup[yearStart]" type="text" size="1" maxlength="1" value="1"> 
+                      </md-input-container> 
+                    </span>
+                    <span class="display-inline-block width-49">
+                      <md-input-container class="md-block marg-bot-0 no-error-spacer"> 
+                        <label>Tahun Polis Sampai</label> 
+                        <input ng-model="topup[yearEnd]" type="text" size="1" maxlength="1" value="5"> 
+                      </md-input-container> 
+                    </span>
+                    <md-input-container class="md-block marg-bot-0 no-error-spacer"> 
+                      <label>Jumlah</label> 
+                      <input ng-model="topup[amount]" type="text"> 
+                    </md-input-container> 
+                    <a class="pull-right pos-right-0 trash-action" ng-click="confirmRemovePopup('topup')">
+                      <i class="ion-trash-a"></i>
+                      <span>Hapus</span>
+                    </a>
+                  </div>
+                </div>
+              </span>
+            </div> 
+          </div>
+          <div class="pull-left width-100 marg-top-10">
+            <span class="width-100 pull-left b-border-white"> 
+              <div class="block-container b-border-none marg-bot-0"> 
+                <div class="content-header text-uppercase pad-left-15"> 
+                  <i class="ion ion-person marg-right-10"></i> 
+                  Penarikan 
+                  <i class="ion ion-plus pull-right font-white h4 marg-0"></i> 
+                </div> 
+              </div>
+            </span>
+            <span class="width-100 pull-left b-border-white"> 
+              <div class="block-container b-border-none marg-bot-0"> 
+                <div class="marg-top-10 pad-left-10"> 
+                  <a href=""  class="text-center pull-left width-100" ng-click="addNewPenarikan()"> 
+                    <span class="font-red font-size-10 text-uppercase">tambah penarikan</span> 
+                  </a>  
+                </div> 
+              </div>
+            </span>
+            <div class="pull-left width-100">
+              <span class="width-100 pull-left" ng-repeat="penarikan in manfaatPenarikan"> 
+                <div class="block-container marg-bot-0 b-border-gray pad-sides-10" ng-class="{'b-border-none':openSublistPenarikan == true}">
+                  <h5>PENARIKAN {{penarikan.id}}<i class="icon ion-arrow-down-b font-size-16 pull-right font-red" ng-click="openSublistPenarikan = !openSublistPenarikan" ng-class="{'rotate-180':openSublistPenarikan == true, 'rotate-0':openSublistPenarikan != true}"></i></h5>
+                  <div class="marg-left-30" ng-show="openSublistPenarikan == true">
+                    <span class="display-inline-block width-49">
+                      <md-input-container class="md-block marg-bot-0 no-error-spacer"> 
+                        <label>Tahun Polis Sejak</label> 
+                        <input ng-model="penarikan[yearStart]" type="text" size="1" maxlength="1" value="1"> 
+                      </md-input-container> 
+                    </span>
+                    <span class="display-inline-block width-49">
+                      <md-input-container class="md-block marg-bot-0 no-error-spacer"> 
+                        <label>Tahun Polis Sampai</label> 
+                        <input ng-model="penarikan[yearStart]" type="text" size="1" maxlength="1" value="5"> 
+                      </md-input-container> 
+                    </span>
+                    <md-input-container class="md-block marg-bot-0 no-error-spacer"> 
+                      <label>Jumlah</label> 
+                      <input ng-model="penarikan[amount]" type="text"> 
+                    </md-input-container>
+                    <a class="pull-right pos-right-0 trash-action" ng-click="confirmRemovePopup('penarikan')">
+                      <i class="ion-trash-a"></i>
+                      <span>Hapus</span>
+                    </a>
+                  </div>
+                </div>
+              </span>
+            </div> 
+          </div>
+          <div class="pull-left width-100 marg-bot-10">
+            <span class="width-100 pull-left b-border-none"> 
+              <div class="block-container marg-bot-0 b-border-none">
+                <div class="form-group"> 
+                  <button class="button button-block button-assertive next-tab" ng-click="sendData($event)">Proses Ilustrasi</button> 
+                </div> 
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,50 @@
+<ion-view view-title="Forgot Password">
+  <div class="content content-red">
+    <ion-content>
+      <a ng-href="#" class="btn-back" ng-click="goBack()">
+        <i class="ion-android-arrow-back"></i>
+      </a>
+      <div class="logo">
+        <h1>
+          <a href="#">
+            <img src="./img/PRUforce-logo.png" alt="PRUforce" />
+          </a>
+        </h1>
+      </div>
+      <div class="content-red-text">
+        <h3>Lupa Password</h3>
+        <form>
+          <div class="form-group">
+            <input class="form-control" name="pru-id" type="text" placeholder="Masukan PRUforce ID" ng-model="initModel.pruforceId">
+          </div>
+          <md-input-container class="md-block content-red-select" flex-gt-sm>
+            <label>Pertanyaan 1</label>
+            <md-select md-container-class="content-red-select-option" ng-model="listSQ.selected1">
+              <md-option ng-value="item.aobdescriptionind" ng-repeat="item in listQuestionAll | filter : (!disableFilter || '') && {'aobitem': 'SQ1'} track by $index">{{item.aobdescriptionind}}</md-option>
+            </md-select>
+            <div class="md-errors-spacer"></div>
+          </md-input-container>
+          <div class="form-group">
+            <input class="form-control" name="question-1" type="text" placeholder="Jawaban 1" ng-model="initModel.jawaban1">
+          </div>
+          <md-input-container class="md-block content-red-select" flex-gt-sm>
+            <label>Pertanyaan 2</label>
+            <md-select md-container-class="content-red-select-option" ng-model="listSQ.selected2">
+              <md-option ng-value="item.aobdescriptionind" ng-repeat="item in listQuestionAll | filter : (!disableFilter || '') && {'aobitem': 'SQ2'} track by $index">{{item.aobdescriptionind}}</md-option>
+            </md-select>
+            <div class="md-errors-spacer"></div>
+          </md-input-container>
+          <div class="form-group">
+            <input class="form-control" name="question-2" type="text" placeholder="Jawaban 2" ng-model="initModel.jawaban2">
+          </div>
+          <div class="form-group">
+            <a href="#/access_option/lupa_pertanyaan_rahasia" class="button button-transparent button-block pru-logo text-center">Lupa pertanyaan Rahasia?</a>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="button button-block button-light text-uppercase" ng-click="verifySQSubmit()">Verifikasi</button>
+          </div>
+        </form>
+      </div>
+    </ion-content>
+  </div>
+</ion-view>

@@ -1,0 +1,176 @@
+@font-face {
+  font-family:'Frutiger-Regular';
+  src: url('../fonts/Frutiger_gdi.eot');
+  src: url('../fonts/Frutiger_gdi.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Frutiger_gdi.woff') format('woff'),
+  url('../fonts/Frutiger_gdi.ttf') format('truetype'),
+  url('../fonts/Frutiger_gdi.svg#Frutiger-Regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2212;
+}
+
+@font-face {
+  font-family:'FrutigerLinotype-Bold';
+  font-style: normal;
+  src: local('FrutigerLinotype-Bold_gdi'), local('FrutigerLinotype-Bold_gdi'), url(../fonts/FrutigerLinotype-Bold_gdi.woff) format('woff'),
+  url('../fonts/FrutigerLinotype-Bold_gdi.woff') format('woff'),
+  url('../fonts/FrutigerLinotype-Bold_gdi.ttf') format('truetype'),
+  url('../fonts/FrutigerLinotype-Bold_gdi.svg#Frutiger-Regular') format('svg');
+  /*font-weight: 700;*/
+  font-style: normal;
+  font-stretch: normal;
+}
+
+html, body{
+  font-family: 'Frutiger-Regular';
+}
+
+button, html, input, select, textarea{
+  font-family: 'Frutiger-Regular' !important;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #191919;
+  font-weight: 500;
+  font-family: "Frutiger-Regular", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  line-height: 1.2;
+}
+
+p, .item p{
+  color: #736d6d;
+}
+
+/*---------------------------- colours ----------------------------*/
+
+.balanced{
+  color: #699e3f;
+}
+
+.balanced-bg{
+  background-color: #699e3f;
+  color: #fff;
+}
+
+.gray{
+  color: #6a747b;
+}
+
+.gray-bg{
+  background-color: #6a747b;
+  color: #fff;
+}
+
+.assertive{
+  color: #ff0000;
+}
+
+.assertive-bg{
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.black{
+  color: #000000;
+}
+
+.black-bg{
+  background-color: #000000;
+  color: #fff;
+}
+
+.lightgray-bg{
+  background: #f1f1f1;
+}
+
+.energized{
+  color: #fabd40;
+}
+
+.energized-bg{
+  background-color: #fabd40;
+  color: #fff;
+}
+
+.has-header{
+  top: 65px;
+}
+
+.cropper-has-header{
+  top: 55px;
+}
+
+.has-button-bottom{
+  bottom: 47px;
+}
+
+.item.active,
+.item.activated,
+.item-complex.active .item-content,
+.item-complex.activated .item-content,
+.item .item-content.active,
+.item .item-content.activated{
+  background-color: #efefef;
+}
+
+.hidden{
+  display: none;
+}
+
+.text-uppercase{
+  text-transform: uppercase;
+}
+
+.popup-container.active .popup{
+  border-radius:2px;
+}
+
+.card{
+  padding: 10px;
+  margin: 0;
+  box-shadow: none;
+}
+
+@media (min-width: 768px){
+  ion-modal-view{
+    box-shadow: 0 7px 8px -4px rgba(0,0,0,.2),0 13px 19px 2px rgba(0,0,0,.14),0 5px 24px 4px rgba(0,0,0,.12);
+    border-radius: 4px;
+  }
+
+  .card{
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }  
+
+  .modal {
+    max-width: 500px;
+    margin: 0 auto;
+    bottom: auto !important;
+    min-height: 430px;
+    top: 20% !important;
+  }
+}
+
+@media (min-width: 680px){
+  .modal.ng-leave-active{
+    bottom: auto;
+  }
+
+  .modal {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .modal .scroll-content{
+    background: #fff;
+  }
+}
+
+.vAccordion--default v-pane-content>div {
+  padding-bottom: 0 !important;
+}

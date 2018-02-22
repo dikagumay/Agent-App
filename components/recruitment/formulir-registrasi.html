@@ -1,0 +1,56 @@
+<ion-view view-title="Formulir Registrasi">
+  <ion-header-bar align-title="left" class="bar-assertive">
+    <a class="left-buttons" ng-href="#/daftar-rekrutment">
+      <button menu-toggle="left" class="button button-icon icon ion-ios-arrow-back"></button>
+    </a>
+    <h1 class="title text-uppercase">Formulir Registrasi</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <form name="formRegister" class="default-form">
+      <md-input-container class="md-icon-float md-block">
+        <label>Nama lengkap sesuai KTP</label>
+        <md-icon aria-label="person" class="material-icons">&#xE7FD;</md-icon>
+        <input ng-model="candidateRegister.name" type="text" required>
+        <div ng-messages="formRegister.name.$error">
+          <div ng-message="required">Harus diisi.</div>
+        </div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block">
+        <label>Tanggal Lahir</label>
+        <md-icon class="material-icons">&#xE878;</md-icon>
+        <input ng-model="candidateRegister.date" type="date" onfocus="(this.type='date')">
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block">
+        <label>Nomor KTP</label>
+        <md-icon class="material-icons">&#xE8AA;</md-icon>
+        <input ng-model="candidateRegister.numberktp" ng-maxlength="16" type="number" required>
+        <div ng-messages="formRegister.numberktp.$error">
+          <div ng-message="required">Harus diisi.</div>
+          <div ng-message="md-maxlength">Nomor KTP tidak boleh lebih dari 16 karakter.</div>
+        </div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block">
+        <label>Email</label>
+        <md-icon class="material-icons">&#xE0BE;</md-icon>
+        <input ng-model="candidateRegister.email" type="text" required>
+        <div ng-messages="formRegister.email.$error">
+          <div ng-message="required">Harus diisi.</div>
+          <div ng-message="md-maxlength">Nomor KTP tidak boleh lebih dari 16 karakter.</div>
+        </div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block">
+        <label>Telepon Selular</label>
+        <md-icon class="material-icons">&#xE0D4;</md-icon>
+        <input ng-model="candidateRegister.phone" ng-maxlength="16" type="number" required>
+        <div ng-messages="formRegister.phone.$error">
+          <div ng-message="required">Harus diisi.</div>
+        </div>
+      </md-input-container>
+      <div class="form-group marg-top-30">
+        <a href="#" class="button button-assertive button-block " type="submit" ng-click="lanjutAction()">Lanjut</a>
+        <a href="#/daftar-rekrutment" class="button button-dark button-block grey-btn2">simpan</a>
+      </div>
+    </form>
+    </form>
+  </ion-content>
+</ion-view>

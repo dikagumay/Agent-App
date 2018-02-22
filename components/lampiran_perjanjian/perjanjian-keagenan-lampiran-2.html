@@ -1,0 +1,88 @@
+<ion-view view-title="Perjanjian Keagenan Lampiran 2" ng-controller="lampiranPerjanjianCtrl">
+  <ion-header-bar align-title="left" class="bar-assertive">
+    <a class="left-buttons" ng-href="#/perjanjian-keagenan-lampiran-1">
+      <button menu-toggle="left" class="button button-icon icon ion-ios-arrow-back"></button>
+    </a>
+    <h1 class="title title-left">LEMBAR PERSETUJUAN</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <div class="content-profile-head content-white-head profile-name small-header">
+      <div class="center-content">
+        <h5 class="text-center marg-top-5 marg-bot-5"> LAMPIRAN II<br>VALIDASI PROMOSI DAN VALIDASI MAINTENANCE</h5>
+      </div>
+    </div>
+    <div class="content-standard pad-top-0">
+      <h5> Validasi Promosi </h5>
+      <table class="marg-bot-25">
+        <thead>
+          <tr>
+            <th colspan="2" class="text-left pad-sides-25">Promosi<br>Agen menjadi Unit Manager (UM)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="no-wrap">
+              Persyaratan 1</td>
+            <td>Telah menjadi Agen min. 6 bulan dari Tanggal efektif Perjanjian (selanjutnya dalam Lampiran 2 ini, dapat disebut sebagai &quot;Tanggal Pengangkatan&quot;)</td></tr>
+          <tr>
+            <td class="no-wrap">
+              Persyaratan 2</td>
+            <td>API pribadi min. Rp 150 juta; Tingkat persistensi tahun sebelumnya atau tahun berjalan bagi agen yang baru bargabung min. 85%</td></tr>
+          <tr>
+            <td class="no-wrap">
+              Persyaratan 3</td>
+            <td>Telah merekrut dan memiliki min. 4 Agen aktif dengan min. API Rp 30 juta per Agen</td></tr>
+          <tr>
+            <td class="no-wrap">
+              Persyaratan 4</td>
+            <td>Total API unit min. Rp 300 juta</td></tr>
+          <tr>
+            <td class="no-wrap">
+              Persyaratan 5</td>
+            <td>Telah mengikuti dan lulus ujian lisensi penuh unit link AAJI, AASI sebelum promosi dan telah mengikuti training yang ditentukan oleh Perusahaan dan dikeluarkan dari waktu ke waktu</td></tr>
+        </tbody>
+      </table>
+      
+      <h5> Validasi Maintenance </h5>
+      <table class="marg-bot-15">
+        <thead>
+          <tr>
+            <th class="r-border-white">Maintenance</th>
+            <th class="r-border-white width-40">Agen Validasi</th>
+            <th>Agen Validasi Tahunan <br/> (Periode Januari s/d Desember)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="no-wrap">
+              Persyaratan 1</td>
+            <td>Minimum menghasilkan API dan/atau polis sesuai dengan ketentuan Perusahaan yang dikeluarkan dari waktu ke waktu</td>
+            <td>Minimum menghasilkan API dan/atau polis sesuai dengan ketentuan Perusahaan yang dikeluarkan dari waktu ke waktu</td></tr>
+          <tr>
+            <td class="no-wrap">
+              Persyaratan 2</td>
+            <td>Telah mendapatkan Sertifikasi dan Lisensi Keagenan Penuh Unit Link AAJI sesuai dengan ketentuan AAJI yang berlaku</td>
+            <td>-</td></tr>
+          <tr>
+            <td class="no-wrap">
+              Persyaratan 3</td>
+            <td>Mematuhi setiap dan segala peraturan dan kode etik yang berlaku, baik yang dikeluarkan oleh Perusahaan maupun AAJI</td>
+            <td>Mematuhi setiap dan segala peraturan dan kode etik yang berlaku, baik yang dikeluarkan oleh Perusahaan maupun AAJI</td></tr>
+          <tr>
+            <td class="no-wrap">
+              Persyaratan 4</td>
+            <td>-</td>
+            <td>Tingkat persistensi sesuai dengan ketentuan Perusahaan yang dikeluarkan dari waktu ke waktu</td></tr>
+        </tbody>
+      </table>
+
+      <div class="form-group" ng-controller="submitCtrl">
+        <button ng-click="appNext('perjanjian-keagenan-lampiran-3')" class="button button-assertive button-block">Setuju</button>
+        
+      </div>
+    </div>
+  </ion-content>
+  <div ng-click="scrollTop()" class="back-to-top">
+    <i class="ion-chevron-up"></i>
+  </div>
+</ion-view>

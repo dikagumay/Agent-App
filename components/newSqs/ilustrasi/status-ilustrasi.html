@@ -1,0 +1,117 @@
+<ion-view view-title="Daftar Ilustrasi Tertunda" ng-controller="ilustrasiCtrl">
+  <ion-header-bar align-title="left" class="bar-assertive">
+    <a class="left-buttons" ng-href="#/daftar-newsqs">
+      <button   class="button button-icon icon ion-ios-arrow-back"></button>
+    </a>
+    <h1 class="title text-uppercase">Daftar Ilustrasi Tertunda</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <div class="card pad-0">
+      <div class="content spaced-area">
+        <div class="illustration-progress _single">
+          <div class="illustration-progress-container">
+            <span ng-repeat="itemProgress in illustrationProgress">
+              <span ng-class="{'bg-red': itemProgress.id <= 3, 'bg-light-gray': itemProgress.id > 3}" class="circled-number" style="margin-left:{{(itemProgress.id-1)*24}}%">
+                {{itemProgress.id}}
+              </span>
+              <span class="vertcal-bar" ng-class="{'bg-red': 3 > itemProgress.id, 'bg-light-gray': 3<= itemProgress.id}" ng-if="itemProgress.id < 5" style="margin-left:{{(itemProgress.id-1)*24}}%">&nbsp;</span>
+              <span class="circled-number-label" style="margin-left:{{(itemProgress.id-1)*24}}%">
+                {{itemProgress.name}}
+              </span>
+            </span>
+          </div>
+        </div>
+        <div class="block-container marg-bot-0 b-border-white">
+          <h6 class="font-gray marg-bot-5">Nama Klien</h6>
+          <h5 class="marg-top-0 text-uppercase font-gray">Haji Raden Mas Elon Musk Kertarajasa Suryodiningrat</h5>
+        </div>
+        <div class="list list-empty" layout-xs="column" layout-gt-xs="row">
+          <div flex>
+            <div class="block-container b-border-white">
+              <div class="item item-wrapper" href="#">
+                <a href="#/sqs/profil-pemegang-polis" class="item item-icon-left pad-left-45">
+                  <i class="icon ion-ios-checkmark balanced pos-left-0 h4 marg-0"></i>
+                  <h2>Profile Pemegang Polis</h2>
+                  <p class="white-space-normal">pengisian data lengkap dan tervaldasi</p>
+                </a>
+              </div>
+              <div class="item item-wrapper" href="#">
+                <span class="item item-icon-left item-icon-right pad-left-45 b-border-gray">
+                  <i class="icon ion-ios-checkmark balanced pos-left-0 h4 marg-0"></i>
+                  <h2>Profile Tertanggung</h2>
+                  <p>3 dari 3 selesai</p>
+                  <i class="icon ion-play font-size-16 pull-right font-red" ng-click="openSublist = !openSublist" ng-class="{'rotate-90':openSublist == true, 'rotate-30':openSublist != true}"></i>
+                </span>
+                <ul class="list sub-list pad-left-45" ng-show="openSublist">
+                  <a href="#/sqs/profil-pemegang-polis">
+                    <li class="item pad-left-0 b-border-gray marg-top-1" href="#">
+                      Data Tertanggung utama<br/>
+                      <small class="white-space-normal">pengisian data lengkap pada 18 Agustus 2016</small>
+                    </li>
+                  </a>
+                  <li class="item pad-left-0 b-border-gray marg-top-1">
+                    Data Tertanggung ke 2<br/>
+                    <small class="white-space-normal">pengisian data lengkap pada 18 Agustus 2016</small>
+                  </li>
+                  <a href="#/sqs/profil-pemegang-polis">
+                    <li class="item pad-left-0 marg-top-1">
+                      Data Tertanggung ke 3<br/>
+                      <small class="white-space-normal">pengisian data lengkap pada 18 Agustus 2016</small>
+                    </li>
+                  </a>
+                </ul>
+              </div>
+              <div class="item item-wrapper" href="#">
+                <span class="item item-icon-left item-icon-right pad-left-45 b-border-gray">
+                  <i class="icon ion-ios-close assertive pos-left-0 h4 marg-0"></i>
+                  <h2>Pilihan Produk</h2>
+                  <p>0 dari 2 prduk selesai</p>
+                  <i class="icon ion-play font-size-16 pull-right font-red" ng-click="openSublist2 = !openSublist2" ng-class="{'rotate-90':openSublist2 == true, 'rotate-30':openSublist2 != true}"></i>
+                </span>
+                <ul class="list sub-list pad-left-45" ng-show="openSublist2">
+                  <li class="item pad-left-0 b-border-gray marg-top-1 white-space-normal" href="#">
+                    Produk Dasar: PRUlink assurance account (RUP)<br/>
+                    <small class="white-space-normal">pengisian data belum lengkap</small>
+                  </li>
+                  <li class="item pad-left-0 b-border-gray marg-top-1 white-space-normal">
+                    Produk Tambahan PRUink assurance account (USD)<br/>
+                    <small class="white-space-normal">pengisian data belum lengkap</small>
+                  </li>
+                </ul>
+              </div>
+              <div class="item item-wrapper" href="#">
+                <span class="item item-icon-left pad-left-45 b-border-gray">
+                  <i class="icon ion-ios-close assertive pos-left-0 h4 marg-0"></i>
+                  <h2>Manfaat</h2>
+                  <p class="white-space-normal">pengisian data belum lengkap</p>
+                </span>
+              </div>
+              <div class="item item-wrapper" href="#">
+                <span class="item item-icon-left item-icon-right pad-left-45 b-border-gray">
+                  <i class="icon ion-ios-close assertive pos-left-0 h4 marg-0"></i>
+                  <h2>Ilustrasi</h2>
+                  <p>pengisian data belum lengkap</p>
+                  <i class="icon ion-play font-size-16 pull-right font-red" ng-click="openSublist3 = !openSublist3" ng-class="{'rotate-90':openSublist3 == true, 'rotate-30':openSublist3 != true}"></i>
+                </span>
+                <ul class="list sub-list pad-left-45" ng-show="openSublist3">
+                  <li class="item pad-left-0 b-border-gray marg-top-1 white-space-normal" href="#">
+                    Ringkasan Ilustrasi<br/>
+                    <small class="white-space-normal">pengisian data belum lengkap</small>
+                  </li>
+                  <li class="item pad-left-0 b-border-gray marg-top-1 white-space-normal">
+                    Tanda Tangan Agen<br/>
+                    <small class="white-space-normal">pengisian data belum lengkap</small>
+                  </li>
+                  <li class="item pad-left-0 b-border-gray marg-top-1 white-space-normal">
+                    Tanda Tangan Persetujuan Agen<br/>
+                    <small class="white-space-normal">pengisian data belum lengkap</small>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

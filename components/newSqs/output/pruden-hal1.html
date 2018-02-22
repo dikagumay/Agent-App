@@ -1,0 +1,24 @@
+
+<ion-content ng-controller="DocumentController as vm" class="padding">
+    <p>
+        <button ng-click="vm.createInvoice()" class="button icon-left ion-play button-assertive">Create Invoice</button>
+
+
+    </p>
+</ion-content>
+
+
+
+<script id="pdf-viewer.html" type="text/ng-template">  
+    <ion-modal-view>
+        <ion-header-bar>
+            <h1 class="title">Invoice</h1> 
+            <button ng-click="vm.modal.hide()" class="button button-icon icon ion-android-close"></button>
+        </ion-header-bar>
+        <ion-content>
+                <ng-pdf ng-if="pdfUrl" template-url="components/newSqs/output/viewer.html" canvasid="pdf" scale="page-fit"></ng-pdf>  
+                <button ng-click="vm.getPdfOutput()" class="button button-assertive">download</li>
+        </ion-content>
+
+    </ion-modal-view>
+</script> 

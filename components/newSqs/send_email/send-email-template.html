@@ -1,0 +1,57 @@
+<ion-view view-title="Send Email Ilustrasi" ng-controller="sendEmailSqsCtrl">
+  <ion-header-bar align-title="left" class="bar-assertive">
+    <a class="left-buttons" ng-href="#/homepage">
+      <button class="button button-icon icon ion-ios-arrow-back"></button>
+    </a>
+    <h1 class="title text-uppercase">Compose</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <div class="card">
+      <div class="marg-bot-40">
+        <span class="pull-right">
+          <span class="marg-right-20 cursor-pointer" ng-click="attachFile()"> 
+            <md-icon md-svg-src="img/pinned-document.svg" class="height-17 svg-height-17" aria-label="send"></md-icon>
+            <span class="font-red font-size-10">LAMPIRKAN</span> 
+          </span> 
+          <span class="marg-right-20 cursor-pointer"> 
+            <md-icon md-svg-src="img/send.svg" aria-label="send"></md-icon>
+            <span class="font-red font-size-10">KIRIM</span> 
+          </span> 
+        </span>
+      </div>
+      <form name="formSendMailIlustrasi" class="default-form">
+        <md-input-container class="md-block black-placeholder no-error marg-bot-30">
+          <label>To</label>
+          <input ng-model="sendMail.to" placeholder="Type in address or serch phone book" type="text">
+          <md-icon class="cursor-pointer material-icons font-red display-inline">&#xE8A3;</md-icon>
+        </md-input-container>
+        <md-input-container class="md-block black-placeholder no-error marg-bot-30">
+          <label>cc</label>
+          <input ng-model="sendMail.cc" placeholder="Type in address or serch phone book" type="text">
+          <md-icon class="cursor-pointer material-icons font-red display-inline">&#xE8A3;</md-icon>
+        </md-input-container>
+        <md-input-container class="md-block black-placeholder no-error marg-bot-30">
+          <label>Subject</label>
+          <span class="font-red pos-left-0 position-absolute marg-top-3">[SQS]</span>
+          <input ng-model="sendMail.subject" type="text" class="pad-left-40" placeholder="Template Name">
+        </md-input-container>
+        <md-input-container class="md-block black-placeholder no-error marg-bot-30">
+          <label>From</label>
+          <input ng-model="sendMail.from" placeholder="Agent Name - Agent Email Address" type="text">
+        </md-input-container>
+        <md-input-container class="md-block no-error marg-bot-30">
+          <textarea placeholder="Type in your message here" ng-model="user.biography" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+        </md-input-container>
+        <div>
+          <span class="email-attachment" ng-repeat="item in mailAttachments">
+            <div class="attachment-icon" ng-class="{'pdf-icon': item.extn == 'pdf'}">
+            </div>
+            {{item.fileName}}
+          </span>
+        </div>
+        <h6 class="font-gray pru-logo-text">Sent via <span class="font-black">PRU</span>force SQS Prudential Indonesia</h6>
+        <input type="file" ng-model="fileUploadUrl" class="hidden" id="fileUpload" onchange="angular.element(this).scope().addFileUpload()">
+      </form>
+    </div>
+  </ion-content>
+</ion-view>

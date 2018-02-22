@@ -1,0 +1,132 @@
+<ion-view view-title="Detail Notification">
+  <div class="bar bar-header bar-assertive">
+    <a class="left-buttons" ng-href="#" ng-click="goBack()">
+      <button menu-toggle="left" class="button button-icon icon ion-ios-arrow-back"></button>
+    </a>
+    <h1 class="title title-left text-uppercase">Detail Notification</h1>
+  </div>
+  <ion-content class="has-header">
+    <div class="content-profile-head content-white-head">
+      <div class="center-content text-center">
+        <p><small>Nama Calon Agen</small></p>
+        <h4>{{candidateName}}</h4>
+      </div>
+    </div>
+    <a href="#" class="button button-assertive button-block text-uppercase marg-10">Tanda Tangan Anda Dibutuhkan</a>
+    <div class="list list-empty">
+      <div class="item item-wrapper" href="#">
+        <a href="#/data-kandidat" class="item item-icon-left" menu-close>
+          <i class="icon ion-ios-checkmark balanced"></i>
+          <h2>Application Pack</h2>
+          <p>4 dari 4 selesai</p>
+        </a>
+        <div class="list sub-list">
+          <a class="item item-icon-left" href="#">
+            <i class="icon ion-ios-checkmark balanced"></i>
+            <p>Data Kandidat</p>
+            <small>100% selesai pada 18 Agustus 2015</small>
+          </a>
+          <li class="item item-icon-left">
+            <i class="icon ion-ios-checkmark balanced"></i>
+            <p>Application Pack</p>
+            <small>100% selesai pada 18 Agustus 2015</small>
+          </li>
+          <li class="item item-icon-left">
+            <i class="icon ion-ios-checkmark balanced"></i>
+            <p>Dokumen Pendukung</p>
+            <small>100% selesai pada 18 Agustus 2015</small>
+          </li>
+          <li class="item item-icon-left">
+            <i class="icon ion-ios-checkmark balanced"></i>
+            <p>Syarat &amp; Ketentuan</p>
+            <small>100% selesai pada 18 Agustus 2015</small>
+          </li>
+        </div>
+      </div>
+      <div class="item item-wrapper" href="#">
+        <a href="#" class="item item-icon-left">
+          <i class="icon ion-ios-checkmark balanced"></i>
+          <h2>Peraturan & Kode etik perusahaan</h2>
+          <p>2 dari 2 selesai</p>
+        </a>
+        <ul class="list sub-list">
+          <li class="item item-icon-left">
+            <i class="icon ion-ios-checkmark balanced"></i>
+            <p>Training Material</p>
+            <small>4 dari 4 selesai</small>
+          </li>
+          <li class="item item-icon-left">
+            <i class="icon ion-ios-checkmark balanced"></i>
+            <p>Ujian Peraturan & Kode Etik Perusahaan </p>
+            <small>4 dari 4 selesai</small>
+          </li>
+        </ul>
+      </div>
+      <div class="item item-wrapper" href="#">
+        <a href="#" class="item item-icon-left">
+          <i class="icon ion-ios-close assertive"></i>
+          <h2 class="pru-logo-text"><strong>PRU</strong><em>fast start</em></h2>
+          <p>1 dari 1 dimulai</p>
+        </a>
+        <ul class="list sub-list">
+          <li class="item item-icon-left">
+            <i class="icon ion-ios-close assertive"></i>
+            <p>Training & Ujian</p>
+            <small>4 dari 4 selesai</small>
+          </li>
+        </ul>
+      </div>
+      <div class="item item-wrapper" href="#">
+        <a href="#/data-kandidat-pack" class="item item-icon-left" menu-close>
+          <i class="icon ion-ios-information energized"></i>
+          <h2>AAJI</h2>
+          <p>2 dari 3 selesai</p>
+        </a>
+        <ul class="list sub-list">
+          <li class="item item-icon-left">
+            <i class="icon ion-ios-checkmark balanced"></i>
+            <p>Pendaftaran jadwal ujian</p>
+            <small>4 dari 4 selesai</small>
+          </li>
+          <li class="item item-icon-left">
+            <i class="icon ion-ios-information energized"></i>
+            <p>Surat Informasi Ujian</p>
+            <small>4 dari 4 selesai</small>
+          </li>
+          <li class="item item-icon-left">
+            <i class="icon ion-ios-checkmark balanced"></i>
+            <p>Ujian AAJI</p>
+            <small>4 dari 4 selesai</small>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr class="marg-top-10 marg-bot-0">
+    <form>
+      <div class="form-group image-editor pas-foto-pribadi" data-photo-type="potrait">
+        <div class="image-holder image-potrait">
+          <i class="material-icons" ng-if='notifsign.all_image.pas_foto == undefined'>&#xE3F4;</i>
+          <img class="image-result" ng-src="{{notifsign.all_image.pas_foto}}" ng-if='notifsign.all_image.pas_foto != undefined'>
+        </div>
+        <div class="upload-wrap">
+          <input type="file" id="pas-foto" class="cropit-image-input" ng-model="notifsign.all_image.pas_foto" potrait-photo-uploader/>
+          <a class="button button-assertive button-block">upload Pas Foto</a>
+        </div>
+        <a class="button button-dark button-block" ng-model="notifsign.all_image.pas_foto" take-potrait-photo>Ambil gambar</a>
+      </div>
+      <div class="form-group image-editor">
+        <a href="#/tanda-tangan">
+          <div ng-if="signature[0]">
+            <img src="{{signature[0]}}" height="120px" width="100%" />
+          </div>
+          <div ng-if="!signature[0]" class="sign">
+            Tanda Tangan Disini
+          </div>
+        </a>
+      </div>
+      <div class="form-group">
+        <button class="button button-block button-assertive text-uppercase" ng-click="completedNotification($event)">Simpan dan Kirim</button>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

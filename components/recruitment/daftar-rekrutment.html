@@ -1,0 +1,37 @@
+<ion-view view-title="Daftar Rekrutmen" ng-controller="recruitCtrl">
+  <ion-header-bar align-title="left" class="bar-assertive">
+    <a class="left-buttons" ng-href="#/homepage">
+      <button   class="button button-icon icon ion-ios-arrow-back"></button>
+    </a>
+    <h1 class="title text-uppercase">Rekrutmen</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+  <div class="content content-button-bottom">
+    <div class="content-header text-uppercase">
+      <i class="ion ion-person"></i>
+      Sekilas calon agen
+    </div>
+    <div class="list">
+      <div class="item item-right-arrow" ng-repeat="candidate in recruitCandidate | orderBy: '-id'">
+        <a href="#/status-perekrutan">
+          <p>{{candidate.name}}</p>
+          <div class="progress">
+            <span class="progress-text-default">{{candidate.progress_detail}}</span>
+            <div ng-class="'progress-bar progress-bar-' + candidate.progress_status" role="progressbar" ng-style="{'width': candidate.progress_total}">
+              <span>{{candidate.progress_detail}}</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<a href="#/formulir-registrasi" class="button button-assertive button-fixed-bottom">
+  <i class="ion-ios-personadd"></i>
+  Daftarkan calon agen baru
+</a>
+</ion-view>

@@ -1,0 +1,114 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(../../fonts/2fcrYFNaTjcS6g4U3t-Y5RV6cRhDpPC5P4GCEJpqGoc.woff) format('woff');
+}
+
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
+.form-group .material-icons,
+.form-group .sprites-icons,
+.form-group .ion {
+  color: #6a757b;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  margin: 8px;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.form-group .ion.ion-square{
+  background: #6a757b;
+  border-radius: 2px;
+  padding: 0px;
+  color: #fff;
+  text-align: right;
+  padding: 4px;
+}
+
+.form-group .ion.ion-square.linked-in{
+  background: #fff;
+  color: #6a757b;
+  font-size: 32px;
+  padding: 0;
+  text-align: center;
+  margin-top: 3px;
+}
+
+md-input-container.input-gray md-icon{
+  top: 5px;
+  left: 10px;
+  right: auto;
+  color: #fff;
+}
+
+.vAccordion--default.custom-pru v-pane-header.header-icon md-icon,
+.vAccordion--default.custom-pru v-pane-header i.pru-icons,
+.vAccordion--default.custom-pru v-pane.is-expanded>v-pane-header.header-icon i.pru-icons {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  font-size: 24px;
+  line-height: 20px;
+}
+
+.vAccordion--default.custom-pru v-pane-header.compact.header-icon md-icon,
+.vAccordion--default.custom-pru v-pane-header.compact i.pru-icons,
+.vAccordion--default.custom-pru v-pane.is-expanded>v-pane-header.compact.header-icon i.pru-icons {
+  top: 10px;
+}
+
+.vAccordion--default.custom-pru v-pane-header.header-icon,
+.vAccordion--default.custom-pru v-pane.is-expanded>v-pane-header.header-icon {
+  padding-left: 40px !important;
+}
+
+.email-attachment{
+  min-width: 90px;
+  display: inline-block;
+  text-align: center;
+  font-size: 10px;
+}
+
+.email-attachment .attachment-icon.pdf-icon{
+  background-image: url(../../img/pdf.png);
+  height: 30px;
+  width: 30px;
+  background-position: center center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  margin: auto;
+}
+
+md-icon.height-17{
+  height: 17px;
+  width: 17px;
+  min-width: 1px;
+  min-height: 1px;
+}
+
+md-icon.svg-height-17 svg{
+  height:17px;
+}

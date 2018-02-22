@@ -1,0 +1,275 @@
+.bar.bar-header.bar-assertive{
+  height: 55px;
+}
+
+.bar.bar-header.bar-assertive:after{
+  content: "";
+  height: 10px;
+  position: absolute;
+  width: 100%;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  background: #6a747b;
+}
+
+.bar .title.title-left{
+  left: 30px !important;
+}
+
+.platform-android:not(.platform-ios) .bar .title.title-left,
+.platform-browser .bar .title.title-left{
+  left: 30px !important;
+  line-height: 55px;
+}
+
+.bar.bar-header.bar-assertive.bar-plain:after{
+  content: none;
+}
+
+.bar.bar-logo .title{
+  background-image: url("../../img/PRUforce-logo.png");
+  background-size: 135px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.platform-android:not(.platform-ios) .bar .title,
+.platform-browser .bar .title{
+  height: 55px;
+  line-height: 55px;
+}
+
+.bar .button, .bar button{
+  height: 100%;
+}
+
+.platform-ios:not(.platform-browser) .ios-header-bar{
+  background-color: #e10b00;
+  height: 15pt;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  right: 0;
+  z-index: 5;
+}
+
+.bar.bar-assertive{
+  border-color: #ff0000;
+  background-color: #ff0000;
+  background-image: linear-gradient(0deg, #ff0000, #ff0000 50%, transparent 50%);
+  color: #fff;
+}
+
+.bar .button.button-icon .icon:before,
+.bar .button.button-icon:before,
+.bar .button.button-icon.icon-left:before,
+.bar .button.button-icon.icon-right:before,
+.bar button.button-icon .icon:before,
+.bar button.button-icon:before,
+.bar button.button-icon.icon-left:before,
+.bar button.button-icon.icon-right:before{
+  font-size: 27px;
+}
+
+.menu-open .menu-content:after{
+  content: " ";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.25);
+  z-index: 10;
+  position: fixed;
+}
+
+.content-header{
+  position: relative;
+  border-radius: 3px;
+  background-color: #ff0000;
+  padding: 10px; 
+  padding-left: 45px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.content-header.no-p{
+  padding-left: 10px;
+}
+
+.content-header.content-header-white{
+  background-color: #ffffff;
+  color:#6a747b;
+  padding-left:35px;
+}
+
+.content-header.light-gray{
+  background-color:  #d7d7d7;
+}
+
+.content-header i.pru-icons{
+  position: absolute;
+  left: 15px;
+  top: 10.5px;
+  font-size: 24px;
+  line-height: 20px;
+}
+
+.content-header.content-header-white i{
+  left:0;
+  color:#c2c2c2;
+}
+
+.bar .right-nav {
+  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.bar .right-nav a {
+  height: 56px;
+  width: 40px;
+  line-height: 53px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+}
+
+.bar .right-nav i {
+  color: #fff;
+  position: relative;
+  top: 3px;
+  font-size: 24px;
+  right: 4px;
+}
+
+.bar .right-nav .new-notif {
+  position: absolute;
+  right: 4px;
+  top: 10px;
+  font-size: 10px;
+  line-height: 16px;
+  width: 16px;
+  height: 16px;
+  background-color: rgba(255,255,255,0.8);
+  color: #ff0000;
+  border-radius: 8px;
+}
+
+.menu-left{
+  width: calc(100% - 50px) !important;
+  box-shadow: 0 2px 40px rgba(0,0,0,0.2);
+  transform: translate3d(-275px, 0px, 0px);
+  transition: all 0.3s ease;
+  max-width: 275px;
+}
+
+.menu-open .menu-left{
+  z-index: 5 !important;
+  transform: translate3d(0, 0px, 0px) !important;
+}
+
+.menu-open .menu-content{
+  /*transform: translate3d(calc(100% - 50px), 0px, 0px) !important;*/
+  transform: translate3d(0px, 0px, 0px) !important;
+}
+
+.bar .title.multi-line{
+  line-height: 20px !important;
+  white-space: normal;
+  text-align: left;
+  height: auto;
+  position: relative;
+  font-size: 14px;
+  max-width: 190px;
+  margin-right:0;
+  left:62px;
+}
+.bar.bar-header.bar-assertive.auto-height{
+  height: auto !important;
+  padding: 30px 10px;
+  position: relative;
+}
+
+.main-avatar img {
+  width: 100%;
+}
+
+.main-avatar {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  -webkit-border-radius: 60px;
+  border-radius: 60px;
+  overflow: hidden;
+  margin-left:5px;
+}
+
+.bar-agent .bar.bar-header,
+.platform-ios.platform-cordova:not(.fullscreen) .bar-agent .bar-header:not(.bar-subheader){
+  height: 110px;
+}
+
+
+.platform-ios.platform-cordova:not(.fullscreen) .bar-agent .bar-header:not(.bar-subheader){
+  margin-top: 20px;
+}
+
+.bar-agent .bar.bar-header .image,
+.bar-agent .bar.bar-header h1,
+.platform-ios.platform-cordova:not(.fullscreen) .bar-agent .bar-header:not(.bar-subheader) > *{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  overflow: hidden;
+  text-overflow: initial;
+  white-space: normal;
+}
+
+.bar-agent .bar.bar-header .image{
+  margin-left: 0;
+  line-height: 20px;
+  height: 100px;
+  width: 90px;
+  top: 0;
+}
+
+.bar-agent .bar.bar-header .image img{
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+}
+
+.bar-agent .bar.bar-header > h1,
+.platform-android .bar-agent .bar.bar-header > h1 {
+  margin-left: 98px;
+  line-height: 20px;
+  height: 110px;
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 17px;
+}
+
+.bar-agent .has-header {
+  top: 125px;
+}
+
+.platform-ios.platform-cordova:not(.fullscreen) .bar-agent .has-header{
+  top: 145px;
+}
+
+@media only screen and (max-width : 500px) {
+  .bar .title.multiple-line{
+    white-space: initial;
+    line-height: 20px !important;
+    margin-top: 7.5px;
+    max-width:380px;
+  }
+}

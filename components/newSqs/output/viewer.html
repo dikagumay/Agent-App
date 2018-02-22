@@ -1,0 +1,41 @@
+<ion-footer-bar align-title="left" class="bar-assertive">
+  <button ng-click="vm.createPdf()" class="button button-assertive">download</button>
+  <nav ng-class="getNavStyle(scroll)">
+  <button ng-click="goPrevious()"><span>&lt;</span></button>
+  <button ng-click="goNext()"><span>&gt;</span></button>
+
+  <button ng-click="zoomIn()"><span>+</span></button>
+  <button ng-click="fit()"><span>100%</span></button>
+  <button ng-click="zoomOut()"><span>-</span></button>
+  <!-- <button ng-click="rotate()"><span>90</span></button> -->
+
+  <span>Page: </span>
+  <input type="text" min=1 ng-model="pageNum">
+  <span> / {{pageCount}}</span>
+</nav>
+</ion-footer-bar>
+
+{{loading}}
+<ion-scroll max-zoom="5" zooming="true" direction="xy" style="width: 100%; height:100%; overflow: hidden" >
+    <canvas id="pdf" class="rotate0"></canvas>
+</ion-scroll>
+<div id="chartdiv"></div>   
+
+
+
+
+<style type="text/css">
+  .rotate0 {-webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  .rotate90 {-webkit-transform: rotate(90deg); transform: rotate(90deg); }
+  .rotate180 {-webkit-transform: rotate(180deg); transform: rotate(180deg); }
+  .rotate270 {-webkit-transform: rotate(270deg); transform: rotate(270deg); }
+  .fullmodal{
+    position: fixed;
+    left: 0;
+    top: 0 !important;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+</style>

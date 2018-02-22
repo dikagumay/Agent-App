@@ -1,0 +1,62 @@
+<ion-content class="has-header-tabs">
+  <form name="formFamily" class="default-form" ng-submit="sendData($event,currentMenuTab)">
+    <md-input-container class="md-icon-float md-block">
+      <label>Nama Istri/Suami</label>
+      <md-icon aria-label="person" class="material-icons">&#xE63D;</md-icon>
+      <input ng-model="candidatePack.dataKeluarga.wifeName" ng-blur="save()" type="text" required>
+      <div ng-messages="formFamily.wifeName.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+
+    <md-input-container class="md-icon-float md-block">
+      <label>Tanggal lahir Istri/Suami</label>
+      <md-icon aria-label="person" class="material-icons">&#xE878;</md-icon>
+      <input ng-model="candidatePack.dataKeluarga.wifeBirthOfDate" ng-blur="save()"  type="date" required>
+      <div ng-messages="formFamily.name.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+
+    <md-input-container class="md-icon-float md-block">
+      <label>Nomor KTP Istri/Suami</label>
+      <md-icon aria-label="person" class="material-icons">&#xE8AA;</md-icon>
+      <input ng-model="candidatePack.dataKeluarga.wifeIdCardNumber" ng-blur="save()" type="text" required>
+      <div ng-messages="formFamily.name.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+
+    <md-input-container class="md-icon-float md-block">
+      <label>Pekerjaan Istri/Suami</label>
+      <md-icon aria-label="person" class="material-icons">&#xE8F9;</md-icon>
+      <input ng-model="candidatePack.dataKeluarga.wifeJobs" ng-blur="save()" type="text" required>
+      <div ng-messages="formFamily.name.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+
+    <md-input-container class="md-icon-float md-block">
+      <label>Nama perusahaan</label>
+      <md-icon aria-label="person" class="material-icons">&#xE0AF;</md-icon>
+      <input ng-model="candidatePack.dataKeluarga.wifeCompanyName" ng-blur="save()" type="text" required>
+      <div ng-messages="formFamily.name.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+
+    <md-input-container class="md-icon-float md-block">
+      <label>Jumlah Anak/Tanggungan</label>
+      <md-icon aria-label="person" class="material-icons">&#xE8D3;</md-icon>
+      <input ng-model="candidatePack.dataKeluarga.childrens" ng-blur="save()" type="text" required>
+      <div ng-messages="formFamily.name.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    
+    <div class="form-group">
+      <button class="button button-block button-assertive next-tab" type="submit">Lanjut</button>
+    </div>
+
+  </form>
+</ion-content>

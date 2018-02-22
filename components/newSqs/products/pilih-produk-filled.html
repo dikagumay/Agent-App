@@ -1,0 +1,126 @@
+<ion-content class="has-header-tabs">
+  <div class="card" flex>
+    <form name="formpilihProdukFilled" class="default-form pad-top-0">
+      <div class="form-group marg-bot-0" flex="100">
+        <md-input-container class="md-icon-float md-block">
+          <div class="form-group marg-bot-0">
+            <md-radio-group ng-model="pilihProdukFilled.pilihTemplate" class="inline-radio-button">
+              <md-radio-button ng-value="{{pilihProdukFilled.pilihTemplate}}" class="md-primary"><span class="marg-left-5">Gunakan Template</span></md-radio-button>
+            </md-radio-group>
+          </div>
+        </md-input-container>
+      </div>
+      <md-input-container class="md-icon-float md-block marg-bot-0" flex-gt-sm>
+        <label class="font-grey">Template yang dipilih</label>
+        <md-icon aria-label="person" class="material-icons"><i class="pru-icons pf-icon-pru-icon_notepad"></i></md-icon>
+        <md-select ng-model="dataALokasiDana.namelist">
+          <md-option value="{{dataALokasiDana.namelist}}">Crisis Cover</md-option>
+          <md-option value="template 3">Template 2</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block">
+        <label>Nomor SPAJ/Polis</label>
+        <md-icon aria-label="person" class="material-icons"><i class="pru-icons pf-icon-pru-icon_agreement"></i></md-icon>
+        <input ng-model="dataALokasiDana.noSpaja" type="text" required>
+        <div ng-messages="pilihProdukFilled.nospaj.$error">
+          <div ng-message="required">Harus diisi.</div>
+        </div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block marg-bot-0" flex-gt-sm>
+        <label class="font-grey">Jenis Produk</label>
+        <md-icon aria-label="person" class="material-icons"><i class="pru-icons pf-icon-pru-icon_contract"></i></md-icon>
+        <md-select ng-model="dataALokasiDana.jenisProduk">
+          <md-option value="{{dataALokasiDana.jenisProduk}}">Prulink</md-option>
+          <md-option value="none">None</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+        <!-- <md-input-container class="md-icon-float md-block marg-bot-0" flex-gt-sm>
+          <label class="font-grey">Nama Produk</label>
+          <md-icon aria-label="person" class="material-icons"><i class="pru-icons pf-icon-pru-icon_contract"></i></md-icon>
+          <md-select ng-model="dataALokasiDana.produkNama">
+            <md-option value="{{dataALokasiDana.produkNama}}">PRUlink assurance account (RUP)</md-option>
+            <md-option value="template 3">Template 2</md-option>
+          </md-select>
+          <div class="md-errors-spacer"></div>
+        </md-input-container> -->
+        <md-input-container class="md-icon-float md-block" flex-gt-sm>
+          <label>Nama produk</label>
+          <md-icon aria-label="person" class="material-icons"><i class="pru-icons pf-icon-pru-icon_contract"></i></md-icon>
+          <md-select ng-model="productName" md-on-close="clearProductName()" data-md-container-class="select-with-search">
+            <!-- <md-select-header class="select-header">
+              <input ng-model="searchProductName" type="text" placeholder="Ketik Disini untuk Mencari" class="header-searchbox md-text" ng-keydown="$event.stopPropagation()">
+            </md-select-header> -->
+            <md-optgroup label="perlindungan terkait investasi" class="sub">
+              <span>Pembayaran Premi Berkala</span>
+              <md-option ng-repeat="option in registerPolicyHolders | filter:{category:'perlindungan'}" ng-value="option.key">{{option.value}}</md-option>
+              <span>Pembayaran Premi Tunggal</span>
+              <md-option ng-repeat="option in registerPolicyHolders | filter:{category:'pembayaran'}" ng-value="option.key">{{option.value}}</md-option>
+            </md-optgroup>
+            <md-optgroup label="Asuransi Jiwa Berjangka" class="sub">
+              <md-option ng-repeat="option in registerPolicyHolders | filter:{category:'asuransiBerjangka'}" ng-value="option.key">{{option.value}}</md-option>
+            </md-optgroup>
+            <md-optgroup label="Asuransi Jiwa Tradisional" class="sub">
+              <md-option ng-repeat="option in registerPolicyHolders | filter:{category:'asuransiTraditional'}" ng-value="option.key">{{option.value}}</md-option>
+            </md-optgroup>
+            <md-optgroup label="Dwiguna" class="sub">
+              <md-option ng-repeat="option in registerPolicyHolders | filter:{category:'dwiGuna'}" ng-value="option.key">{{option.value}}</md-option>
+            </md-optgroup>
+          </md-select>
+          <div class="md-errors-spacer"></div>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block " flex-gt-sm> 
+          <label>Frekuensi Pembayaran</label> 
+          <md-icon aria-label="person" class="material-icons"><i class="pru-icons pf-icon-pru-icon_money"></i></md-icon>
+          <md-select ng-model="dataALokasiDana.frequensi"> 
+            <md-option value="bulanan">Bulanan</md-option> 
+            <md-option value="tiga">Tiga Bulanan</md-option>
+            <md-option value="setengah">Setengah Tahunan</md-option>
+            <md-option value="tahunan">Tahunan</md-option>
+          </md-select> 
+        </md-input-container>
+        <v-accordion multiple class="vAccordion--default custom-pru">
+          <v-pane expanded="true">
+            <v-pane-header class="header-icon">
+              <md-icon aria-label="person" class="material-icons font-white">&#xE7FD;</md-icon> Alokasi Dana 
+            </v-pane-header>
+            <v-pane-content>
+              <div class="sub-lists accordion-body pad-bot-20 pad-left-10 pad-right-10">
+                <div layout="row" class="marg-top-10 marg-bot-10">
+                  <div flex class="text-">
+                    <a href="" ng-click="btnAlokasiDana($event)"><h6 class="font-red text-center text-uppercase">Pilih Dana Investasi</h6></a>
+                  </div>
+                </div>
+                <div layout="row" ng-repeat="item in popupAlokasiDana" class="marg-top-10" ng-if="item.checked == true">
+                  <div flex="10" class="pad-top-5 hide">
+                    <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="item.checked" md-colors="red"></md-checkbox>
+                  </div>
+                  <div flex>
+                    <span class="pru-logo-text label-middle pad-right-5" ng-bind-html="item.name"></span>
+                  </div>
+                  <div flex class="pad-left-15">
+                    <md-input-container class="md-icon-float input-little-box-dropdown md-block marg-0" flex-gt-sm>
+                      <label></label>
+                      <md-select ng-model="alokasiLists" md-on-close="clearProductName()" data-md-container-class="select-with-search">
+                        <md-select-header class="select-header">
+                          <input ng-model="searchAlokasi" type="search" placeholder="Ketik Disini untuk Mencari" class="header-searchbox md-text" ng-keydown="$event.stopPropagation()">
+                        </md-select-header>
+                        <md-optgroup>
+                          <md-option ng-repeat="option in alokasiList | filter:searchAlokasi" ng-value="option.key">{{option.value}}</md-option>
+                        </md-optgroup>
+                      </md-select>
+                    </md-input-container>
+                  </div>
+                </div>
+              </div>
+            </v-pane-content>
+          </v-pane>
+        </v-accordion>
+        <div class="form-group pad-left-10 pad-right-10">
+          <button class="button button-block button-assertive next-tab" type="submit">Lanjut</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</ion-content>

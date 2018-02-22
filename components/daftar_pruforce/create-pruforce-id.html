@@ -1,0 +1,48 @@
+<ion-view view-title="Daftar PRUforce ID">
+  <div class="content content-red">
+    <ion-content>
+      <a href="#" class="btn-back" ng-click="goBack()">
+        <i class="ion-android-arrow-back"></i>
+      </a>
+      <div class="logo">
+        <h1>
+          <a href="#">
+            <img src="./img/PRUforce-logo.png" alt="PRUforce" />
+          </a>
+        </h1>
+      </div>
+      <div class="content-red-text">
+        <h4 class="pru-logo-text">Daftar <strong>PRU</strong><em>force</em> ID</h4>
+        <form>
+          <div class="form-group">
+            <input class="form-control" name="username" type="text" placeholder="PRUForce ID" ng-model="initModel.pruforceID">
+          </div>
+          <div class="form-group">
+            <input class="form-control" name="password" type="password" placeholder="PRUforce Password" ng-model="initModel.password">
+          </div>
+          <div class="form-group">
+            <input class="form-control" name="password" type="password" placeholder="Ulangi PRUforce Password" ng-model="initModel.cpassword">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="button button-block button-light text-uppercase" ng-click="CreatePRUForceID()">Daftar</button>
+          </div>
+          <div class="form-group text-small text-bold">
+            <p>PRUforce ID harus:</p>
+            <ul>
+              <li>Tidak mengandung spasi</li>
+              <li>Terdiri dari 8-12 karakter</li>
+              <li>Minimal mengandung 1 angka</li>
+            </ul>
+            <p>Password harus:</p>
+            <ul>
+              <li>Tidak mengandung spasi</li>
+              <li>Minimal mengandung 1 buah angka</li>
+              <li>Minimal mengandung 1 buah huruf</li>
+              <li>Kombinasi huruf kecil dan besar</li>
+            </ul>
+          </div>
+        </form>
+      </div>
+    </ion-content>
+  </div>
+</ion-view>

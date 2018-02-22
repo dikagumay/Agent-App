@@ -1,0 +1,141 @@
+<ion-content class="has-header-tabs">
+  <div class="card" flex>
+    <form name="formPilihProduk" class="default-form pad-top-0">
+      <div layout="column">
+        <div class="marg-right-md-10" flex="100">
+          <i class="icon ion-edit h6 font-gray"></i> <span class="font-red font-size-10 marg-right-20">EMAIL</span>
+          <i class="icon ion-android-person-add h6 font-gray"></i> <span class="font-red font-size-10">PAKAI TEMPLATE</span>
+          <md-input-container class="md-icon-float md-block">
+            <label>Nomor SPAJ/Polis</label>
+            <md-icon aria-label="person" class="material-icons"><i class="pru-icons pf-icon-pru-icon_agreement"></i></md-icon>
+            <input ng-model="pilihProduk.nospaj" type="text" required>
+            <div ng-messages="noSpaj.nospaj.$error">
+              <div ng-message="required">Harus diisi.</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-icon-float md-block">
+            <label>Jenis Produk</label>
+            <md-icon aria-label="person" class="material-icons"><i class="pru-icons pf-icon-pru-icon_contract"></i></md-icon>
+            <input ng-model="pilihProduk.jenisProduk" type="text" required>
+            <div ng-messages="formPillihProduk.jenisProduk.$error">
+              <div ng-message="required">Harus diisi.</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-icon-float md-block">
+            <label>Nama Produk</label>
+            <md-icon aria-label="person" class="material-icons"><i class="pru-icons pf-icon-pru-icon_contract"></i></md-icon>
+            <input ng-model="pilihProduk.name" type="text" required>
+            <div ng-messages="pilihProduk.name.$error">
+              <div ng-message="required">Harus diisi.</div>
+            </div>
+          </md-input-container> 
+          <md-input-container class="md-icon-float md-block marg-bot-0" flex-gt-sm>
+            <label>Frekuensi Pembayaran</label>
+            <md-icon aria-label="person" class="material-icons"><i class="pru-icons pf-icon-pru-icon_money"></i></md-icon>
+            <md-select ng-model="pilihProduk.pembayaranFrekuensi">
+              <md-option value="{{pilihProduk.pembayaranFrekuensi}}">Bulanan</md-option>
+              <md-option value="tigaBulan">Tiga Bulanan</md-option>
+              <md-option value="setengahTahunan">Setengah Tahunan</md-option>
+              <md-option value="tahunan">Tahunan</md-option>
+            </md-select>
+            <div class="md-errors-spacer"></div>
+          </md-input-container> 
+        </div>
+        <div class="marg-right-md-10" flex="100">
+          <v-accordion multiple class="vAccordion--default custom-pru">
+            <v-pane expanded="true">
+              <v-pane-header class="header-icon">
+                <md-icon aria-label="person" class="material-icons font-white">&#xE7FD;</md-icon> Alokasi Dana 
+              </v-pane-header>
+              <v-pane-content>
+              <div class="sub-lists accordion-body pad-bot-20 pad-left-10 pad-right-10">
+                <div layout="row" class="marg-top-10 marg-bot-10">
+                  <div flex class="text-center">
+                    <a href="" ng-click="btnAlokasiDanaTemp($event)"><h6><span class="font-red">PILIH ALOKASI DANA LAIN</span></h6></a>
+                  </div>
+                </div>
+                <div layout="row" class="marg-top-10" ng-repeat="item in popupAlokasiDanaTemps">
+                  <div flex="70"  flex-sm="90">
+                    <label class="label-middle pad-right-5">{{item.label}}</label>
+                  </div>
+                  <div flex>
+                    <md-input-container class="md-icon-float input-little-box-dropdown md-block marg-0" flex-gt-sm>
+                      <md-select ng-model="polis.pemegang">
+                        <md-option value="none">None</md-option>
+                        <md-option value="1">1</md-option>
+                      </md-select>
+                    </md-input-container>
+                  </div>
+                </div>
+              </div>
+              </v-pane-content>
+            </v-pane>
+            <v-pane expanded="true">
+              <v-pane-header class="header-icon marg-top-10">
+               <md-icon aria-label="person" class="material-icons font-white">&#xE7FD;</md-icon> Manfaat
+              </v-pane-header>
+              <v-pane-content>
+              <div class="sub-lists accordion-body pad-top-20 pad-left-10 pad-right-10">
+                <h5 class="marg-bot-0 marg-top-0">PRUlink assurance account</h5>
+                <form name="formPremi" class="default-form">
+                  <md-input-container class="md-icon-float md-block">
+                    <label>Besar Premi Tahunan</label>
+                    <input ng-model="premi.besarPremiTahunan" type="text" required>
+                    <div ng-messages="premi.besarPremiTahunan.$error">
+                      <div ng-message="required">Harus diisi.</div>
+                    </div>
+                  </md-input-container>
+                  <md-input-container class="md-icon-float md-block label-normal marg-bot-0">
+                    <label>Rencana Masa Pembayaran yang dikendaki Nasabah (dalam Tahun)</label>
+                    <input ng-model="premi.rencanaPembayaran" type="text" required>
+                    <div ng-messages="premi.rencanaPembayaran.$error">
+                      <div ng-message="required">Harus diisi.</div>
+                    </div>
+                  </md-input-container>
+                  <md-input-container class="md-icon-float md-block marg-bot-0" flex-gt-sm>
+                    <label>Alternatif Rencana Pembayaran</label>
+                    <md-select ng-model="premi.alternatifPembayaran">
+                      <md-option value="{{premi.alternatifPembayaran}}">99</md-option>
+                    </md-select>
+                    <div class="md-errors-spacer"></div>
+                  </md-input-container>
+                  <h5 class="marg-bot-0 marg-top-0">Halaman Ringkasan Manfaat, Asumsi Nilai Tunai di Masa Depan:</h5>
+                  <div layout="row" class="marg-top-10">
+                    <div flex-xs="33" flex="20">
+                      <md-input-container class="md-icon-float md-block marg-bot-0" flex-gt-sm>
+                        <md-select ng-model="premi.asumsiNilai1">
+                          <md-option value="{{premi.asumsiNilai1}}">45</md-option>
+                        </md-select>
+                        <div class="md-errors-spacer"></div>
+                      </md-input-container>
+                    </div>
+                    <div flex-xs="33" flex="20">
+                      <md-input-container class="md-icon-float md-block marg-bot-0" flex-gt-sm>
+                        <md-select ng-model="premi.asumsiNilai2">
+                          <md-option value="{{premi.asumsiNilai2}}">55</md-option>
+                        </md-select>
+                        <div class="md-errors-spacer"></div>
+                      </md-input-container>
+                    </div>
+                    <div flex-xs="33" flex="20">
+                      <md-input-container class="md-icon-float md-block marg-bot-0" flex-gt-sm>
+                        <md-select ng-model="premi.asumsiNilai3">
+                          <md-option value="{{premi.asumsiNilai3}}">65</md-option>
+                        </md-select>
+                        <div class="md-errors-spacer"></div>
+                      </md-input-container>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              </v-pane-content>
+            </v-pane>
+          </v-accordion>
+          <div class="form-group pad-left-10 pad-right-10">
+            <button class="button button-block button-assertive next-tab" type="submit">Lanjut</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</ion-content>

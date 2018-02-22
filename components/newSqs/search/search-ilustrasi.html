@@ -1,0 +1,289 @@
+<ion-view view-title="Search Ilustrasi" ng-controller="searchSqsCtrl">
+  <ion-header-bar align-title="left" class="bar-assertive">
+    <a class="left-buttons" ng-href="#/daftar-newsqs">
+      <button class="button button-icon icon ion-ios-arrow-back"></button>
+    </a>
+    <h1 class="title text-uppercase">Hasil Pencarian</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <div layout="row">
+      <div class="card pad-10" flex>
+        <div class="search-with-button marg-bot-10">
+          <div layout="row">
+            <md-input-container class="md-block input-gray" flex-gt-sm="80" md-no-float>
+              <md-icon class="ion-ios-search-strong"></md-icon>
+              <input ng-model="user.firstName" placeholder="ketik kata kunci untuk mencari">
+            </md-input-container>
+            <button class="button button-assertive" flex-gt-sm="20">Cari</button>
+          </div>
+          <div class="md-middle-content">
+            <div class="form-group marg-bot-0">
+              <label class="block-display marg-bot-5">Pilih satu atau lebih kategori dokumen</label>
+              <div layout="row">
+                <div flex-xs="35" flex="20">
+                  <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="search.illustrasi" md-colors="red">
+                    Illustrasi
+                  </md-checkbox>
+                </div>
+                <div flex-xs="35" flex="20">
+                  <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="search.template" md-colors="red">
+                    Template
+                  </md-checkbox>
+                </div>
+                <div flex-xs="35" flex="20">
+                  <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="search.email" md-colors="red">
+                    E-mail
+                  </md-checkbox>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-body pad-0">
+          <ul class="tab-opt tabs-md three-tabs">
+            <li ng-repeat="searchTab in searchTabs" class="pad-10" md-ink-ripple="#000" ng-class="{active:isActiveTab(searchTab.url)}" ng-click="onClickTab(searchTab)">{{searchTab.title}}</li>
+          </ul>
+          <div class="tab-content">
+            <div id="searchTab">
+              <div ng-include="currentSearchTab"></div>
+            </div>
+            <script type="text/ng-template" id="illustrasi">
+              <div class="md-middle-content">
+                <div class="card-list no-border-bottom pad-0 marg-0 marg-top-20">
+                  <div class="body-card pad-top-0 ">
+                    <div layout="column">
+                      <div class="card-info-list" flex flex="100">
+                        <div class="link-card list-info-link pad-0">
+                          <label class="card-paragh font-dark text-uppercase">Spongebob Squarepants</label>
+                          <a href="#" class="download font-size-10 text-uppercase">Download PDF</a>
+                        </div>
+                        <p class="small">
+                          No. Quotation 0A1234567
+                        </p>
+                        <span class="small block-display l-height-1">Dibuat 10 Oktober 2016</span>
+                      </div>
+                      <div class="card-info-list" flex flex="100">
+                        <div class="link-card list-info-link pad-0">
+                          <label class="card-paragh font-dark text-uppercase">Angela  D. Angel</label>
+                          <a href="#" class="download font-size-10 text-uppercase">Download PDF</a>
+                        </div>
+                        <p class="small">
+                          No. Quotation 0A1234567
+                        </p>
+                        <span class="small block-display l-height-1">Dibuat 10 Oktober 2016</span>
+                      </div>
+                    </div>
+                    <div layout="column" >
+                      <div class="card-info-list" flex flex="100">
+                        <div class="link-card list-info-link pad-0">
+                          <label class="card-paragh font-dark text-uppercase">Spongebob Squarepants</label>
+                          <a href="#" class="download font-size-10 text-uppercase">Download PDF</a>
+                        </div>
+                        <p class="small">
+                          No. Quotation 0A1234567
+                        </p>
+                        <span class="small block-display l-height-1">Dibuat 10 Oktober 2016</span>
+                      </div>
+                      <div class="card-info-list" flex flex="100">
+                        <div class="link-card list-info-link pad-0">
+                          <label class="card-paragh font-dark text-uppercase">Angela  D. Angel</label>
+                          <a href="#" class="download font-size-10 text-uppercase">Download PDF</a>
+                        </div>
+                        <p class="small">
+                          No. Quotation 0A1234567
+                        </p>
+                        <span class="small block-display l-height-1">Dibuat 10 Oktober 2016</span>
+                      </div>
+                    </div>
+                    <div layout="column" >
+                      <div class="card-info-list" flex="100">
+                        <div class="link-card list-info-link pad-0">
+                          <label class="card-paragh font-dark text-uppercase">Spongebob Squarepants</label>
+                          <a href="#" class="download font-size-10 text-uppercase">Download PDF</a>
+                        </div>
+                        <p class="small">
+                          No. Quotation 0A1234567
+                        </p>
+                        <span class="small block-display l-height-1">Dibuat 10 Oktober 2016</span>
+                      </div>
+                      <div class="card-info-list" flex="100">
+                        <div class="link-card list-info-link pad-0">
+                          <label class="card-paragh font-dark text-uppercase">Angela  D. Angel</label>
+                          <a href="#" class="download font-size-10 text-uppercase">Download PDF</a>
+                        </div>
+                        <p class="small">
+                          No. Quotation 0A1234567
+                        </p>
+                        <span class="small block-display l-height-1">Dibuat 10 Oktober 2016</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </script>
+            <script type="text/ng-template" id="template">
+              <div class="md-middle-content">
+                <div class="card-list no-border-bottom pad-0 marg-0 marg-top-20">
+                  <div class="body-card pad-top-0 ">
+                    <div layout="column" >
+                      <div class="card-info-list" flex="100">
+                        <div class="link-card list-info-link pad-0">
+                          <label class="card-paragh font-dark text-uppercase">cover crisis</label>
+                          <a href="#" class="download font-size-10 text-uppercase">Kirim via email</a>
+                        </div>
+                        <span class="small block-display l-height-1">Dibuat 10 Oktober 2016</span>
+                        <p class="small">
+                          Prulink assurance account 
+                        </p>
+                      </div>
+                      <div class="card-info-list" flex="100">
+                        <div class="link-card list-info-link pad-0">
+                          <label class="card-paragh font-dark text-uppercase">cover crisis</label>
+                          <a href="#" class="download font-size-10 text-uppercase">Kirim via email</a>
+                        </div>
+                        <span class="small block-display l-height-1">Dibuat 10 Oktober 2016</span>
+                        <p class="small">
+                          Prulink assurance account 
+                        </p>
+                      </div>
+                    </div>
+                    <div layout="column">
+                      <div class="card-info-list" flex="100">
+                        <div class="link-card list-info-link pad-0">
+                          <label class="card-paragh font-dark text-uppercase">cover crisis</label>
+                          <a href="#" class="download font-size-10 text-uppercase">Kirim via email</a>
+                        </div>
+                        <span class="small block-display l-height-1">Dibuat 10 Oktober 2016</span>
+                        <p class="small">
+                          Prulink assurance account 
+                        </p>
+                      </div>
+                      <div class="card-info-list" flex="100">
+                        <div class="link-card list-info-link pad-0">
+                          <label class="card-paragh font-dark text-uppercase">cover crisis</label>
+                          <a href="#" class="download font-size-10 text-uppercase">Kirim via email</a>
+                        </div>
+                        <span class="small block-display l-height-1">Dibuat 10 Oktober 2016</span>
+                        <p class="small">
+                          Prulink assurance account 
+                        </p>
+                      </div>
+                    </div>
+                    <div layout="column">
+                      <div class="card-info-list" flex="100">
+                        <div class="link-card list-info-link pad-0">
+                          <label class="card-paragh font-dark text-uppercase">cover crisis</label>
+                          <a href="#" class="download font-size-10 text-uppercase">Kirim via email</a>
+                        </div>
+                        <span class="small block-display l-height-1">Dibuat 10 Oktober 2016</span>
+                        <p class="small">
+                          Prulink assurance account 
+                        </p>
+                      </div>
+                      <div class="card-info-list" flex="100">
+                        <div class="link-card list-info-link pad-0">
+                          <label class="card-paragh font-dark text-uppercase">cover crisis</label>
+                          <a href="#" class="download font-size-10 text-uppercase">Kirim via email</a>
+                        </div>
+                        <span class="small block-display l-height-1">Dibuat 10 Oktober 2016</span>
+                        <p class="small">
+                          Prulink assurance account 
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </script>
+            <script type="text/ng-template" id="email">
+              <div class="md-middle-content">
+                <div class="card-list no-border-bottom pad-0 marg-0 marg-top-20">
+                  <div class="body-card pad-top-0 ">
+                    <div layout="column">
+                      <div class="card-info-list" flex="100">
+                        <div class="link-card list-info-link pad-0">
+                          <label class="card-paragh font-dark text-uppercase">Spongebob Squarepants</label>
+                          <a href="#" class="download font-gray font-size-10 text-capitalize">Pending</a>
+                        </div>
+                        <p class="small">
+                          No. Quotation 0A1234567
+                        </p>
+                        <span class="small block-display l-height-1">Dikirm 10 Oktober 2016</span>
+                        <span class="small block-display line-height-1-5">Kepada Mickey Mouse</span>
+                        <button class="button button-block button-assertive marg-bot-0">Kirim Ulang</button>
+                      </div>
+                      <div class="card-info-list" flex="100">
+                        <div class="link-card list-info-link pad-0">
+                          <label class="card-paragh font-dark text-uppercase">Angela  D. Angel</label>
+                          <a href="#" class="download font-gray font-size-10 text-capitalize">Terkirim</a>
+                        </div>
+                        <p class="small">
+                          No. Quotation 0A1234567
+                        </p>
+                        <span class="small block-display l-height-1">Dikirm 10 Oktober 2016</span>
+                        <span class="small block-display line-height-1-5">Kepada Mickey Mouse</span>
+                        <button class="button button-block button-assertive marg-bot-0">Kirim Ulang</button>
+                      </div>
+                    </div>
+                    <div layout="column">
+                      <div class="card-info-list" flex="100">
+                        <div class="link-card list-info-link pad-0">
+                          <label class="card-paragh font-dark text-uppercase">Spongebob Squarepants</label>
+                          <a href="#" class="download font-gray font-size-10 text-capitalize">Pending</a>
+                        </div>
+                        <p class="small">
+                          No. Quotation 0A1234567
+                        </p>
+                        <span class="small block-display l-height-1">Dikirm 10 Oktober 2016</span>
+                        <span class="small block-display line-height-1-5">Kepada Mickey Mouse</span>
+                        <button class="button button-block button-assertive marg-bot-0">Kirim Ulang</button>
+                      </div>
+                      <div class="card-info-list" flex="100">
+                        <div class="link-card list-info-link pad-0">
+                          <label class="card-paragh font-dark text-uppercase">Angela  D. Angel</label>
+                          <a href="#" class="download font-gray font-size-10 text-capitalize">Terkirim</a>
+                        </div>
+                        <p class="small">
+                          No. Quotation 0A1234567
+                        </p>
+                        <span class="small block-display l-height-1">Dikirm 10 Oktober 2016</span>
+                        <span class="small block-display line-height-1-5">Kepada Mickey Mouse</span>
+                        <button class="button button-block button-assertive marg-bot-0">Kirim Ulang</button>
+                      </div>
+                    </div>
+                    <div layout="column">
+                      <div class="card-info-list" flex="100">
+                        <div class="link-card list-info-link pad-0">
+                          <label class="card-paragh font-dark text-uppercase">Spongebob Squarepants</label>
+                          <a href="#" class="download font-gray font-size-10 text-capitalize">Pending</a>
+                        </div>
+                        <p class="small">
+                          No. Quotation 0A1234567
+                        </p>
+                        <span class="small block-display l-height-1">Dikirm 10 Oktober 2016</span>
+                        <span class="small block-display line-height-1-5">Kepada Mickey Mouse</span>
+                        <button class="button button-block button-assertive marg-bot-0">Kirim Ulang</button>
+                      </div>
+                      <div class="card-info-list" flex="100">
+                        <div class="link-card list-info-link pad-0">
+                          <label class="card-paragh font-dark text-uppercase">Angela  D. Angel</label>
+                          <a href="#" class="download font-gray font-size-10 text-capitalize">Terkirim</a>
+                        </div>
+                        <p class="small">
+                          No. Quotation 0A1234567
+                        </p>
+                        <span class="small block-display l-height-1">Dikirm 10 Oktober 2016</span>
+                        <span class="small block-display line-height-1-5">Kepada Mickey Mouse</span>
+                        <button class="button button-block button-assertive marg-bot-0">Kirim Ulang</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,77 @@
+<ion-view view-title="Home" ng-controller="SqsCtrl">
+  <ion-header-bar align-title="left" class="bar-assertive">
+    <a class="left-buttons" ng-href="#/homepage">
+      <button class="button button-icon icon ion-ios-arrow-back"></button>
+    </a>
+    <h1 class="title text-uppercase">Sales Quotation System (SQS)</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <div layout="row">
+      <div class="card" flex>
+        <p>Gunakan fitur pencarian cepat dibawah ini untuk mencari Dokumen yang Anda perlukan.</p>
+        <div class="search-with-button">
+          <div layout="row">
+            <md-input-container class="md-block input-gray" flex-gt-sm="80" md-no-float>
+              <md-icon class="ion-ios-search-strong"></md-icon>
+              <input ng-model="user.firstName" placeholder="ketik kata kunci untuk mencari">
+            </md-input-container>
+            <button class="button button-assertive" flex-gt-sm="20">Cari</button>
+          </div>
+          <div class="form-group marg-bot-0">
+            <label class="block-display marg-bot-5">Pilih satu atau lebih kategori dokumen</label>
+            <div layout="row">
+              <div flex-xs="35" flex="20">
+                <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="search.illustrasi" md-colors="red">
+                  Illustrasi
+                </md-checkbox>
+              </div>
+              <div flex-xs="35" flex="20">
+                <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="search.template" md-colors="red">
+                  Template
+                </md-checkbox>
+              </div>
+              <div flex-xs="35" flex="20">
+                <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="search.email" md-colors="red">
+                  E-mail
+                </md-checkbox>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-header text-uppercase">
+          <i class="pru-icons pf-icon-pru-icon_agreement"></i>
+          Ilurstrasi
+        </div>
+        <div class="content-body">
+          <div class="tab-content">
+            <div class="list list-empty">
+              <div class="item item-right-arrow marg-0">
+                <a href="#/achievement-persistency-policy-list" class="font-gray">Buat Ilustrasi baru</a>
+              </div>
+              <div class="item item-right-arrow marg-0">
+                <a href="#/unit-persistency">
+                  Lanjutkan Illustrasi Tertunda
+                </a>
+              </div>
+              <div class="item item-right-arrow marg-0">
+                <a href="#/group-persistency">Daftar Ilustrasi</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-header text-uppercase">
+          <i class="pru-icons pf-icon-pru-icon_notepad"></i>
+          Template
+        </div>
+        <div class="content-body">
+          <div class="tab-content">
+            <div class="list list-empty">
+                <a href="#/sqs/templates/buat-pilih-produk" class="font-gray item item-right-arrow marg-0">Buat Template</a>
+                <a href="#/sqs/templates/daftar-templates" class="item item-right-arrow marg-0">Daftar Template</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

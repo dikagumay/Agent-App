@@ -1,0 +1,121 @@
+<ion-header-bar align-title="left" class="bar-positive header">
+  <a href="#/" ><i class="ion-ios-arrow-back left"></i></a>
+  <h2>Agent Profile</h2>
+</ion-header-bar>
+<span class="grey-space"></span>
+<ion-view view-title="Agen Profile" ng-controller="AgenProfileCtrl">
+  <ion-content>
+    <div class="container home agent-profile" onload="loadFormRequirements()">
+      <div class="content">
+        <div class="head-profile">
+          <div class="main-avatar" style="background-image:url('img/ionic/elon-musk.jpeg');" ng-click="changePhoto()">
+            <img src="" class="tmp-main-avatar">
+          </div>
+          <input type="file" name="agen-photo-profile" class="agen-change-photo-profile" ng-model="agen_profile_photo" square-photo-uploader>
+          <div class="agent-name-container">
+            <h2>H. Elon Musk Sastromiharjo Kertarajasa Suryodiningrat </h2>
+            <p>Agen Sejak 15 Januari 2014</p>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="clear">
+          <div class="widget mTop5 no-border">
+            <div class="widget-head no-content">
+              <a href="#">Personal Data</a>
+              <i class="li icon-png icon-agent-profile"></i>
+            </div>
+            <div class="list-info">
+              <i class="li icon-png icon-sales-code"></i>
+              <h3>Sale Force Code</h3>
+              <p>A0 12345678910</p>
+            </div>
+            <div class="list-info">
+              <i class="li material-icons">&#xE878;</i>
+              <h3>Date of Birth</h3>
+              <p>17 August 1945</p>
+            </div>
+            <div class="list-info">
+              <i class="li icon-png icon-license"></i>
+              <h3>Martital Status</h3>
+              <p>Married</p>
+            </div>
+            <div class="list-info">
+              <i class="li ion-home"></i>
+              <h3>Address</h3>
+              <p>Jalan Kanan Kiri Oke Blok D No. 22<br/>
+                Rt. 004/12 Kebon Sirih Baru<br/>
+                Jakarta Pusat<br/>
+                Indonesia 12345
+              </p>
+            </div>
+            <div class="list-info">
+              <i class="li ion-android-mail"></i>
+              <h3>Email</h3>
+              <p>hello@handoko.com</p>
+            </div>
+            <div class="list-info">
+              <i class="li ion-android-call"></i>
+              <h3>Phone Number</h3>
+              <div class="sub-lists phone-agent-profile-new">
+                <div class="sub-list-info">
+                  <span class="sub-title">
+                    <i class="ion-iphone"></i>Mobile
+                  </span>
+                  0899238748237
+                </div>
+                <div class="sub-list-info">
+                  <span class="sub-title">
+                    <i class="ion-home"></i>Home
+                  </span>
+                  022 62342387
+                </div>
+                <div class="sub-list-info">
+                  <span class="sub-title">
+                    <i class="material-icons">&#xE0AF;</i>Office
+                  </span>
+                  0899238748237
+                </div>
+              </div>
+            </div>
+            <div class="list-info">
+              <i class="li material-icons">&#xE0AF;</i>
+              <h3>Office</h3>
+              <p>Prudential Jakarta</p>
+            </div>
+            <div class="list-info">
+              <i class="li ion-key"></i>
+              <h3>Unit Code</h3>
+              <p>ASDFGHJKL</p>
+            </div>
+            <div class="list-info">
+              <i class="li ion-person-stalker"></i>
+              <h3>Unit Name</h3>
+              <p>Space-X</p>
+            </div>
+          </div>
+          <div class="widget mTop5 no-border">
+            <div class="widget-head no-content">
+              <a href="#">Numbers of Sanctions</a>
+              <span class="li ion-ios-information-outline"></span>
+            </div>
+            <div class="list-info with-arrow">
+              <p>Current Year</p>
+              <p>99 saction</p>
+              <i class="arrow ion-ios-arrow-forward"></i>
+            </div>
+            <div class="list-info with-arrow">
+              <p>Overall</p>
+              <p>99 saction</p>
+              <i class="arrow ion-ios-arrow-forward"></i>
+            </div>
+            <div class="list-info with-arrow">
+              <p>Current Year Refreshing Training of AML/ABC/Anti Fraud</p>
+              <p>99 saction</p>
+              <i class="arrow ion-ios-arrow-forward"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,43 @@
+<ion-view view-title="Security Question">
+  <div class="content content-red compact">
+    <a href="#" class="btn-back">
+      <i class="ion-android-arrow-back"></i>
+    </a>
+    <div class="logo">
+      <h1>
+        <a href="#">
+          <img src="img/PRUforce-logo.png" alt="PRUforce" />
+        </a>
+      </h1>
+    </div>
+    <div class="content-red-text top-space">
+      <h4 class="marg-bott-30">Pertanyaan Rahasia</h4>
+      <form>
+        <md-input-container class="md-block content-red-select" flex-gt-sm>
+          <label>Pertanyaan 1</label>
+          <md-select md-container-class="content-red-select-option" ng-model="listSQ.selected1">
+            <md-option ng-value="item.aobdescriptionind" ng-repeat="item in listQuestionAll | filter : (!disableFilter || '') && {'aobitem': 'SQ1'} track by $index">{{item.aobdescriptionind}}</md-option>
+          </md-select>
+          <div class="md-errors-spacer"></div>
+        </md-input-container>
+        <div class="form-group">
+          <input class="form-control" name="question-1" type="text" placeholder="Jawaban 1" ng-model="initModel.jawaban1">
+        </div>
+        <md-input-container class="md-block content-red-select" flex-gt-sm>
+          <label>Pertanyaan 2</label>
+          <md-select md-container-class="content-red-select-option" ng-model="listSQ.selected2">
+            <md-option ng-value="item.aobdescriptionind" ng-repeat="item in listQuestionAll | filter : (!disableFilter || '') && {'aobitem': 'SQ2'} track by $index">{{item.aobdescriptionind}}</md-option>
+          </md-select>
+          <div class="md-errors-spacer"></div>
+        </md-input-container>
+        <div class="form-group">
+          <input class="form-control" name="question-2" type="text" placeholder="Jawaban 2" ng-model="initModel.jawaban2">
+        </div>
+        <div class="form-group marg-top-30poi]">
+          <button class="button button-block button-light text-uppercase marg-0" ng-click="Lanjut()">Lanjut</button>
+          <a href="#" class="button button-block button-light text-uppercase" ng-click="BackToLogin()">Kembali ke halaman login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-view>

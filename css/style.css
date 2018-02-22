@@ -1,0 +1,90 @@
+/* Empty. Add your own CSS if you like */
+.tmp_photo {
+  display: none;
+}
+
+.marg-15{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.text-small{
+  font-size: 12px;
+}
+
+.text-bold{
+  font-weight: bold;
+}
+
+
+.load-spinner {
+  background: rgba(0,0,0,0.9);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  display: none;
+}
+
+.load-spinner.show {
+  display: block;
+}
+
+.load-spinner .cssload-double-torus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -40px 0 0 -40px;
+}
+
+.load-spinner .counter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -12px 0 0 -30px;
+  display: inline-block;
+  width: 60px;
+  text-align: center;
+}
+
+.load-spinner .counter i {
+  font-style: normal;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cssload-double-torus {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border: 8px solid;
+  border-radius: 50%;
+  border-color: transparent rgba(255,255,255,0.99) rgb(255,255,255);
+  animation: cssload-spin 1000ms infinite linear;
+    -o-animation: cssload-spin 1000ms infinite linear;
+    -ms-animation: cssload-spin 1000ms infinite linear;
+    -webkit-animation: cssload-spin 1000ms infinite linear;
+    -moz-animation: cssload-spin 1000ms infinite linear;
+}
+
+@keyframes cssload-spin {
+  100%{ transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+@-o-keyframes cssload-spin {
+  100%{ -o-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+@-ms-keyframes cssload-spin {
+  100%{ -ms-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+@-webkit-keyframes cssload-spin {
+  100%{ -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+@-moz-keyframes cssload-spin {
+  100%{ -moz-transform: rotate(360deg); transform: rotate(360deg); }
+}

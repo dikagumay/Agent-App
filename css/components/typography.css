@@ -1,0 +1,144 @@
+@font-face {
+  font-family: 'Garamond-Italic';
+  src:  url('../../fonts/AGaramondPro-Italic.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/AGaramondPro-Italic.otf')  format('opentype'),
+        url('../../fonts/AGaramondPro-Italic.woff') format('woff'),
+        url('../../fonts/AGaramondPro-Italic.ttf')  format('truetype'),
+        url('../../fonts/AGaramondPro-Italic.svg#AGaramondPro-Italic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Frutiger-Bold';
+  src:  url('../../fonts/FrutigerLinotype-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/FrutigerLinotype-Bold.woff') format('woff'),
+        url('../../fonts/FrutigerLinotype-Bold.ttf')  format('truetype'),
+        url('../../fonts/FrutigerLinotype-Bold.svg#FrutigerLinotype-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src:  local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        url(../../fonts/2fcrYFNaTjcS6g4U3t-Y5RV6cRhDpPC5P4GCEJpqGoc.woff) format('woff');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.pru-logo-text{
+  font-size: 110%;
+}
+
+.pru-logo-text strong,
+h2.pru-logo-text strong{
+  font-family: 'Frutiger-Bold';
+  text-transform: uppercase;
+}
+
+.pru-logo-text em,
+h2.pru-logo-text em{
+  font-family: 'Garamond-Italic';
+  font-size: 130%;
+  text-transform: initial;
+  font-weight: 200 !important;
+}
+
+.pru-logo-text em.font-100{
+  font-size: 100%;
+}
+p.font-black, span.font-black, label.font-black{
+  color:#000;
+}
+.font-gray{
+  color:#636363 !important;
+}
+.font-light-gray{
+  color:#d0d0d0;
+}
+.font-red{
+  color:#ff0000 !important;
+  text-decoration: none;
+}
+.font-green{
+  color:#49752a !important;
+}
+.font-light-brown{
+  color:#eabc5f !important; 
+}
+.font-white{
+  color:#ffffff !important;
+}
+.font-dark {
+  color: #000!important;
+}
+.pru-alert.lowercase .popup .popup-body{
+  text-transform: lowercase !important;
+}
+.text-fade{
+  color: rgba(255,255,255,.6) !important;
+}
+.italic-font{
+  font-style: italic;
+}
+.line-height-1-5{
+  line-height: 1.5em;
+}
+.line-height-12{
+  line-height: 12px;
+}
+.font-size-10{
+  font-size:10px!important;
+}
+.font-size-16{
+  font-size:16px !important;
+}
+.font-size-18{
+  font-size:18px !important;
+}
+.font-size-20{
+  font-size:20px !important;
+}
+.font-size-22{
+  font-size:22px !important;
+}
+.font-size-8 {
+  font-size: 8.5px!important;
+}
+.font-bold{
+  font-weight: bold;
+}
+.text-uppercase{
+  text-transform: uppercase !important;
+}
+
+.font-italic{
+  font-style: italic;
+}
+
+.text-capitalize{
+  text-transform: capitalize !important;
+}
+
+.card-list .head-card h4 {
+  font-size: 18px;
+  margin: 0;
+}

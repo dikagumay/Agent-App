@@ -1,0 +1,41 @@
+.img-80{width: 80px; height: 80px;}
+
+.img-icon{
+  background-color: #fff;
+  font-size: 50px;
+  line-height: 80px;
+  color: #333;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.img-badge{
+  position: relative;
+}
+
+.img-badge:after{
+  content: "\f3fd";
+  display: inline-block;
+  font-family: "Ionicons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 35px;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.img-badge-success.img-badge:after{
+  color: #fff;
+  background: #699e3f;
+}

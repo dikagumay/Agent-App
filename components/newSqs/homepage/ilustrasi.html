@@ -1,0 +1,92 @@
+<ion-view>
+  <ion-content class="has-header-tabs marg-bot-50">
+    <div class="card pad-0">
+      <div class="content spaced-area">
+        <md-chips class="md-block width-100 custom-gray-searchbox" ng-model="selectedCode" md-autocomplete-snap="">
+          <md-autocomplete 
+                           md-selected-item="selectedItem" 
+                           md-search-text="searchText" 
+                           md-items="item in querySearch(searchText, memberIllustrationOnHoldDatas)" 
+                           md-item-text="item.name" 
+                           md-selected-item-change="chipSearch(item, 'illustrationOnHoldDatas')"
+                           placeholder="ketik nomor quotation atau nama tertanggung">
+            <span md-highlight-text="searchText">{{item.name}} {{item.quotationNumber}}</span>
+          </md-autocomplete>
+          <md-chip-template>
+            <span>
+              <strong>{{$chip.name}}</strong>
+              <em>({{$chip.quotationNumber}})</em>
+            </span>
+          </md-chip-template>
+          <button class="md-chip-remove" ng-click="removeChips('illustrationOnHoldDatas')" md-chip-remove> <i class="material-icons">&#xE14C;</i> </button>
+        </md-chips>
+        <div layout="row">
+          <md-input-container flex="50">
+            <label class="font-gray">Filter</label>
+            <md-select class="border-red-2 pad-bot-5 pad-left-15" ng-model="memberInsuranceFilter" ng-change="filterIlustrasiList(memberInsuranceFilter, 'illustrationOnHoldDatas')">
+              <md-option ng-value="-1" ng-disabled="$index === 1"><em>default</em></md-option>
+              <md-option ng-value="2" ng-disabled="$index === 1">
+                show completed only
+              </md-option>
+            </md-select>
+          </md-input-container>
+          <md-input-container flex="50">
+            <label class="font-gray">Sorting</label>
+            <md-select class="border-red-2 pad-bot-5 pad-left-15" ng-model="orderBy" ng-change="sortingIlustrasiList(orderBy, 'illustrationOnHoldDatas')">
+              <md-option ng-value="-1" ng-disabled="$index === 1"><em>default</em></md-option>
+              <md-option ng-value="1" ng-disabled="$index === 1">
+                sort by created date
+              </md-option>
+            </md-select>
+          </md-input-container>
+        </div>
+        <span class="width-100 pull-left" ng-repeat="item in illustrationOnHoldDatas">
+          <div class="block-container with-user-level-agent marg-bot-10 position-relative">
+            <h5 class="font-gray marg-top-5 marg-bot-0">
+              <a href="" ng-click="statusilustrasi()">
+                {{item.quotationNumber}}
+              </a>
+              <a href class="pull-right">
+                <i class="h4 font-gray ion-android-more-horizontal" ng-click="morePopup('ilustrasi')"></i>
+              </a>
+            </h5>
+            <a>
+              <h5 class="font-gray marg-top-5 marg-bot-0">
+                <span class="text-uppercase">{{item.name}}</span>
+                <span class="pull-right font-green">
+                  <span ng-if="item.approved == 1">Terkirim</span>
+                  <span ng-if="item.approved == 0">Tidak Terkirim</span>
+                </span>
+              </h5>
+              <h5 class="font-gray marg-top-5 marg-bot-0">Dibuat  {{item.dateCreate | amDateFormat:'DD MMMM YYYY'}}</h5>
+              <h5 class="font-gray marg-top-5 marg-bot-0 pru-logo-text" ng-bind-html="item.type"></h5>
+              <div class="illustration-progress new-customized" ng-click="statusilustrasi()">
+                <div class="illustration-progress-container">
+                  <span ng-repeat="itemProgress in illustrationProgress">
+                    <span ng-class="{'bg-red': itemProgress.id < item.progress, 'font-red': itemProgress.id >= item.progress, 'undone': itemProgress.id >= item.progress, 'intime': itemProgress.id == item.progress}" class="circled-number" style="margin-left:{{(itemProgress.id-1)*25}}%">
+                      <span ng-class="{intime: itemProgress.id == item.progress}">{{itemProgress.id}}</span>
+                    </span>
+                    <span class="vertcal-bar" ng-if="itemProgress.id < 5" style="margin-left:{{(itemProgress.id-1)*25}}%">&nbsp;</span>
+                    <span class="circled-number-label" ng-class="{'
+                      choose-product': itemProgress.name == 'Pilih Produk', 
+                      benefit: itemProgress.name == 'Manfaat', 
+                      illustration: itemProgress.name == 'Ilustrasi',
+                      'insured-profile': itemProgress.name == 'Profile Tertanggung' 
+                    }">
+                      {{itemProgress.name}}
+                    </span>
+                  </span>
+                </div>
+                <i class="icon ion-chevron-right pull-right h4 font-light-gray marg-top-7"></i>
+              </div>
+              </a>
+          </div>
+        </span>
+      </div>
+    </div>
+  </ion-content>
+  <a href="" class="button button-assertive button-fixed-bottom" ng-click="pemegangpolis()">
+    <i class="ion-android-add-circle"></i>
+    Buat ilustrasi baru
+  </a>
+</ion-view>

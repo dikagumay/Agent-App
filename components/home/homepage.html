@@ -1,0 +1,58 @@
+<ion-side-menus enable-menu-with-back-views="false" cache-view="false">
+  <ion-side-menu side="left">
+    <div class="bar bar-header bar-assertive">
+      <h1 class="title"></h1>
+    </div>
+    <div class="list list-empty has-header">
+      <a href="#/daftar-rekrutment" class="item item-icon-left">
+        <i class="icon medium-icon ion-clipboard assertive"></i>
+        Rekrutment
+      </a>
+      <a href="#" class="item item-icon-left">
+        <i class="icon medium-icon ion-ribbon-b assertive"></i>
+        Pencapaian
+      </a>
+      <a href="#" class="item item-icon-left">
+        <i class="icon medium-icon ion-monitor assertive"></i>
+        Kinerja
+      </a>
+      <a href="#" class="item item-icon-left">
+        <i class="icon medium-icon ion-trophy assertive"></i>
+        Kontes
+      </a>
+      <a href="#" class="item item-icon-left">
+        <i class="icon medium-icon ion-compose assertive"></i>
+        Keterangan
+      </a>
+      <a href="#" class="item item-icon-left">
+        <i class="icon medium-icon ion-clipboard assertive"></i>
+        FAQ
+      </a>
+    </div>
+  </ion-side-menu>
+
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-assertive bar-logo with-grey-bottom">
+      <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+      </ion-nav-buttons>
+      <h1 class="title">Title!</h1>
+    </ion-nav-bar>
+    <ion-view view-title="Dashboard" ng-controller="homeCtrl">
+      <ion-content class="has-header">
+        <img src="img/big-watch.jpg">
+        <div class="widget-list">
+          <a href="" class="button button-assertive button-block" ng-click="disclaimerPopup.show()">
+            <i class="ion-plus-round"></i>
+            Tambahkan Widget
+          </a>
+        </div>
+      </ion-content>
+    </ion-view>
+  </ion-side-menu-content>
+
+  <!-- Right menu -->
+  <ion-side-menu side="right">
+  </ion-side-menu>
+
+</ion-side-menus>

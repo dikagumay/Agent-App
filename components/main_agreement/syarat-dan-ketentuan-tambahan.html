@@ -1,0 +1,90 @@
+<ion-view view-title="Syarat & ketentuan Tambahan" ng-controller="baseCtrl">
+  <ion-header-bar align-title="left" class="bar-assertive">
+      <a class="left-buttons" ng-href="#/">
+        <button menu-toggle="left" class="button button-icon icon ion-ios-arrow-back"></button>
+      </a>
+      <h1 class="title">LEMBAR PERSETUJUAN</h1>
+    </ion-header-bar>
+
+    <ion-content class="has-header">
+      <div class="heading-main-content">
+        <h3>SYARAT DAN KETENTUAN TAMBAHAN</h3>
+      </div>
+
+      <div class="content-main-description">
+
+        
+        <div class="list-desc">
+          <ol>
+            <li>
+              Pada saat ditandatanganinya Perjanjian Keagenan, Agen :
+
+              <ul type=" b" class="list-alpha">
+                <li>Tidak mempunyai hubungan dan/atau perjanjian kerja dengan perusahaan asuransi lain.</li>
+                <li>Tidak mempunyai hubungan dan/atau perjanjian keagenan dengan perusahaan suransi lain.</li>
+                <li>Tidak pernah masuk daftar hitam perusahaan lain yang berhubungan dengan industri asuransi.</li>
+                <li>Jika sebelumnya pernah bergabung di perusahaan asuransi lain, telah mengakhiri hubungan dan/atau perjanjian keagenan dengan perusahaan asuransi lain sekurang-kurangnya 6 (enam) bulan, sebelum tanggal Perjanjian Keagenan ini (surat resmi pengakhiran hubungan keagenan dengan perusahaan asuransi lain telah dilampirkan dalam aplikasi Agen).</li>
+                <li>Tidak pernah terlibat tindakan kriminal di Indonesia atau di negara lain.</li>
+              </ul>
+            </li>
+            <hr class="list-item-divider">
+            <li>
+              Dengan ditandatanganinya Perjanjian Keagenan, Agen (beri tanda √ untuk pernyataan yang Anda anggap benar) :
+
+              <ion-list class="content-main-list subsection">
+                <ul class="check-list">
+                  <li class="marg-0 pad-0">
+                    <div class="list pad-0">
+                      <ion-checkbox class="pad-top-0 marg-top-10 no-border" ng-model="filter.list1">tidak mempunyai hubungan keluarga atau teman dekat yang bekerja sebagai karyawan Prudential Indonesia.
+                      </ion-checkbox>
+
+                      <ion-checkbox ng-checked=true class="pad-top-0 marg-top-10 no-border" ng-model="filter.list2">mempunyai hubungan keluarga/teman dekat* yang bekerja sebagai karyawan Prudential Indonesia, dengan nama :
+                      </ion-checkbox>
+
+                    </div>
+                  </li>
+                </ul>
+              </ion-list>
+ 
+              
+
+            </li>
+            <form action="" class="default-form marg-bot-20 pad-0">
+                <div class="pad-0 marg-left-30 near-numbering for-form marg-top-0">
+                  <md-input-container class="md-icon-float md-block marg-bot-0 marg-top-10">
+                    <label class="font-black">Nama Lengkap</label>
+                    <input ng-model="userHubungan.name" value="Angela del Angel" type="text">
+                    <div ng-messages="projectForm.description.$error">
+                      <div ng-message="required">Harus diisi.</div>
+                    </div>
+                  </md-input-container>
+
+                  <md-input-container class="md-icon-float md-block">
+                    <label class="font-black">Hubungan</label>
+                    <input ng-model="user.departement" type="text">
+                    <div ng-messages="projectForm.description.$error">
+                      <div ng-message="required">Harus diisi.</div>
+                    </div>
+                  </md-input-container>
+                </div>
+            </form>
+           
+          </ol>
+        </div>
+
+        <div class="padd-syarat m-bottom-15" ng-controller="submitCtrl">
+          <button class="button button-assertive margin-0 button-full" ng-click="appNext('syarat-dan-ketentuan-keagenan-checked')">
+          Setuju
+          </button>
+        </div>
+        
+
+        
+      </div>
+    </ion-content>
+     <div ng-click="scrollTop()" class="back-to-top">
+    <i class="ion-chevron-up"></i>
+  </div>
+</ion-view>
+
+

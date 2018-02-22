@@ -1,0 +1,186 @@
+<ion-view view-title="Data Kandidat" ng-controller="dataCandidateCtrl" cache-view="false">
+  <ion-header-bar align-title="left" class="bar-assertive">
+    <a class="left-buttons" ng-href="#/formulir-perekrutan">
+      <button menu-toggle="left" class="button button-icon icon ion-ios-arrow-back"></button>
+    </a>
+    <h1 class="title text-uppercase">Formulir Perekrutan</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <button class="button button-white button-small button-block text-uppercase marg-top-0 marg-bot-0" ng-click="showAllAnswer($event)">TAMPILKAN SEMUA PILIHAN JAWABAN</button>
+    <form action="" class="default-form label-normal">
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>Jenis Kelamin</label>
+        <md-icon aria-label="person" class="material-icons">&#xE7FD;</md-icon>
+        <md-select ng-model="user.filled.sex">
+          <md-option value="man">Laki-Laki</md-option>
+          <md-option value="woman">Perempuan</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>Umur</label>
+        <md-icon aria-label="person" class="material-icons">&#xE7E9;</md-icon>
+        <md-select ng-model="user.filled.age">
+          <md-option value="27">&gt; 27 tahun</md-option>
+          <md-option value="2740">27 - 40 tahun</md-option>
+          <md-option value="40">&lt; 40 tahun</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>Status Pernikahan</label>
+        <md-icon aria-label="person" class="material-icons">&#xE63D;</md-icon>
+        <md-select ng-model="user.filled.marital">
+          <md-option value="notmarried">Belum Menikah</md-option>
+          <md-option value="married">Menikah</md-option>
+          <md-option value="divorce">Cerai</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>Tanggung jawab keluarga</label>
+        <md-icon aria-label="person" class="material-icons">&#xE227;</md-icon>
+        <md-select ng-model="user.filled.responsible">
+          <md-option value="main-breadwinner">Pencari nafkah utama</md-option>
+          <md-option value="second-earner">Pencari nafkah kedua/ketiga</md-option>
+          <md-option value="no-responsibility">Tidak memiliki tanggung jawab keuangan</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>Jumlah Tanggungan</label>
+        <md-icon aria-label="person" class="material-icons">&#xE7EF;</md-icon>
+        <md-select ng-model="user.filled.amenability">
+          <md-option value="2">&lt;= 2 orang</md-option>
+          <md-option value="1">1 orang</md-option>
+          <md-option value="no-amenability">Belum punya tanggungan</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>Anak</label>
+        <md-icon aria-label="person" class="material-icons">&#xE87C;</md-icon>
+        <md-select ng-model="user.filled.children">
+          <md-option value="school">Sekolah</md-option>
+          <md-option value="not-yet-school">Belum Sekolah</md-option>
+          <md-option value="working">Bekerja</md-option>
+          <md-option value="not-have-child">Belum punya anak</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>Pendidikan terakhir</label>
+        <md-icon aria-label="person" class="material-icons">&#xE80C;</md-icon>
+        <md-select ng-model="user.filled.education">
+          <md-option value="university">Universitas/Akademi</md-option>
+          <md-option value="slta">SLTA/Sederajat</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>Pengalaman kerja</label>
+        <md-icon aria-label="person" class="material-icons">&#xE8F9;</md-icon>
+        <md-select ng-model="user.filled.experience">
+          <md-option value="1">Memiliki usaha sendiri</md-option>
+          <md-option value="2">Staf pemasaran/penjualan</md-option>
+          <md-option value="3">Tenaga ahli profesional</md-option>
+          <md-option value="4">Ibu rumah tangga</md-option>
+          <md-option value="5">Pensiunan</md-option>
+          <md-option value="6">Belum ada pengalaman kerja</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>Total masa kerja sebelumnya</label>
+        <md-icon aria-label="person" class="material-icons">&#xE8AE;</md-icon>
+        <md-select ng-model="user.filled.working_period">
+          <md-option value="5">&gt; 5 tahun</md-option>
+          <md-option value="4">3 - 4 tahun</md-option>
+          <md-option value="2">1 -2 tahun</md-option>
+          <md-option value="1">&lt; 1 tahun</md-option>
+          <md-option value="not_working">Belum pernah bekerja</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>Jabatan perkerjaan terkahir</label>
+        <md-icon aria-label="person" class="material-icons">&#xE903;</md-icon>
+        <md-select ng-model="user.filled.job_title">
+          <md-option value="1">Pemilik perusahaan</md-option>
+          <md-option value="2">Direktur/Manager</md-option>
+          <md-option value="3">Penyelia/Staf</md-option>
+          <md-option value="4">Belum pernah kerja</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>Kendaraan yang dimiliki</label>
+        <md-icon class="material-icons">&#xE531;</md-icon>
+        <md-select ng-model="user.filled.transport">
+          <md-option value="car">Mobil</md-option>
+          <md-option value="motorcycle">Motor</md-option>
+          <md-option value="dont_have">Tidak memiliki kendaraan</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>Telepon seluler</label>
+        <md-icon class="material-icons">&#xE0D4;</md-icon>
+        <md-select ng-model="user.filled.phone">
+          <md-option value="yes">Ya</md-option>
+          <md-option value="no">Tidak</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>Pendapatan terakhir</label>
+        <md-icon class="material-icons">&#xE850;</md-icon>
+        <md-select ng-model="user.filled.income">
+          <md-option value="60">&gt; 60 juta/tahun</md-option>
+          <md-option value="36">36 juta/tahun</md-option>
+          <md-option value="20">&lt; 36 juta/tahun</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>Kemauan/dorongan untuk maju</label>
+        <md-icon class="material-icons">&#xE8DC;</md-icon>
+        <md-select ng-model="user.filled.desire">
+          <md-option value="high">Sangat tinggi</md-option>
+          <md-option value="above">Diatas rata-rata</md-option>
+          <md-option value="middle">Rata-rata</md-option>
+          <md-option value="low">Sangat rendah</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>Jumlah teman</label>
+        <md-icon class="material-icons">&#xE7EF;</md-icon>
+        <md-select ng-model="user.filled.total_friends">
+          <md-option value="100">&gt; 100 orang</md-option>
+          <md-option value="50">50 - 100 orang</md-option>
+          <md-option value="25">25 - 49 orang</md-option>
+          <md-option value="1">1 - 24 orang</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>Menurut anda, mengapa anda bisa sukses di prudential?</label>
+        <md-icon class="material-icons">&#xE887;</md-icon>
+        <textarea ng-model="user.filled.biography" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+    </form>
+    <div class="afterwhite">
+      <div class="score">
+        <h5>Total Nilai</h5>
+        <p class="score-text">80</p>
+        <h5>Calon Memenuhi Kriteria</h5>
+      </div>
+      <div class="form-group  marg-top-50" ng-controller="submitCtrl">
+        <button ng-click="nextPageKandidate('nilai-kelayakan-calon-agen')" class="button button-assertive button-block" type="submit">Lanjut</button>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>

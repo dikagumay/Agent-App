@@ -1,0 +1,18 @@
+<ion-modal-view>
+  <ion-header-bar align-title="left" class="bar-assertive bar-plain landscape-upload-modal">
+    <a class="left-buttons" ng-click="landscapePhotoModal.hide()">
+      <button menu-toggle="left" class="button button-icon icon ion-ios-arrow-back"></button>
+    </a>
+    <h1 class="title">Foto KTP</h1>
+    <button class="button button-clear button-primary button-header-clear" ng-click="useLandspacePhoto($event)">USE</button>
+  </ion-header-bar>
+  <ion-content class="cropper-has-header">
+    <div ng-if='landscapeImage != undefined'>
+      <ng-croppie src="landscapeImage" class="cropit-image-input" ng-model='landscapeOutputImage' boundry="{w: '100%', h: 250}" viewport="{w: 250, h:160}" mousezoom="true" zoom="true" enableOrientation="true" rotation="landscapeImageRotation" type="square"></ng-croppie>
+      <div class="padding">
+        <a ng-click="rotateImageLandscape()" class="button button-assertive button-block"><i class="ion-android-refresh"></i> Rotate</a>
+      </div>
+      <img ng-src="{{landscapeOutputImage}}" class="image-modal-result" id="landspaceResult">
+    </div>
+  </ion-content>
+</ion-modal-view>

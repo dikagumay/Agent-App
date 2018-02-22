@@ -1,0 +1,26 @@
+<ion-view view-title="Tanda Tangan Agen" ng-controller="ilustrasiCtrl">
+  <ion-header-bar align-title="left" class="bar-assertive">
+    <a class="left-buttons" ng-href="#/sqs/homepage">
+      <button   class="button button-icon icon ion-ios-arrow-back"></button>
+    </a>
+    <h1 class="title text-uppercase">Tanda Tangan Agen</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <div class="card">
+      <div class="landing text-center">
+        <p>
+          Gunakan jari/stylus untuk melakukan tanda tangan di area dibawah ini. Anda juga dapat memutar ponsel anda untuk area tandatangan yang lebih leluasa.
+        </p>
+      </div>
+      <div class="sign-wrap marg-bot-20 ">
+        <div class="sign tanda-tangan">
+          <canvas id='signatureCanvasAgen' class="signature-canvas"></canvas>
+        </div>
+      </div>
+      <div class="pad-sides-5 m-bottom-15">
+        <button ng-click='clearCanvasAgen()' class="button button-dark margin-0 button-full">ubah</button>
+        <button  ng-click='saveCanvasAgen()' class="button button-assertive margin-0 button-full">setuju</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

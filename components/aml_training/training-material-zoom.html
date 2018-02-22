@@ -1,0 +1,16 @@
+<div class="modal image-modal transparent" on-swipe-down="closeModal()">
+  <div class="header-close">
+    <a class=" ion-ios-arrow-back close-color" ng-click="closeModal()"></a>
+  </div>
+  <ion-slide-box on-slide-changed="slideChanged(index)" pager-click="navSlide(index)"  active-slide="activeSlide" show-pager="false">
+    <ion-slide ng-repeat="item in data.slides" >
+      <ion-scroll  min-zoom="1" direction="xy" overflow-scroll="false" scrollbar-x="false" scrollbar-y="false" zooming="true" min-zoom="{{item.zoomMin}}" style="width: 100%; height: 100%" delegate-handle="scrollHandle{{$index}}" on-scroll="updateSlideStatus(activeSlide)" on-release="updateSlideStatus(activeSlide)">
+      <div class="image" style="background-image: url( data:image/png;base64,{{ item.imageFile }} )"></div>
+    </ion-scroll>
+  </ion-slide>
+</ion-slide-box>
+  <div class="button-pageSlide">
+    <a class="button button-positive button-clear no-animation  ion-chevron-left left margin-slideModal" ng-click="previous()"></a>
+    <a class="button button-positive button-clear no-animation  ion-chevron-right right margin-slideModal" ng-click="next()"></a>
+  </div>
+</div>

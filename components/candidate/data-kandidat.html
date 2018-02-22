@@ -1,0 +1,148 @@
+<ion-view view-title="Data Kandidat" ng-controller="dataCandidateCtrl">
+  <ion-header-bar align-title="left" class="bar-assertive">
+    <a class="left-buttons" ng-href="#/r-candidate">
+      <button menu-toggle="left" class="button button-icon icon ion-ios-arrow-back"></button>
+    </a>
+    <h1 class="title">Data Kandidat</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <button class="button button-white button-small button-block text-uppercase marg-top-0 marg-bot-0" ng-click="showAllAnswer($event)">TAMPILKAN SEMUA PILIHAN JAWABAN</button>
+    <form action="" class="material">
+      <div class="form-group">
+        <i class="material-icons">&#xE7FD;</i>
+        <select name="mySelect1" placeholder="Jenis kelamin">
+          <option>Wanita</option>
+          <option>Pria</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <i class="material-icons">&#xE7E9;</i>
+        <select name="mySelect2" placeholder="Umur">
+          <option>&gt; 27 tahun</option>
+          <option>27 - 40 tahun</option>
+          <option>&lt; 40 tahun</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <i class="material-icons">&#xE63D;</i>
+        <select name="mySelect3" placeholder="Status pernikahan">
+          <option>Belum menikah</option>
+          <option>Menikah</option>
+          <option>Cerai</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <i class="material-icons">&#xE227;</i>
+        <select name="mySelect4" placeholder="Tanggung jawab keluarga">
+          <option>Pencari nafkah utama</option>
+          <option>Pencari nafkah kedua/ketiga</option>
+          <option>Tidak memiliki tanggung jawab keuangan</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <i class="material-icons">&#xE7EF;</i>
+        <select name="mySelect5" placeholder="Jumlah tanggungan">
+          <option>&lt;= 2 orang</option>
+          <option>1 orang</option>
+          <option>Belum punya tanggungan</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <i class="material-icons">&#xE87C;</i>
+        <select name="mySelect6" placeholder="Anak">
+          <option>Sekolah</option>
+          <option>Belum sekolah</option>
+          <option>Bekerja</option>
+          <option>Belum punya anak</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <i class="material-icons">&#xE80C;</i>
+        <select name="mySelect7" placeholder="Pendidikan terakhir">
+          <option>Universitas/Akademi</option>
+          <option>SLTA/Sederajat</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <i class="material-icons">&#xE8F9;</i>
+        <select name="mySelect8" placeholder="Pengalaman kerja">
+          <option>Memiliki usaha sendiri</option>
+          <option>Staf pemasaran/penjualan</option>
+          <option>Tenaga ahli profesional</option>
+          <option>Ibu rumah tangga</option>
+          <option>Pensiunan</option>
+          <option>Belum ada pengalaman kerja</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <i class="material-icons">&#xE8AE;</i>
+        <select name="mySelect9" placeholder="Total masa kerja sebelumnya">
+          <option>&gt; 5 tahun</option>
+          <option>3 - 4 tahun</option>
+          <option>1 -2 tahun</option>
+          <option>&lt; 1 tahun</option>
+          <option>Belum pernah bekerja</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <i class="material-icons">&#xE903;</i>
+        <select name="mySelect10" placeholder="Jabatan pekerjaan terakhir">
+          <option>Pemilik perusahaan</option>
+          <option>Direktur/Manager</option>
+          <option>Penyelia/Staf</option>
+          <option>Belum pernah kerja</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <i class="material-icons">&#xE531;</i>
+        <select name="mySelect11" placeholder="Kendaraan yang dimiliki">
+          <option>Mobil</option>
+          <option>Motor</option>
+          <option>Tidak memiliki kendaraan</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <i class="material-icons">&#xE0D4;</i>
+        <select name="mySelect12" placeholder="Telepon seluler">
+          <option>Ya</option>
+          <option>Tidak</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <i class="material-icons">&#xE850;</i>
+        <select name="mySelect13" placeholder="Pendapatan terakhir">
+          <option>&gt; 60 juta/tahun</option>
+          <option>36 juta/tahun</option>
+          <option>&lt; 36 juta/tahun</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <i class="material-icons">&#xE8DC;</i>
+        <select name="mySelect14" placeholder="Kemauan/dorongan untuk maju">
+          <option>Sangat tinggi</option>
+          <option>Diatas rata-rata</option>
+          <option>Rata-rata</option>
+          <option>Sangat rendah</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <i class="material-icons">&#xE7EF;</i>
+        <select name="mySelect15" placeholder="Jumlah teman">
+          <option>&gt; 100 orang</option>header
+          <option>50 - 100 orang</option>
+          <option>25 - 49 orang</option>
+          <option>1 - 24 orang</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <i class="material-icons">&#xE887;</i>
+        <textarea name="message" placeholder="Menurut anda, mengapa anda bisa sukses di prudential?"></textarea>
+      </div>
+    </form>
+    <div class="afterwhite">
+      <div class="form-group">
+        <button class="button button-small button-assertive button-block" type="submit">Lanjut</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

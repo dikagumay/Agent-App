@@ -1,0 +1,24 @@
+
+@media only screen 
+and (min-device-width : 768px)
+and (max-device-width : 1824px)  {
+  .dual-column .first-column,
+  .dual-column .second-column{
+    position: relative;
+    margin-bottom: 0;
+  }
+
+  .dual-column .first-column{
+    margin-right: 10px;
+  }
+
+  .dual-column .second-column{
+    margin-left: 10px;
+  }
+  .width-80-md{
+    width:80%!important;
+  }
+  .width-50-md{
+    width:50% !important;
+  }
+}

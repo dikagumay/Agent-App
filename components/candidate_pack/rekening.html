@@ -1,0 +1,52 @@
+<ion-content class="has-header-tabs">
+  <form name="formRekening" class="default-form" ng-submit="sendData($event,currentMenuTab)">
+    <md-input-container class="md-icon-float md-block">
+      <label>Nomor rekening bank Anda</label>
+      <md-icon aria-label="person" class="material-icons">&#xE850;</md-icon>
+      <input ng-model="candidatePack.dataRekening.bankAccountNumber" type="number" ng-blur="save()" required>
+      <div ng-messages="formRekening.dataRekening.bankAccountNumber.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Nama Bank</label>
+      <md-icon aria-label="person" class="material-icons">&#xE84F;</md-icon>
+      <input ng-model="candidatePack.dataRekening.bankName" type="text" ng-blur="save()" required>
+      <div ng-messages="formRekening.dataRekening.bankName.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Cabang</label>
+      <md-icon aria-label="person" class="material-icons">&#xE0C8;</md-icon>
+      <input ng-model="candidatePack.dataRekening.bankBranchOffice" ng-blur="save()" type="text" required>
+      <div ng-messages="formPribadi.branch.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Nama Anda didalam Rekening</label>
+      <md-icon aria-label="person" class="material-icons">&#xE7FD;</md-icon>
+      <input ng-model="candidatePack.dataRekening.bankAccountName" ng-blur="save()" type="text" required>
+      <div ng-messages="formPribadi.branch.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+
+    <div class="form-group image-editor foto">
+      <div class="image-holder rekening">
+        <i class="material-icons" ng-if='candidatePack.dataRekening.foto == undifined'>&#xE3F4;</i>
+        <img class="image-result" ng-src="{{candidatePack.dataRekening.foto}}" ng-if='candidatePack.dataRekening.foto != undefined'>
+      </div>
+      <div class="upload-wrap">
+        <input type="file" id="rekening" class="cropit-image-input" ng-model="candidatePack.dataRekening.foto" landscape-photo-uploader />
+        <a class="button button-assertive button-block">upload foto buku rekening</a>
+      </div>
+      <a class="button button-dark button-block" ng-model="candidatePack.dataRekening.foto" take-landscape-photo>Ambil gambar</a>
+    </div>
+
+    <div class="form-group">
+      <button class="button button-block button-assertive next-tab"  type="submit">Lanjut</button>
+    </div>
+  </form>
+</ion-content>

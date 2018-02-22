@@ -1,0 +1,222 @@
+<ion-content class="has-header-tabs" ng-cloak>
+  <div>
+    <form name="formManfaat" class="default-form">
+      <div class="card pad-0 width-100 marg-top-0 marg-bot-0 bg-light-gray-ebebeb">
+        <div class="pull-left width-100">
+          <div class="block-container b-border-none marg-bot-0"> 
+            <h4 class="marg-bot-0">Kalkulator Premi</h4>
+          </div>
+          <span class="width-50-md width-100 b-border-white pull-left marg-bot-10"> 
+            <div class="block-container b-border-none marg-bot-0"> 
+              <div>
+                <span class="display-inline-block width-50">
+                  <h6 class="font-gray marg-bot-5">Minimum Uang Pertanggungan</h6>
+                  <h4 class="font-size-16 marg-top-0">Rp 0.00</h4>
+                </span>
+                <span class="pull-right text-right width-50">
+                  <h6 class="font-gray marg-bot-5">Maksimum Uang Pertanggungan</h6>
+                  <h4 class="font-size-16 marg-top-0">Rp 0.00</h4>
+                </span>
+              </div>
+            </div>
+          </span>
+          <span class="width-50-md width-100 pull-left b-border-white marg-bot-10"> 
+            <div class="block-container b-border-none marg-bot-0"> 
+              <div class="content-header pad-0 marg-top-5 marg-bot-5 marg-left-0">
+                <span class="display-inline-block width-50 pad-left-10">
+                  <h6 class="font-gray marg-bot-5 font-white marg-top-5">Premi Unaplied</h6>
+                  <h4 class="font-size-16 marg-top-0 font-white marg-bot-5">Rp 0.00</h4>
+                </span>
+                <span class="pull-right text-right width-50 font-white">
+                  <h5 class="font-white marg-right-50 marg-top-15">HITUNG</h5>
+                </span>
+              </div>
+            </div>
+          </span>
+          <h6 class="font-red text-center text-uppercase">Simpan Kalkulator</h6>
+        </div>
+      </div>
+      <div class="card pad-0 width-100 marg-top-0">
+        <div class="pull-left width-100">
+          <span class="width-50-md width-100 pull-left b-border-none"> 
+            <div class="block-container b-border-none marg-bot-0"> 
+              <h4 class="marg-bot-0">Jenis Produk</h4>
+              <md-input-container class="md-block marg-bot-0"> 
+                <label>Besar Premi Tahunan</label> 
+                <input ng-model="manfaat.besarPremiTahunan" type="text" required> 
+                <div ng-messages="formManfaat.name.$error"> 
+                  <div ng-message="required">Harus diisi.</div> 
+                </div> 
+              </md-input-container> 
+              <h4 class="marg-bot-0 marg-top-0 font-size-16">PRUsaver</h4>
+              <md-input-container class="md-block input-inset-shadow b-border-gray"> 
+                <label>Premi Tahunan</label> 
+                <input ng-model="manfaatp.premiTahunan" type="text"> 
+                <div ng-messages="formManfaat.name.$error"> 
+                  <div ng-message="required">Harus diisi.</div> 
+                </div> 
+              </md-input-container> 
+              <md-input-container class="md-block marg-top-40 marg-bot-0"> 
+                <label class="white-space-normal">Rencana Masa Pembayaran yang dikehendaki Nasabah (dalam Tahun)</label> 
+                <input ng-model="manfaatp.ss" type="text"> 
+              </md-input-container> 
+            </div>
+          </span>
+          <span class="width-50-md width-100 pull-left b-border-white marg-bot-10"> 
+            <div class="block-container b-border-none marg-bot-0"> 
+              <md-input-container class="md-block marg-top-0" flex-gt-sm> 
+                <label>Alternatif Rencana Pembayaran</label> 
+                <md-select ng-model="formManfaat.ss"> 
+                  <md-option value="99">99</md-option> 
+                </md-select> 
+              </md-input-container> 
+              <h4 class="marg-bot-0">Halaman Ringkasan Manfaat, Asumsi Nilai Tunai di Masa Depan:</h4>
+              <div>
+                <span class="display-inline-block width-30"> 
+                  <md-input-container class="marg-0 md-block width-100"> 
+                    <label>Usia 1</label>
+                    <md-select ng-model="item.data.val2" aria-label=""> 
+                      <md-option value="1">1</md-option> 
+                      <md-option value="2">2</md-option> 
+                    </md-select> 
+                    <div class="md-errors-spacer"></div> 
+                  </md-input-container> 
+                </span> 
+                <span class="display-inline-block width-30"> 
+                  <md-input-container class="marg-0 md-block width-100"> 
+                    <label>Usia 2</label>
+                    <md-select ng-model="item.data.val2" aria-label=""> 
+                      <md-option value="1">1</md-option> 
+                      <md-option value="2">2</md-option> 
+                    </md-select> 
+                    <div class="md-errors-spacer"></div> 
+                  </md-input-container> 
+                </span> 
+                <span class="display-inline-block width-30"> 
+                  <md-input-container class="marg-0 md-block width-100"> 
+                    <label>Usia 3</label>
+                    <md-select ng-model="item.data.val3" aria-label=""> 
+                      <md-option value="1">1</md-option> 
+                      <md-option value="2">2</md-option> 
+                    </md-select> 
+                    <div class="md-errors-spacer"></div> 
+                  </md-input-container> 
+                </span> 
+              </div>
+            </div>
+          </span>
+          <div class="pull-left width-100">
+            <span class="width-50-md width-100 pull-left b-border-white"> 
+              <div class="block-container b-border-none marg-bot-0"> 
+                <div class="content-header text-uppercase pad-left-15"> 
+                  <i class="ion ion-person marg-right-10"></i> 
+                  Manfaat 
+                  <i class="ion ion-plus pull-right font-white h4 marg-0"></i> 
+                </div> 
+              </div>
+            </span>
+            <span class="width-50-md width-100 pull-left b-border-white"> 
+              <div class="block-container b-border-none marg-bot-0"> 
+                <div class="marg-top-10 pad-left-10"> 
+                  <span ng-model="editSubstandardModel"> 
+                    <i class="icon ion-edit h6 font-gray"></i>  
+                    <span class="font-red font-size-10 marg-right-20"> 
+                      <span>EDIT</span> 
+                      <!-- <span ng-if="editSubstandardModel === true">SELESAI</span>  -->
+                    </span> 
+                  </span> 
+                  <span ng-click="addSubstandards()"> 
+                    <i class="icon ion-android-person-add h6 font-gray"></i> <span class="font-red font-size-10">TAMBAH</span> 
+                  </span> 
+                  <span class="pull-right" ng-if="editSubstandardModel === true" ng-click="deleteSubStandard()"> 
+                    <i class="icon ion-ios-trash h5 font-gray"></i>  
+                    <span class="font-red font-size-10 marg-right-20"> 
+                      <span>HAPUS</span> 
+                    </span> 
+                  </span> 
+                </div> 
+              </div>
+            </span>
+          </div>
+          <div class="pull-left width-100 marg-bot-10">
+            <span class="width-50-md width-100 pull-left b-border-white"> 
+              <div class="block-container marg-bot-0 pad-sides-10">
+                <h5>PRUlink assurance account <i class="icon ion-play font-size-16 pull-right font-red rotate-30"></i></h5>
+              </div>
+            </span>
+          </div> 
+          <div class="pull-left width-100">
+            <span class="width-50-md width-100 pull-left b-border-white"> 
+              <div class="block-container b-border-none marg-bot-0"> 
+                <div class="content-header text-uppercase pad-left-15"> 
+                  <i class="ion ion-person marg-right-10"></i> 
+                  Top Up/Penarikan 
+                  <i class="ion ion-plus pull-right font-white h4 marg-0"></i> 
+                </div> 
+              </div>
+            </span>
+            <span class="width-50-md width-100 pull-left b-border-white"> 
+              <div class="block-container b-border-none marg-bot-0"> 
+                <div class="marg-top-10 pad-left-10"> 
+                  <span ng-model="editSubstandardModel"> 
+                    <i class="icon ion-edit h6 font-gray"></i>  
+                    <span class="font-red font-size-10 marg-right-20"> 
+                      <span>EDIT</span> 
+                      <!-- <span ng-if="editSubstandardModel === true">SELESAI</span>  -->
+                    </span> 
+                  </span> 
+                  <span ng-click="addSubstandards()"> 
+                    <i class="icon ion-android-person-add h6 font-gray"></i> <span class="font-red font-size-10">TAMBAH</span> 
+                  </span> 
+                  <span class="pull-right" ng-if="editSubstandardModel === true" ng-click="deleteSubStandard()"> 
+                    <i class="icon ion-ios-trash h5 font-gray"></i>  
+                    <span class="font-red font-size-10 marg-right-20"> 
+                      <span>HAPUS</span> 
+                    </span> 
+                  </span> 
+                </div> 
+              </div>
+            </span>
+          </div>
+          <div class="pull-left width-100">
+            <span class="width-50-md width-100 pull-left b-border-none"> 
+              <div class="block-container marg-bot-0 pad-sides-10">
+                <h5>TOP UP<i class="icon ion-play font-size-16 pull-right font-red rotate-30"></i></h5>
+              </div>
+            </span>
+            <span class="width-50-md width-100 pull-left"> 
+              <div class="block-container marg-bot-0 b-border-none pad-sides-10">
+                <h5>PENARIKAN<i class="icon ion-play font-size-16 pull-right font-red rotate-90"></i></h5>
+                <span class="display-inline-block width-45">
+                  <div class="h6"> 
+                    <div class="font-gray h6 marg-0">Tahun Polis Sejak</div> 
+                    <span class="marg-top-5 display-inline-block"><input class="input-little-box display-inline-block" type="text" size="1" maxlength="1" value="0" /></span> 
+                  </div> 
+                </span>
+                <span class="display-inline-block width-45">
+                  <div class="h6"> 
+                    <div class="font-gray h6 marg-0">Tahun Polis Sampai</div> 
+                    <span class="marg-top-5 display-inline-block"><input class="input-little-box display-inline-block" type="text" size="1" maxlength="1" value="0" /></span> 
+                  </div> 
+                </span>
+                <md-input-container class="md-block marg-bot-0"> 
+                  <label>Jumlah</label> 
+                  <input value="0" type="text"> 
+                </md-input-container> 
+              </div>
+            </span>
+          </div> 
+          <div class="pull-left width-100 marg-bot-10">
+            <span class="width-50-md width-100 pull-left b-border-none"> 
+              <div class="block-container marg-bot-0">
+                <div class="form-group"> 
+                  <button class="button button-block button-assertive next-tab" ng-click="sendData($event)">Proses Ilustrasi</button> 
+                </div> 
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,5 @@
+/* ----  ios  ---- */
+.platform-ios7 .bar .button, .platform-ios7 .bar button{
+	padding: 6px 8px !important;
+}
+/* ----  android  ---- */

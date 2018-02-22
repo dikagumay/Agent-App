@@ -1,0 +1,79 @@
+<ion-view view-title="Lembar Persetujuan Tanda Tangan" ng-controller="tandaTanganCtrl">
+  <ion-header-bar align-title="left" class="bar-assertive">
+      <a class="left-buttons" ng-href="#/syarat-dan-ketentuan-keagenan-checked">
+        <button menu-toggle="left" class="button button-icon icon ion-ios-arrow-back"></button>
+      </a>
+      <h1 class="title">LEMBAR PERSETUJUAN</h1>
+    </ion-header-bar>
+
+    <ion-content class="has-header">
+
+
+      <div class="content-main-description">
+
+        <div class="landing">
+          <p>
+            Untuk menyatakan setuju, anda harus menyertakan tanda tangan
+          </p>
+        </div>
+        
+        <div class="sign-wrap">
+          <p class="text-black">
+            Tanda Tangan Kandidat
+          </p>
+          <a href="#/tanda-tangan">
+            <div ng-if="signature[0]" class="sign">
+              <img src="{{signature[0]}}" height="auto" width="100%" />
+            </div>
+            <div ng-if="!signature[0]" class="sign">
+              Tanda Tangan Disini
+            </div>
+          </a>
+          <h5>Pastikan tanda tangan Anda sesuai dengan tanda tangan yang tertera di KTP.</h5>
+        </div>
+
+        <div class="sign-wrap">
+          <p class=" text-black">
+            Tanda Tangan Perekrut
+          </p>
+
+          <a href="#/tanda-tangan-perekrut">
+            <div ng-if="signature[1]" class="sign">
+              <img src="{{signature[1]}}" height="auto" width="100%" />
+            </div>
+            <div ng-if="!signature[1]" class="sign">
+              Tanda Tangan Disini
+            </div>
+          </a>
+
+          <h5>Pastikan tanda tangan Anda sesuai dengan tanda tangan yang tertera di KTP.</h5>
+        </div>
+
+        <div class="sign-wrap red">
+          <p  class=" text-black">
+            Tanda Tangan Manajer keagenan
+          </p>
+          <a href="#/tanda-tangan-manajer">
+            <div ng-if="signature[2]" class="sign">
+              <img src="{{signature[2]}}" height="auto" width="100%" />
+            </div>
+            <div ng-if="!signature[2]" class="sign">
+              Kami akan mengirimkan notifikasi ke perekrut Anda untuk melakukan tanda tangan
+            </div>
+          </a>
+          <h5>Pastikan tanda tangan Anda sesuai dengan tanda tangan yang tertera di KTP.</h5>
+        </div>
+
+        <div class="padd-syarat m-bottom-15" ng-controller="submitCtrl">
+          <button class="button button-assertive margin-0 button-full" ng-click="appNext('aplikasi-berhasil-dikirim')">
+          SIMPAN DAN KIRIM
+        </button>
+        </div>
+        
+
+        
+      </div>
+    </ion-content>
+</ion-view>
+
+

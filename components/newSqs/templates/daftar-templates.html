@@ -1,0 +1,68 @@
+<ion-view view-title="Daftar Template" ng-controller="templatesCtrl">
+  <ion-header-bar align-title="left" class="bar-assertive">
+    <a class="left-buttons" ng-href="#/daftar-newsqs">
+      <button class="button button-icon icon ion-ios-arrow-back"></button>
+    </a>
+    <h1 class="title text-uppercase">Daftar Template</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <div class="card pad-0">
+      <div class="content spaced-area">
+        <md-chips class="md-block custom-gray-searchbox" ng-model="selectedCode" md-autocomplete-snap="">
+          <md-autocomplete 
+                           md-selected-item="selectedItem" 
+                           md-search-text="searchText" 
+                           md-items="item in querySearch(searchText, memberTemplateDatas)" 
+                           md-item-text="item.name" 
+                           md-selected-item-change="chipSearch(item, 'templateLists')"
+                           placeholder="ketik nomor quotation atau nama tertanggung">
+            <span md-highlight-text="searchText">{{item.name}} {{item.quotationNumber}}</span>
+          </md-autocomplete>
+          <md-chip-template>
+            <span>
+              <strong>{{$chip.name}}</strong>
+              <em>({{$chip.quotationNumber}})</em>
+            </span>
+          </md-chip-template>
+          <button class="md-chip-remove" ng-click="removeChips('templateLists')" md-chip-remove> <i class="material-icons">&#xE14C;</i> </button>
+        </md-chips>
+        <div layout="row">
+          <md-input-container flex="50">
+            <label class="font-gray">Filter</label>
+            <md-select class="border-red-2 pad-left-15" ng-model="memberInsuranceFilter" ng-change="filterIlustrasiList(memberInsuranceFilter, 'templateLists')">
+              <md-option ng-value="-1"><em>default</em></md-option>
+              <md-option ng-value="1" ng-disabled="$index === 1">
+                show approved only
+              </md-option>
+            </md-select>
+          </md-input-container>
+          <md-input-container flex="50">
+            <label class="font-gray">Sorting</label>
+            <md-select class="border-red-2 pad-left-15" ng-model="orderBy" ng-change="sortingIlustrasiList(orderBy, 'templateLists')">
+              <md-option ng-value="-1"><em>default</em></md-option>
+              <md-option ng-value="1" ng-disabled="$index === 1">
+                sort by created date
+              </md-option>
+            </md-select>
+          </md-input-container>
+        </div>
+        <span class="width-50-md width-100 pull-left" ng-repeat="item in templateLists">
+          <div class="block-container with-user-level-agent marg-bot-10 pad-bot-10 position-relative">
+            <table class="width-100">
+              <tr>
+                <td class="white-space-nowrap">
+                  <h5 class="font-gray marg-top-5 marg-bot-0"><strong class="text-uppercase">{{item.name}}</strong></h5>
+                </td>
+                <td class="text-right font-red marg-top-5">
+                  {{item.status}}
+                </td>
+              </tr>
+            </table>
+            <h5 class="font-gray marg-top-5 marg-bot-0">Dibuat  {{item.dateCreate | amDateFormat:'DD MMMM YYYY'}}</h5>
+            <h5 class="font-gray marg-top-5 marg-bot-0">{{item.type}}</h5>
+          </div>
+        </span>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

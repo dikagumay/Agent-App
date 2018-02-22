@@ -1,0 +1,160 @@
+<ion-view view-title="Formulir Perekrutan">
+  <ion-header-bar align-title="left" class="bar-assertive">
+    <a class="left-buttons" ng-href="#/formulir-registrasi">
+      <button menu-toggle="left" class="button button-icon icon ion-ios-arrow-back"></button>
+    </a>
+    <h1 class="title text-uppercase">Formulir Perekrutan</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <button class="button button-white button-small button-block text-uppercase marg-top-0 marg-bot-0" ng-click="showAllAnswer($event)">TAMPILKAN SEMUA PILIHAN JAWABAN</button>
+    <form action="" class="default-form label-normal">
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>{{listQuestions[0].question}}</label>
+        <md-icon aria-label="person" class="material-icons">&#xE7FD;</md-icon>
+        <md-select ng-model="initModel.question1" ng-change="TotalNilai()">
+          <md-option ng-value="item.score" ng-repeat="item in listQuestions[0].answers track by $index">{{item.answer}}</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>{{listQuestions[1].question}}</label>
+        <md-icon aria-label="person" class="material-icons">&#xE7E9;</md-icon>
+        <md-select ng-model="initModel.question2" ng-change="TotalNilai()">
+          <md-option ng-value="item.score" ng-repeat="item in listQuestions[1].answers track by $index">{{item.answer}}</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>{{listQuestions[2].question}}</label>
+        <md-icon aria-label="person" class="material-icons">&#xE63D;</md-icon>
+        <md-select ng-model="initModel.question3" ng-change="TotalNilai()">
+          <md-option ng-value="item.score" ng-repeat="item in listQuestions[2].answers track by $index">{{item.answer}}</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>{{listQuestions[3].question}}</label>
+        <md-icon aria-label="person" class="material-icons">&#xE227;</md-icon>
+        <md-select ng-model="initModel.question4" ng-change="TotalNilai()">
+          <md-option ng-value="item.score" ng-repeat="item in listQuestions[3].answers track by $index">{{item.answer}}</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>{{listQuestions[4].question}}</label>
+        <md-icon aria-label="person" class="material-icons">&#xE7EF;</md-icon>
+        <md-select ng-model="initModel.question5" ng-change="TotalNilai()">
+          <md-option ng-value="item.score" ng-repeat="item in listQuestions[4].answers track by $index">{{item.answer}}</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>{{listQuestions[5].question}}</label>
+        <md-icon aria-label="person" class="material-icons">&#xE87C;</md-icon>
+        <md-select ng-model="initModel.question6" ng-change="TotalNilai()">
+          <md-option ng-value="item.score" ng-repeat="item in listQuestions[5].answers track by $index">{{item.answer}}</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>{{listQuestions[6].question}}</label>
+        <md-icon aria-label="person" class="material-icons">&#xE80C;</md-icon>
+        <md-select ng-model="initModel.question7" ng-change="TotalNilai()">
+          <md-option ng-value="item.score" ng-repeat="item in listQuestions[6].answers track by $index">{{item.answer}}</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>{{listQuestions[7].question}}</label>
+        <md-icon aria-label="person" class="material-icons">&#xE8F9;</md-icon>
+        <md-select ng-model="initModel.question8" ng-change="TotalNilai()">
+          <md-option ng-value="item.score" ng-repeat="item in listQuestions[7].answers track by $index">{{item.answer}}</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>{{listQuestions[8].question}}</label>
+        <md-icon aria-label="person" class="material-icons">&#xE8AE;</md-icon>
+        <md-select ng-model="initModel.question9" ng-change="TotalNilai()">
+          <md-option ng-value="item.score" ng-repeat="item in listQuestions[8].answers track by $index">{{item.answer}}</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>{{listQuestions[9].question}}</label>
+        <md-icon aria-label="person" class="material-icons">&#xE903;</md-icon>
+        <md-select ng-model="initModel.question10" ng-change="TotalNilai()">
+          <md-option ng-value="item.score" ng-repeat="item in listQuestions[9].answers track by $index">{{item.answer}}</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>{{listQuestions[10].question}}</label>
+        <md-icon class="material-icons">&#xE850;</md-icon>
+        <md-select ng-model="initModel.question11" ng-change="TotalNilai()">
+          <md-option ng-value="item.score" ng-repeat="item in listQuestions[10].answers track by $index">{{item.answer}}</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>{{listQuestions[11].question}}</label>
+        <md-icon class="material-icons">&#xE531;</md-icon>
+        <md-select ng-model="initModel.question12" ng-change="TotalNilai()">
+          <md-option ng-value="item.score" ng-repeat="item in listQuestions[11].answers track by $index">{{item.answer}}</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>{{listQuestions[12].question}}</label>
+        <md-icon class="material-icons">&#xE88A;</md-icon>
+        <md-select ng-model="initModel.question13" ng-change="TotalNilai()">
+          <md-option ng-value="item.score" ng-repeat="item in listQuestions[12].answers track by $index">{{item.answer}}</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>{{listQuestions[13].question}}</label>
+        <md-icon class="material-icons">&#xE0D4;</md-icon>
+        <md-select ng-model="initModel.question14" ng-change="TotalNilai()">
+          <md-option ng-value="item.score" ng-repeat="item in listQuestions[13].answers track by $index">{{item.answer}}</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>{{listQuestions[14].question}}</label>
+        <md-icon class="material-icons">&#xE8DC;</md-icon>
+        <md-select ng-model="initModel.question15" ng-change="TotalNilai()">
+          <md-option ng-value="item.score" ng-repeat="item in listQuestions[14].answers track by $index">{{item.answer}}</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>{{listQuestions[15].question}}</label>
+        <md-icon class="material-icons">&#xE7EF;</md-icon>
+        <md-select ng-model="initModel.question16" ng-change="TotalNilai()">
+          <md-option ng-value="item.score" ng-repeat="item in listQuestions[15].answers track by $index">{{item.answer}}</md-option>
+        </md-select>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm>
+        <label>{{listQuestions[16].question}}</label>
+        <md-icon class="material-icons">&#xE887;</md-icon>
+        <textarea ng-model="user.biography" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+        <div class="md-errors-spacer"></div>
+      </md-input-container>
+    </form>
+    <div class="afterwhite">
+      <div class="score">
+        <h5>Total Nilai</h5>
+        <p class="score-text">{{score}}</p>
+        <h5>{{resultDesc}}</h5>
+      </div>
+      <div class="form-group  marg-top-50" ng-controller="submitCtrl">
+        <button  class="button button-assertive button-block" type="submit" ng-click="AplicationPack()">Lanjut</button>
+      </div>
+    </div>
+  </ion-content>
+  <div ng-click="scrollTop()" class="back-to-top">
+    <i class="ion-chevron-up"></i>
+  </div>
+</ion-view>

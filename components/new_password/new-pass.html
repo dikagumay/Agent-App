@@ -1,0 +1,29 @@
+<ion-view view-title="Create Password">
+	<div class="content content-red">
+		<div class="logo">
+			<h1>
+				<a href="#">
+					<img src="./img/PRUforce-logo.png" alt="PRUforce" />
+				</a>
+			</h1>
+		</div>
+		<div class="content-red-text">
+			<h3>Buat Password Baru</h3>
+			<form>
+
+				<div class="form-group">
+					<input class="form-control" name="pruforceId" type="text" placeholder="Masukan PRUforce ID" ng-model="initModel.pruforceId">
+				</div>
+				<div class="form-group">
+					<input class="form-control" name="password" type="password" placeholder="Password baru" ng-model="initModel.password">
+				</div>
+				<div class="form-group">
+					<input class="form-control" name="password" type="password" placeholder="Ulangi password baru" ng-model="initModel.cpassword">
+				</div>
+				<div class="form-group">
+					<button type="submit" class="button button-block button-light text-uppercase" ng-click="NewPass()">Lanjut</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</ion-view>

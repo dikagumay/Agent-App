@@ -1,0 +1,87 @@
+<ion-view view-title="Syarat & ketentuan keagenan" ng-controller="listChecklistCtrl">
+  <ion-header-bar align-title="left" class="bar-assertive">
+      <a class="left-buttons" ng-href="#/">
+        <button menu-toggle="left" class="button button-icon icon ion-ios-arrow-back"></button>
+      </a>
+      <h1 class="title">LEMBAR PERSETUJUAN</h1>
+    </ion-header-bar>
+
+    <ion-content class="has-header">
+      <div class="heading-main-content">
+        <h3>SYARAT DAN KETENTUAN KEAGENAN PT PRUDENTIAL LIFE ASSURANCE</h3>
+      </div>
+
+      <div class="content-main-description">
+
+        <ul class="list padd-syarat m-bottom-15">
+          <li class="item b-content-s pad-bot-0">
+            <p>
+              Agen dengan ini menyatakan  telah membaca, memahami dan menyetujui seluruh isi dokumen dibawah:
+            </p>
+
+            <ion-list class="content-main-list">
+
+              <ul class="check-list">
+                <li>
+                  <div class="list child-list">
+                    <div class="notif-note" ng-hide="notifNoteChecked1"><span>Klik dan centang disini untuk Persetujuan</span><i class="icon ion-arrow-down-b"></i>
+                    </div>
+                    <ion-checkbox ng-click="hideNotif1($event, syaratDanKetentuanChecked1)" ng-model="syaratDanKetentuanChecked1.checked"><span class="syarat-ketentuan"> Syarat dan Ketentuan Perjanjian Keagenan </span> yang terdapat dalam Dokumen Pengajuan Agen Perusahaan yang telah dilengkapi oleh Agen (“Syarat dan Ketentuan Perjanjian Keagenan”). Syarat dan Ketentuan Perjanjian Keagenan dibuat oleh PT Prudential Life Assurance (”Perusahaan”) pada tanggal 9 Februari 2015 di Jakarta, dimana akta aslinya tersimpan pada Hannywati Gunawan, Sarjana Hukum, Magister Kenotariatan, Notaris di Jakarta, sesuai dengan Akta Penyimpanan (Acte van Depot) No. 32 tertanggal 10 Februari 2015, yang dibuat dihadapan Hannywati Gunawan, Sarjana Hukum, Notaris di Jakarta.</ion-checkbox>
+                  </div>
+                </li>
+                <li>
+                  <div class="list child-list">
+                    <div class="notif-note" ng-hide="notifNoteChecked2"><span>Klik dan centang disini untuk Persetujuan</span><i class="icon ion-arrow-down-b"></i>
+                    </div>
+
+                    <ion-checkbox ng-click="hideNotif2($event, syaratDanKetentuanChecked2)" ng-model="syaratDanKetentuanChecked2.checked"><span class="syarat-ketentuan"> Syarat dan Ketentuan Tambahan </span> dari Dokumen Pengajuan Agen Perusahaan, termasuk terkait pemberian kuasa kepada Perusahaan untuk memotong Komisi yang akan diterima oleh Agen dalam rangka pembayaran biaya-biaya terkait sertifikasi dan lisensi keagenan.</ion-checkbox>
+
+                  </div>
+                </li>
+
+                <li>
+                  <div class="list child-list">
+                    <div class="notif-note" ng-hide="notifNoteChecked3"><span>Klik dan centang disini untuk Persetujuan</span><i class="icon ion-arrow-down-b"></i>
+                    </div>
+
+                    <ion-checkbox ng-click="hideNotif3($event, syaratDanKetentuanChecked3)" ng-model="syaratDanKetentuanChecked3.checked"><span class="syarat-ketentuan">Pernyataan Agen </span>atas kelengkapan dokumen sebagaimana dipersyaratkan oleh Perusahaan.</ion-checkbox>
+
+                  </div>
+                </li>
+              </ul>
+
+            </ion-list>
+          </li>
+
+          <li class="item b-content-s border-content-main ">
+            <p>
+              Agen menyetujui untuk senantiasa tunduk dan mengikatkan dirinya kepada seluruh isi Syarat dan Ketentuan Perjanjian Keagenan sebagaimana disebutkan dalam halaman ini, tanpa ada yang dikecualikan termasuk segala perubahan maupun penambahan yang dibuat di masa mendatang oleh Perusahaan, sesuai dengan Syarat dan Ketentuan Perjanjian Keagenan.
+            </p>
+          </li>
+          
+          <li class="item b-content-s border-content-main">
+            <p>
+              Agen juga menyetujui apabila dikemudian hari terdapat atau ditemukan bahwa salah satu pernyataan atau dokumen yang diberikan oleh Agen tidak benar atau diduga tidak benar maka Perusahaan berhak melakukan segala tindakan yang diperlukan terhadap Agen, termasuk namun tidak terbatas pada pengakhiran Perjanjian Keagenan.
+            </p>
+          </li>
+
+          <li class="item b-content-s border-content-main">
+            <p>
+              Selanjutnya, Agen mengetahui dan menyetujui bahwa Syarat dan Ketentuan Perjanjian Keagenan akan ditandatangani secara elektronik oleh Agen dan dicetak oleh Perusahaan dalam rangkap 2 (dua) yang bermeterai cukup serta mempunyai kekuatan hukum yang sama dan berlaku efektif sejak tanggal ditandatanganinya Syarat dan Ketentuan Perjanjian Keagenan ini oleh Perusahaan.
+            </p>
+          </li>
+
+        </ul>
+        <div class="padd-syarat marg-bot-15" ng-controller="submitCtrl">
+          <button class="button button-assertive margin-0 button-full" ng-click="appNext('lembar-persetujuan-tanda-tangan')">
+          Setuju
+        </button>
+        </div>
+      </div>
+    </ion-content>
+    <div ng-click="scrollTop()" class="back-to-top">
+      <i class="ion-chevron-up"></i>
+    </div>
+</ion-view>
+
+

@@ -1,0 +1,143 @@
+<ion-header-bar align-title="left" class="bar-positive header">
+  <a href="#/" ><i class="ion-ios-arrow-back left"></i></a>
+  <h2>Agent Profile</h2>
+</ion-header-bar>
+<span class="grey-space"></span>
+<ion-view view-title="tesname" class="no-grey-strip" >
+  <ion-content>
+    <div class="container home agent-profile" onload="loadFormRequirements()">
+      <div class="content">
+        <div class="head-profile">
+          <div class="main-avatar" style="background-image:url('img/ionic/Elon.jpeg');" ng-click="changePhoto()">
+          	<img src="" class="tmp-main-avatar">
+          </div>
+          <input type="file" name="agen-photo-profile" class="agen-change-photo-profile" ng-model="agen_profile_photo" square-photo-uploader>
+          <div class="agent-name-container">
+            <h2>{{clientName}}</h2>
+            <p> {{joinDates}}</p>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <!-- <div class="clear">
+          <div class="widget mTop5 no-border">
+            <div class="widget-head no-content">
+              <a href="#">{{'PERSONAL_DATA' | translate}}</a>
+              <i class="li icon-png icon-agent-profile"></i>
+            </div>
+            <div class="list-info">
+              <i class="li icon-png icon-sales-code"></i>
+              <h3>{{'SALES_FORCE_CODE' | translate}}</h3>
+              <p>{{agentNumber}}</p>
+            </div>
+            <div class="list-info">
+              <i class="li ion icon-png icon-calendar-time"></i>
+              <h3>{{'DATE_OF_BIRTH' | translate}}</h3>
+              <p>{{dateofBirth}}</p>
+            </div>
+            <div class="list-info">
+              <i class="li icon-png icon-license"></i>
+              <h3>{{'MARITAL_STATUS' | translate}}</h3>
+              <p>{{maritalStatus}}</p>
+            </div>
+            <div class="list-info">
+              <i class="li ion-home"></i>
+              <h3>{{'ADDRESS' | translate}}</h3>
+              <p>{{address}}</p>
+            </div>
+            <div class="list-info">
+              <i class="li ion-android-mail"></i>
+              <h3>Email</h3>
+              <p>{{emailAddress}}</p>
+            </div>
+            <div class="list-info">
+              <i class="li ion-android-call"></i>
+              <h3>{{'PHONE_NUMBER' | translate}}</h3>
+              <div class="sub-lists phone-agent-profile-new">
+                <div class="sub-list-info">
+                  <span class="sub-title">
+                    <i class="ion-iphone" ></i>{{'MOBILE' | translate}}
+                  </span>
+                  <a2 href="" id="mobile">{{mobile}}</a2>
+                </div>
+                <div class="sub-list-info">
+                  <span class="sub-title">
+                    <i class="ion-home"></i>{{'HOME' | translate}}
+                  </span>
+                  {{home}}
+                </div>
+                <div class="sub-list-info">
+                  <span class="sub-title">
+                    <i class="material-icons">&#xE0AF;</i>{{'OFFICE' | translate}}
+                  </span>
+                  {{office}}
+                </div>
+              </div>
+            </div>
+            <div class="list-info">
+              <i class="li material-icons">&#xE0AF;</i>
+              <h3>{{'OFFICE_LOCATION' | translate}}</h3>
+              <p>{{oficeLocation}}</p>
+            </div>
+            <div class="list-info">
+              <i class="li ion-key"></i>
+              <h3>{{'UNIT_CODE' | translate}}</h3>
+              <p>{{unitCode}}</p>
+            </div>
+            <div class="list-info">
+              <i class="li ion-person-stalker"></i>
+              <h3>{{'UNIT_NAME' | translate}}</h3>
+              <p>{{unitName}}</p>
+            </div>
+          </div>
+          <div class="widget mTop5 no-border">
+            <div class="widget-head no-content">
+              <a href="#">{{'NUMBER_OF_SANCTION' | translate}}</a>
+              <span class="li ion-ios-information-outline"></span>
+            </div>
+            <div class="list-info with-arrow">
+              <p>{{'CURRENT_YEAR' | translate}}</p>
+              <p>{{currentYearSanction}}</p>
+              <i class="arrow ion-ios-arrow-forward"></i>
+            </div>
+            <div class="list-info with-arrow">
+              <p>{{'OVERALL' | translate}}</p>
+              <p>{{overallSanction}}</p>
+              <i class="arrow ion-ios-arrow-forward"></i>
+            </div>
+            <div class="list-info with-arrow">
+              <p>{{'CURRENT_YEAR_TRAINING_SANCTION' | translate}}</p>
+              <p>{{currentYearTrainingSanction}}</p>
+              <i class="arrow ion-ios-arrow-forward"></i>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+
+<div class="bs-modal fade square-photo-modal" id="square-photo-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="">
+                <h4 class="text-center">Resize and Crop Image</h4>
+                <div class="img-container pasFoto square-photo-container">
+                  <img src="" alt="Picture"/>
+              </div>
+              <div class="actions crop-tools">
+                  <span data-method="zoom" data-option="0.1" title="Zoom In"><i class="material-icons">&#xE8FF;</i></span>
+                  <span data-method="zoom" data-option="-0.1" title="Zoom Out"><i class="material-icons">&#xE900;</i></span>
+                  <span data-method="rotate" data-option="-90" title="Rotate Left"><i class="material-icons">&#xE419;</i></span>
+                  <span data-method="rotate" data-option="90" title="Rotate Right"><i class="material-icons">&#xE41A;</i></span>
+              </div>  
+              <div class="dtp-buttons text-center clearfix">
+                  <button class="dtp-btn-cancel button button-white pull-left" data-dismiss="modal">Cancel</button>
+                  <button class="export-square-photo dtp-btn-cancel button button-white pull-right" data-dismiss="modal">Crop</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div> 
+<div class="backdrop-place"></div>

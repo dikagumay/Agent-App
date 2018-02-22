@@ -1,0 +1,40 @@
+<ion-view view-title="Tanda Tangan Agen" ng-controller="ilustrasiCtrl">
+  <ion-header-bar align-title="left" class="bar-assertive">
+    <a class="left-buttons" ng-href="#/salin-ilustrasi">
+      <button   class="button button-icon icon ion-ios-arrow-back"></button>
+    </a>
+    <h1 class="title text-uppercase">Preview PDF</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <div class="card" pdf-save-content="idOne">
+        <!-- <header>
+            <ul>
+                <li class="pruleft">
+                    <div class="prulinkLg"></div>
+                </li>
+                <li class="prutitle">halaman ilustrasi ini merupakan bagian dari kontrak asuransi</li>
+                <li class="pruright">
+                    <div class="prudentLg"></div>
+                </li>
+            </ul>
+        </header> -->
+
+        <div class="main-content" ui-view></div>
+            
+        <!-- <footer>
+            <ul>
+                <li class="fooleft">
+                    <label><span class="w15">Disajikan</span><b>Garry</b></label>
+                    <label><span class="w15">Tanggal</span><b>22-jun-2016</b><b>16:24:34</b></label>
+                    <label><span class="w30">Kode Agent/SFC</span><b>135113</b></label>
+                </li>
+                <li class="fooright">
+                    <span><small><b>*Manfaat asuransi diatas dapat diberikan selama biaya asuransi terpenuhi. Apabila nilai Tunai yang terbentuk tidak mencukupi maka Rencana Masa Pembayaran Premi yang direncanakan bisa lebih panjang.</b><br>
+                    **keterangan lengkap lihat dihalaman ILUSTRASI MANFAAT NILAI TUNAI.</small></span>
+                </li>
+            </ul>
+        </footer> -->
+    </div>
+    <button pdf-save-button="idOne" class="btn">download page</button>
+  </ion-content>
+</ion-view>

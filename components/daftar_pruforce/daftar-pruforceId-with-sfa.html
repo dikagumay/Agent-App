@@ -1,0 +1,32 @@
+<ion-view view-title="Verifikasi Data Agen">
+	<div class="content content-red">
+		<ion-content>
+			<a href="#" class="btn-back" ng-click="goBack()">
+				<i class="ion-android-arrow-back"></i>
+			</a>
+			<div class="logo">
+				<h1>
+					<a href="#/">
+						<img src="./img/PRUforce-logo.png" alt="PRUforce" />
+					</a>
+				</h1>
+			</div>
+			<div class="content-red-text top-space">
+				<form>
+					<div class="form-group  ">
+						<input class="form-control" name="agen-code" type="text" placeholder="SFA ID/Kode Agen" ng-model="initModel.agentCode_sfaId">
+					</div>
+					<div class="form-group">
+						<input class="form-control" name="phone-number" type="password" placeholder="SFA Password" ng-model="initModel.password">
+					</div>
+					<div class="form-group">
+						<button type="submit" class="button button-block button-light marg-bot-65  text-uppercase" ng-click="LoginSFA()">Masuk</button>
+					</div>
+					<div class="form-group">
+						<a href="#" class="button button-block button-transparent" ng-click="RegisterSFA()">Tidak Memiliki SFA ID?</a>
+					</div>
+				</form>
+			</div>
+		</ion-content>
+	</div>
+</ion-view>

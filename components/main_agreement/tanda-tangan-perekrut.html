@@ -1,0 +1,31 @@
+<ion-view view-title="Syarat & ketentuan keagenan" ng-controller="tandaTanganCtrl">
+  <ion-header-bar align-title="left" class="bar-assertive">
+      <a class="left-buttons" ng-href="#/">
+        <button menu-toggle="left" class="button button-icon icon ion-ios-arrow-back"></button>
+      </a>
+      <h1 class="title">TANDA TANGAN</h1>
+    </ion-header-bar>
+
+      <div class="content-main-description position-relative has-header">
+        <div class="landing text-center">
+          <p>
+            Gunakan jari/stylus untuk melakukan tanda tangan di area dibawah ini. Anda juga dapat memutar ponsel anda untuk area tandatangan yang lebih leluasa.
+          </p>
+        </div>
+        <div class="sign-wrap marg-bot-20 ">
+          <div class="sign tanda-tangan">
+            <canvas id='signatureCanvasPerekrut' class="signature-canvas"></canvas>
+          </div>
+        </div>
+        <div class="padd-syarat m-bottom-15">
+          <button ng-click='clearCanvasPerekrut()' class="button button-dark margin-0 button-full">
+            ubah
+          </button>
+          <button  ng-click='saveCanvasPerekrut()' class="button button-assertive margin-0 button-full">
+          setuju
+        </button>
+        </div>
+      </div>
+</ion-view>
+
+

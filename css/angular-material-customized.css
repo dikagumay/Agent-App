@@ -1,0 +1,95 @@
+md-optgroup md-option{
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* select with search */
+
+.select-with-search {
+
+}
+.select-with-search .header-searchbox {
+  border: none;
+  outline: none;
+  height: 100%;
+  width: 100%;
+  padding: 0 5px;
+}
+.select-with-search .select-header {
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.12);
+  padding-left: 10.667px;
+  height: 48px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: auto;
+}
+
+.select-with-search md-content._md {
+  max-height: 240px;
+}
+
+md-input-container.md-input-focused:not(.md-input-has-value) md-select.md-default-theme .md-select-value,
+md-input-container.md-input-focused:not(.md-input-has-value) md-select .md-select-value{
+  color: #444;
+}
+
+.md-select-value.md-select-placeholder {
+  color: #a7a7a7 !important;
+}
+
+.md-select-value>span:not(.md-select-icon){
+  text-overflow: initial;
+  white-space: initial;
+  overflow: hidden;
+}
+
+.vAccordion--default v-pane.is-expanded>v-pane-header.no-border .ion-arrow-down-b:before {
+  content: "\f10d";
+}
+
+@media(max-width: 320px){
+  .md-input-has-value.input-md-height{
+    margin-top: 50px;
+  }
+
+  .md-input-has-value.input-lg-height{
+    margin-top: 80px;
+  }
+
+  .md-input-has-value.input-md-height label,
+  .md-input-has-value.input-lg-height label{
+    width: 100% !important;
+  }
+}
+
+@media(min-width: 321px) and (max-width: 680px){
+  .md-input-has-value.input-md-height{
+    margin-top: 35px;
+  }
+
+  .md-input-has-value.input-lg-height{
+    margin-top: 60px;
+  }
+
+  .md-input-has-value.input-md-height label,
+  .md-input-has-value.input-lg-height label{
+    width: 100% !important;
+  }
+}
+
+@media(min-width: 680px) and (max-width: 768px){
+  .md-input-has-value.input-md-height{
+    margin-top: 20px;
+  }
+
+  .md-input-has-value.input-lg-height{
+    margin-top: 30px;
+  }
+
+  .md-input-has-value.input-md-height label,
+  .md-input-has-value.input-lg-height label{
+    width: 100% !important;
+  }
+}

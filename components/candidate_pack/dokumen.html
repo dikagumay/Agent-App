@@ -1,0 +1,88 @@
+<ion-content class="has-header-tabs">
+  <form action="" class="material" ng-submit="sendData($event,currentMenuTab)">
+    <div class="form-group image-editor side-uploader">
+      <div class="upload-wrap">
+        <input type="file" id="document.ktpImage" class="cropit-image-input" ng-model="candidatePack.dataDokumen.ktpImage" landscape-photo-uploader/>
+        <i class="material-icons change-pic">&#xE150;</i>
+      </div>
+      <div class="inside-btn-wrapper ktpImage">
+        <div class="image-holder change-ktp">
+          <i class="material-icons" ng-if='candidatePack.dataDokumen.ktpImage == undifined'>&#xE3F4;</i>
+          <img class="image-result" ng-src="{{candidatePack.dataDokumen.ktpImage}}" ng-if='candidatePack.dataDokumen.ktpImage != undefined'>
+        </div>
+        <span>Lampiran Foto KTP</span>
+      </div>
+    </div>
+
+    <div class="form-group image-editor side-uploader">
+      <div class="upload-wrap">
+        <input type="file" id="document.profileImage" class="cropit-image-input" ng-model="candidatePack.dataDokumen.profileImage" potrait-photo-uploader/>
+        <i class="material-icons change-pic">&#xE150;</i>
+      </div>
+      <div class="inside-btn-wrapper profileImage">
+        <div class="image-holder image-potrait">
+          <i class="material-icons" ng-if='candidatePack.dataDokumen.profileImage == undifined'>&#xE3F4;</i>
+          <img class="image-result" ng-src="{{candidatePack.dataDokumen.profileImage}}" ng-if='candidatePack.dataDokumen.profileImage != undefined'>
+        </div>
+        <span>Lampiran Pas Foto</span>
+      </div>
+    </div>
+
+    <div class="form-group image-editor side-uploader">
+      <div class="upload-wrap">
+        <input type="file" id="document.bankAccount" class="cropit-image-input" ng-model="candidatePack.dataDokumen.bankAccount" landscape-photo-uploader/>
+        <i class="material-icons change-pic">&#xE150;</i>
+      </div>
+      <div class="inside-btn-wrapper bankAccount">
+        <div class="image-holder change-rekening">
+          <i class="material-icons" ng-if='candidatePack.dataDokumen.bankAccount == undifined'>&#xE3F4;</i>
+          <img class="image-result" ng-src="{{candidatePack.dataDokumen.bankAccount}}" ng-if='candidatePack.dataDokumen.bankAccount != undefined'>
+        </div>
+        <span>Lampiran Foto Buku Rekening</span>
+      </div>
+    </div>
+
+    <div class="form-group image-editor side-uploader">
+      <div class="upload-wrap">
+        <input type="file" id="document.npwp" class="cropit-image-input" ng-model="candidatePack.dataDokumen.npwp" landscape-photo-uploader/>
+        <img src="" id="change_npwp_resized" alt="change npwp resized" class="tmp_photo" />
+        <i class="material-icons change-pic">&#xE150;</i>
+      </div>
+      <div class="inside-btn-wrapper npwp">
+        <div class="image-holder change-npwp">
+          <i class="material-icons" ng-if='candidatePack.dataDokumen.npwp == undifined'>&#xE3F4;</i>
+          <img class="image-result" ng-src="{{candidatePack.dataDokumen.npwp}}" ng-if='candidatePack.dataDokumen.npwp != undefined'>
+        </div>
+        <span>Lampiran Foto NPWP</span>
+      </div>
+    </div>
+
+    <div class="doc-container">
+      <div class="form-group hidden image-editor side-uploader">
+<!--         <i class="material-icons">&#xE2BC;</i>
+        <select name="location" placeholder="Pilih Dokumen">
+          <option>NPWP</option>
+          <option>KTP</option>
+          <option>Akta Kelahiran</option>
+        </select> -->
+        <div class="upload-wrap">
+          <input type="file" id="change-od1-input" class="cropit-image-input"/>
+          <img src="" id="change_od1_resized" alt="change od1 resized" class="tmp_photo" />
+          <i class="material-icons change-pic">&#xE150;</i>
+        </div>
+        <div class="inside-btn-wrapper">
+          <div class="image-holder change-od1">
+            <i class="material-icons">&#xE3F4;</i>
+          </div>
+          <span>dokumen tambahan</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group text-center">
+      <a class="button button-gray button-small add-doc">tambahkan dokumen tambahan</a>
+    </div>
+    <div class="form-group">
+      <button class="button button-small button-block button-assertive next-tab" type="submit">Lanjut</button>
+    </div>
+  </form>
+</ion-content>  

@@ -1,0 +1,81 @@
+<ion-view view-title="Daftar Ilustrasi Tertunda" ng-controller="ilustrasiCtrl">
+  <ion-header-bar align-title="left" class="bar-assertive">
+    <a class="left-buttons" ng-href="#/daftar-newsqs">
+      <button   class="button button-icon icon ion-ios-arrow-back"></button>
+    </a>
+    <h1 class="title text-uppercase">Daftar Ilustrasi Tertunda</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <div class="card pad-0">
+      <div class="content spaced-area">
+        <md-chips class="md-block width-100 custom-gray-searchbox" ng-model="selectedCode" md-autocomplete-snap="">
+          <md-autocomplete 
+                           md-selected-item="selectedItem" 
+                           md-search-text="searchText" 
+                           md-items="item in querySearch(searchText, memberIllustrationOnHoldDatas)" 
+                           md-item-text="item.name" 
+                           md-selected-item-change="chipSearch(item, 'illustrationOnHoldDatas')"
+                           placeholder="ketik nomor quotation atau nama tertanggung">
+            <span md-highlight-text="searchText">{{item.name}} {{item.quotationNumber}}</span>
+          </md-autocomplete>
+          <md-chip-template>
+            <span>
+              <strong>{{$chip.name}}</strong>
+              <em>({{$chip.quotationNumber}})</em>
+            </span>
+          </md-chip-template>
+          <button class="md-chip-remove" ng-click="removeChips('illustrationOnHoldDatas')" md-chip-remove> <i class="material-icons">&#xE14C;</i> </button>
+        </md-chips>
+        <div layout="row">
+          <md-input-container flex="50">
+            <label class="font-gray">Filter</label>
+            <md-select class="border-red-2 pad-bot-5 pad-left-15" ng-model="memberInsuranceFilter" ng-change="filterIlustrasiList(memberInsuranceFilter, 'illustrationOnHoldDatas')">
+              <md-option ng-value="-1" ng-disabled="$index === 1"><em>default</em></md-option>
+              <md-option ng-value="1" ng-disabled="$index === 1">
+                show approved only
+              </md-option>
+            </md-select>
+          </md-input-container>
+          <md-input-container flex="50">
+            <label class="font-gray">Sorting</label>
+            <md-select class="border-red-2 pad-bot-5 pad-left-15" ng-model="orderBy" ng-change="sortingIlustrasiList(orderBy, 'illustrationOnHoldDatas')">
+              <md-option ng-value="-1" ng-disabled="$index === 1"><em>default</em></md-option>
+              <md-option ng-value="1" ng-disabled="$index === 1">
+                sort by created date
+              </md-option>
+            </md-select>
+          </md-input-container>
+        </div>
+        <a ng-click="statusIlustrasi()">
+          <span class="width-100 pull-left" ng-repeat="item in illustrationOnHoldDatas">
+            <div class="block-container with-user-level-agent marg-bot-10 position-relative">
+              <h5 class="font-gray marg-top-5 marg-bot-0"><strong class="text-uppercase">{{item.name}}</strong></h5>
+              <h5 class="font-gray marg-top-5 marg-bot-0">Dibuat  {{item.dateCreate | amDateFormat:'DD MMMM YYYY'}} | {{item.type}}</h5>
+              <div class="illustration-progress _single">
+                <div class="illustration-progress-container">
+                  <span ng-repeat="itemProgress in illustrationProgress">
+                    <i ng-if="item.progress > itemProgress.id" class="icon icon-illustration-progress ion-ios-checkmark balanced position-absolute" style="margin-left:{{(itemProgress.id-1)*21}}%">
+                    </i>
+                    <span ng-if="item.progress <= itemProgress.id"  ng-class="{'bg-red': itemProgress.id == item.progress, 'bg-light-gray': itemProgress.id > item.progress}" class="circled-number" style="margin-left:{{(itemProgress.id-1)*21}}%">
+                      {{itemProgress.id}}
+                    </span>
+                    <span class="vertcal-bar" ng-class="{'bg-green': item.progress > itemProgress.id, 'bg-light-gray': item.progress <= itemProgress.id}" ng-if="itemProgress.id < 5" style="margin-left:{{(itemProgress.id-1)*21}}%">&nbsp;</span>
+                    <span class="circled-number-label" ng-class="{'
+                      choose-product': itemProgress.name == 'Pilih Produk', 
+                      benefit: itemProgress.name == 'Manfaat', 
+                      illustration: itemProgress.name == 'Ilustrasi',
+                      'insured-profile': itemProgress.name == 'Profile Tertanggung' 
+                    }">
+                      {{itemProgress.name}}
+                    </span>
+                  </span>
+                </div>
+                <i class="icon ion-chevron-right pull-right h4 font-light-gray marg-top-7"></i>
+              </div>
+            </div>
+          </span>
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

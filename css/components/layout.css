@@ -1,0 +1,5 @@
+@media (min-width: 768px){
+  .scroll-content:not(.bg-content-red){
+    background: #f0f0f0;
+  }
+}

@@ -1,0 +1,122 @@
+<ion-view view-title="Syarat & ketentuan Tambahan" ng-controller="baseCtrl">
+  <ion-header-bar align-title="left" class="bar-assertive">
+      <a class="left-buttons" ng-href="#/">
+        <button menu-toggle="left" class="button button-icon icon ion-ios-arrow-back"></button>
+      </a>
+      <h1 class="title">LEMBAR PERSETUJUAN</h1>
+    </ion-header-bar>
+
+    <ion-content class="has-header">
+      <div class="heading-main-content">
+        <h3>SYARAT DAN KETENTUAN TAMBAHAN</h3>
+      </div>
+
+      <div class="content-main-description">
+
+        
+        <div class="list-desc">
+          <ol>
+            <li>
+              Pada saat ditandatanganinya Perjanjian Keagenan, Agen :
+
+              <ul class="list-alpha">
+                <li>Tidak mempunyai hubungan dan/atau perjanjian kerja dengan perusahaan asuransi lain.</li>
+                <li>Tidak mempunyai hubungan dan/atau perjanjian keagenan dengan perusahaan suransi lain.</li>
+                <li>Tidak pernah masuk daftar hitam perusahaan lain yang berhubungan dengan industri asuransi.</li>
+                <li>Jika sebelumnya pernah bergabung di perusahaan asuransi lain, telah mengakhiri hubungan dan/atau perjanjian keagenan dengan perusahaan asuransi lain sekurang-kurangnya 6 (enam) bulan, sebelum tanggal Perjanjian Keagenan ini (surat resmi pengakhiran hubungan keagenan dengan perusahaan asuransi lain telah dilampirkan dalam aplikasi Agen).</li>
+                <li>Tidak pernah terlibat tindakan kriminal di Indonesia atau di negara lain.</li>
+              </ul>
+            </li>
+            <hr class="list-item-divider">
+            <li>
+              Dengan ditandatanganinya Perjanjian Keagenan, Agen (beri tanda √ untuk pernyataan yang Anda anggap benar) :
+
+              <ion-list class="content-main-list subsection">
+                <ul class="check-list">
+                  <li class="marg-0 pad-0">
+                    <div class="list pad-0">
+                      <ion-checkbox class="pad-top-0 marg-top-10 no-border" ng-model="filter.list1">tidak mempunyai hubungan keluarga atau teman dekat yang bekerja sebagai karyawan Prudential Indonesia.
+                      </ion-checkbox>
+
+                      <ion-checkbox class="pad-top-0 marg-top-10 no-border" ng-model="filter.list2">mempunyai hubungan keluarga/teman dekat* yang bekerja sebagai karyawan Prudential Indonesia, dengan nama :
+                      </ion-checkbox>
+
+                    </div>
+                  </li>
+                </ul>
+              </ion-list>
+            </li>
+            <form action="" class="default-form marg-bot-20 pad-0">
+              <ol class="numbering-list marg-left-10">
+                <li class="pad-0 near-numbering for-form marg-top-0">
+                  <md-input-container class="md-icon-float md-block marg-bot-0 marg-top-10">
+                    <label class="font-black">Nama Lengkap</label>
+                    <input ng-model="" type="text">
+                    <div ng-messages="projectForm.description.$error">
+                      <div ng-message="required">Harus diisi.</div>
+                    </div>
+                  </md-input-container>
+
+                  <md-input-container class="md-icon-float md-block">
+                    <label class="font-black">Depatemen</label>
+                    <input ng-model="" type="text">
+                    <div ng-messages="projectForm.description.$error">
+                      <div ng-message="required">Harus diisi.</div>
+                    </div>
+                  </md-input-container>
+
+                </li>
+                  
+                <li class="pad-0 near-numbering for-form marg-top-0">
+                  <md-input-container class="md-icon-float md-block">
+                    <label class="font-black">Nama Lengkap</label>
+                    <input ng-model="user.name2" type="text">
+                    <div ng-messages="projectForm.description.$error">
+                      <div ng-message="required">Harus diisi.</div>
+                    </div>
+                  </md-input-container>
+
+                  <md-input-container class="md-icon-float md-block">
+                    <label class="font-black">Depatemen</label>
+                    <input class="no-border" ng-model="user.departement2" type="text">
+                    <div ng-messages="projectForm.description.$error">
+                      <div ng-message="required">Harus diisi.</div>
+                    </div>
+                  </md-input-container>
+                  
+                </li>
+              </ol>
+            </form>
+
+            <hr class="list-item-divider hr-pad-form">
+
+            <li>
+              Agen setuju untuk bertanggung jawab dan membebaskan Perusahaan dari setiap dan segala kerugian atau biaya yang timbul apabila satu atau lebih pernyataan dalam Butir 1 dan 2 diatas tidak benar/akurat. Jika di kemudian hari ditemukan ketidakbenaran atau ketidakakuratan atas pernyataan tersebut, maka Agen setuju jika Perusahaan berhak mengenakan tindakan disiplin sesuai dengan Perjanjian Keagenan, termasuk penangguhan maupun pemotongan Komisi dan pendapatan Agen lainnya sampai dengan pengakhiran Perjanjian.
+            </li>
+
+            <li>
+              Agen setuju untuk memberikan kuasa penuh kepada Perusahaan untuk memotong komisi-komisi yang berhak diterima oleh Agen, untuk dibayarkan oleh Perusahaan kepada Asosiasi Asuransi Jiwa Indonesia (AAJI) dan Asosiasi Asuransi Syariah Indonesia (AASI) guna pembayaran segala biaya yang berkaitan dengan sertifikasi dan lisensi keagenan penuh unit link, dan sertifikasi dan lisensi keagenan syariah termasuk biaya ujian sertifikasi dan lisensi keagenan penuh unit link dan syariah termasuk biaya ujian ulang, dan biaya perpanjangan atas sertifikasi dan lisensi keagenan penuh unit link dan syariah, dan lisensi grandfathering sesuai tarif biaya yang dikeluarkan oleh AAJI dan AASI. Kuasa ini diberikan dengan mengesampingkan pasal-pasal 1813, 1814, 1816 Kitab Undang-Undang Hukum Perdata Republik Indonesia.
+            </li>
+
+            <hr class="list-item-divider">
+
+           
+          </ol>
+        </div>
+
+        <div class="padd-syarat m-bottom-15" ng-controller="submitCtrl">
+          <button class="button button-assertive margin-0 button-full" ng-click="appNext('syarat-dan-ketentuan-keagenan-checked')">
+          Setuju
+          </button>
+        </div>
+        
+
+        
+      </div>
+    </ion-content>
+     <div ng-click="scrollTop()" class="back-to-top">
+      <i class="ion-chevron-up"></i>
+    </div>
+</ion-view>
+
+

@@ -1,0 +1,38 @@
+md-dialog.pru-md-dialog{
+  max-width:90%;
+  min-width: 290px;
+}
+
+.pru-md-dialog .md-toolbar-tools, .pru-md-dialog md-toolbar{
+  background-color: #f00;
+  height: 40px !important;
+  max-height:40px !important;
+  min-height:40px !important;
+}
+
+.pru-md-dialog .md-toolbar-tools div.title{
+  width: 100%;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+
+.pru-md-dialog md-dialog-actions{
+  padding:0 10px 20px;
+}
+
+.pru-md-dialog md-dialog-actions .button{
+  min-height: 30px;
+  padding: 6px 10px;
+  font-size: 12px;
+  margin: 0 5px;
+}
+
+.pru-md-dialog md-dialog-actions .button.button-cancel{
+  background-color: #959595 !important;
+}
+
+.landscape-upload-modal{
+  top: 10%;
+  min-height: 80%;
+}

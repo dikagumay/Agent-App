@@ -1,0 +1,43 @@
+<ion-content class="has-header-tabs">
+  <form name="jejaringSosial" class="default-form" ng-submit="sendData($event,currentMenuTab)">
+    <md-input-container class="md-icon-float md-block">
+      <label>Akun Facebook Anda</label>
+      <md-icon aria-label="person" class="ion-social-facebook"></md-icon>
+      <input ng-model="candidatePack.dataJejaring.facebook" ng-blur="save()" type="text" required>
+      <div ng-messages="jejaringSosial.facebook.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+
+    <md-input-container class="md-icon-float md-block">
+      <label>Akun Twitter Anda</label>
+      <md-icon aria-label="person" class="ion-social-twitter"></md-icon>
+      <input ng-model="candidatePack.dataJejaring.twitter" ng-blur="save()" type="text" required>
+      <div ng-messages="jejaringSosial.twitter.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+
+    <md-input-container class="md-icon-float md-block">
+      <label>Akun LinkedIn Anda</label>
+      <md-icon aria-label="person" class="ion-social-linkedin"></md-icon>
+      <input ng-model="candidatePack.dataJejaring.linkedin" ng-blur="save()" type="text" required>
+      <div ng-messages="jejaringSosial.linkedin.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+
+    <md-input-container class="md-icon-float md-block">
+      <label>Akun Social lain</label>
+      <md-icon aria-label="person" class="ion-ios-world"></md-icon>
+      <input ng-model="candidatePack.dataJejaring.other" ng-blur="save()" type="text" required>
+      <div ng-messages="jejaringSosial.other.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+
+    <div class="form-group">
+      <button class="button button-assertive button-block next-tab" type="submit">Lanjut</button>
+    </div>
+  </form>
+</ion-content>  

@@ -1,0 +1,73 @@
+<ion-view view-title="Data Kandidat" ng-controller="dataCandidatePackCtrl" cache-view="false">
+  <ion-header-bar align-title="left" class="bar-assertive bar-plain">
+    <!-- <a class="left-buttons" ng-href="#/">
+      <button menu-toggle="left" class="button button-icon icon ion-ios-arrow-back"></button>
+    </a>-->
+    <h1 class="title">Formulir Aplikasi Keagenan</h1>
+  </ion-header-bar>
+  <div class="top-tabs tabs-striped tabs-top tabs-background-light tabs-color-assertive">
+    <div class="papertab tabs">
+      <div class="tab-scrolling pru-logo" onload="navAnimation()">
+        <a ng-repeat="menu in menuTabs" href="#" class="tab-item" ng-click="movingTab($event, menu)" ng-class="{active:isActiveTab(menu.url)}">
+          <span ng-bind-html="menu.name"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="tab-content">
+    <div id="pribadi" ng-include="currentMenuTab.url" onload="loadFormRequirements()">
+    </div>
+  </div>
+  <div class="modal fade potrait-photo-modal" id="potrait-photo-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="">
+            <h4 class="text-center">Resize and Crop Image 123</h4>
+            <div class="img-container pasFoto potrait-photo-container">
+              <img src="" alt="Picture"/>
+            </div>
+            <div class="actions crop-tools">
+              <span data-method="zoom" data-option="0.1" title="Zoom In"><i class="material-icons">&#xE8FF;</i></span>
+              <span data-method="zoom" data-option="-0.1" title="Zoom Out"><i class="material-icons">&#xE900;</i></span>
+              <span data-method="rotate" data-option="-90" title="Rotate Left"><i class="material-icons">&#xE419;</i></span>
+              <span data-method="rotate" data-option="90" title="Rotate Right"><i class="material-icons">&#xE41A;</i></span>
+            </div>  
+            <div class="dtp-buttons text-center clearfix">
+              <button class="dtp-btn-cancel button button-white pull-left" data-dismiss="modal">Cancel</button>
+              <button class="export-potrait-photo dtp-btn-cancel button button-white pull-right" data-dismiss="modal">Crop</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <div class="modal fade landscape-photo-modal" id="landscape-photo-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="">
+            <h4 class="text-center">Resize and Crop Image</h4>
+            <div class="img-container pasFoto landscape-photo-container">
+              <img src="" alt="Picture"/>
+            </div>
+            <div class="actions crop-tools">
+              <span data-method="zoom" data-option="0.1" title="Zoom In"><i class="material-icons">&#xE8FF;</i></span>
+              <span data-method="zoom" data-option="-0.1" title="Zoom Out"><i class="material-icons">&#xE900;</i></span>
+              <span data-method="rotate" data-option="-90" title="Rotate Left"><i class="material-icons">&#xE419;</i></span>
+              <span data-method="rotate" data-option="90" title="Rotate Right"><i class="material-icons">&#xE41A;</i></span>
+            </div>  
+            <div class="dtp-buttons text-center clearfix">
+              <button class="dtp-btn-cancel button button-white pull-left" data-dismiss="modal">Cancel</button>
+              <button class="export-landscape-photo pas-foto dtp-btn-cancel button button-white pull-right" data-dismiss="modal">Crop</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <div class="backdrop-place"></div>
+  <div class="load-spinner">
+    <div class="cssload-double-torus"></div>
+  </div>
+</ion-view>

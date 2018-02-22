@@ -1,0 +1,36 @@
+<div ng-init="takenAlokasiDana()">
+  <md-input-container class="md-block no-error marg-0" md-no-float>
+    <input ng-model="searchInvestation" class="b-border-gray" type="text" placeholder="ketik disini untuk mencari">
+  </md-input-container>
+  <div class="text-left">
+    <strong class="display-block marg-top-10 marg-bot-10 text-center text-uppercase">Nama Investasi</strong>
+    <ul>
+      <strong class="text-uppercase marg-top-0">Konservatif</strong>
+      <li ng-repeat="item in popupAlokasiDana | filter:{category:'Konservatif', name:searchInvestation}" class="pad-left-15 marg-bot-10 font-gray">
+        <md-checkbox ng-model="item.taken" md-no-ink aria-label="Checkbox No Ink" class="h6 right-checkbox font-gray marg-0"> 
+          <p ng-bind-html="item.name" class="pru-logo-text display-block width-70 marg-bot-0 marg-top-5"></p> 
+        </md-checkbox> 
+      </li>
+    </ul>
+  </div>
+  <div class="text-left">
+    <ul>
+      <strong class="text-uppercase marg-top-0">Moderat</strong>
+      <li ng-repeat="item in popupAlokasiDana | filter:{category:'Moderat', name:searchInvestation}" class="pad-left-15 marg-bot-10 font-gray">
+        <md-checkbox ng-model="item.taken" ng-change="addRemoveBenefit(item, item.taken)" md-no-ink aria-label="Checkbox No Ink"  class="h6 right-checkbox font-gray marg-0"> 
+          <p ng-bind-html="item.name" class="pru-logo-text display-block width-70 marg-bot-0 marg-top-5"></p> 
+        </md-checkbox> 
+      </li>
+    </ul>
+  </div>
+  <div class="text-left">
+    <ul>
+      <strong class="text-uppercase marg-top-0">Agresif</strong>
+      <li ng-repeat="item in popupAlokasiDana | filter:{category:'Agresif', name:searchInvestation}" class="pad-left-15 marg-bot-10 font-gray">
+        <md-checkbox ng-model="item.taken" ng-change="addRemoveBenefit(item, item.taken)" md-no-ink aria-label="Checkbox No Ink"  class="h6 right-checkbox font-gray marg-0"> 
+          <p ng-bind-html="item.name" class="pru-logo-text display-block width-70 marg-bot-0 marg-top-5"></p> 
+        </md-checkbox> 
+      </li>
+    </ul>
+  </div>
+</div>

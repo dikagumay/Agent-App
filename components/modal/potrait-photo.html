@@ -1,0 +1,18 @@
+<ion-modal-view>
+  <ion-header-bar align-title="left" class="bar-assertive bar-plain potrait-upload-modal">
+    <a class="left-buttons" ng-click="potraitPhotoModal.hide()">
+      <button menu-toggle="left" class="button button-icon icon ion-ios-arrow-back"></button>
+    </a>
+    <h1 class="title">Foto KTP</h1>
+    <button class="button button-clear button-primary button-header-clear" ng-click="usePotraitPhoto($event)">USE</button>
+  </ion-header-bar>
+  <ion-content class="cropper-has-header">
+    <div ng-if='potraitImage != undefined'>
+      <ng-croppie src="potraitImage" class="cropit-image-input" ng-model='potraitOutputImage' boundry="{w: '100%', h: 250}" viewport="{w: 100, h:130}" mousezoom="true" zoom="true" enableOrientation="true" rotation="potraitImageRotation" type="square"></ng-croppie>
+      <div class="padding">
+        <a ng-click="rotateImagePotrait()" class="button button-assertive button-block"><i class="ion-android-refresh"></i> Rotate</a>
+      </div>
+      <img ng-src="{{potraitOutputImage}}" class="image-modal-result" id="potraitResult">
+    </div>
+  </ion-content>
+</ion-modal-view>

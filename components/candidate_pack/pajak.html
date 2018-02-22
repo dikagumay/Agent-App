@@ -1,0 +1,90 @@
+<ion-content class="has-header-tabs">
+  <form name="formPajak" class="default-form" ng-submit="sendData($event,currentMenuTab)">
+    <md-input-container class="md-icon-float md-block" flex-gt-sm>
+      <label>Status NPWP</label>
+      <md-icon class="material-icons">&#xE55A;</md-icon>
+      <md-select ng-model="candidatePack.dataPajak.npwpStatus" ng-change="save()">
+        <md-option value="Mr">Pribadi</md-option>
+        <md-option value="Mrs">Suami</md-option>
+      </md-select>
+      <div class="md-errors-spacer"></div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Nomor Pokok Wajib Pajak</label>
+      <md-icon class="material-icons">&#xE8AA;</md-icon>
+      <input ng-model="candidatePack.dataPajak.npwpNumber" ng-blur="save()" type="number" required>
+      <div ng-messages="formPribadi.pajakNumber.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Nama Wajib Pajak</label>
+      <md-icon class="material-icons">&#xE7FD;</md-icon>
+      <input ng-model="candidatePack.dataPajak.npwpName" ng-blur="save()" type="text" required>
+      <div ng-messages="formPribadi.name.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Alamat 1</label>
+      <md-icon class="material-icons">&#xE88A;</md-icon>
+      <input ng-model="candidatePack.dataPajak.address1" ng-blur="save()"  type="text">
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Alamat 2</label>
+      <md-icon class="material-icons">&#xE88A;</md-icon>
+      <input ng-model="candidatePack.dataPajak.address2" ng-blur="save()" type="text">
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Alamat 3</label>
+      <md-icon class="material-icons">&#xE88A;</md-icon>
+      <input ng-model="candidatePack.dataPajak.address3" ng-blur="save()" type="text">
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block" flex-gt-sm>
+      <label>Provinsi</label>
+      <md-icon class="material-icons">&#xE0AF;</md-icon>
+      <md-select ng-model="candidatePack.dataPajak.province" ng-change="save()">
+        <md-option value="Aceh">Aceh</md-option>
+        <md-option value="Jawa barat">Jawa barat</md-option>
+        <md-option value="Jawa timur">Jawa timur</md-option>
+        <md-option value="Sulawesi">Sulawesi</md-option>
+      </md-select>
+      <div class="md-errors-spacer"></div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block" flex-gt-sm>
+      <label>Kota</label>
+      <md-icon class="material-icons">&#xE0AF;</md-icon>
+      <md-select ng-model="candidatePack.dataPajak.city" ng-change="save()">
+        <md-option value="Bandung">Bandung</md-option>
+        <md-option value="Bogor">Bogor</md-option>
+        <md-option value="Bekasi">Bekasi</md-option>
+        <md-option value="Jakarta">Jakarta</md-option>
+      </md-select>
+      <div class="md-errors-spacer"></div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Kode POS</label>
+      <md-icon class="material-icons">&#xE0BE;</md-icon>
+      <input ng-model="candidatePack.dataPajak.zipCode" ng-blur="save()" type="number" required>
+      <div ng-messages="formPribadi.posCode.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+
+    <div class="form-group image-editor npwp">
+      <div class="image-holder npwp">
+        <i class="material-icons" ng-if='candidatePack.dataPajak.npwpImage == undifined'>&#xE3F4;</i>
+        <img class="image-result" ng-src="{{candidatePack.dataPajak.npwpImage}}" ng-if='candidatePack.dataPajak.npwpImage != undefined'>
+      </div>
+      <div class="upload-wrap">
+        <input type="file" id="npwp" class="cropit-image-input" ng-model="candidatePack.dataPajak.npwpImage" landscape-photo-uploader />
+        <a class="button button-assertive button-block">upload foto NPWP Anda</a>
+      </div>
+      <a class="button button-dark button-block" ng-model="candidatePack.dataPajak.npwpImage" take-landscape-photo>Ambil gambar</a>
+    </div>
+
+    <div class="form-group">
+      <button class="button button-assertive button-block next-tab" type="submit">Lanjut</button>
+    </div>
+  </form>
+</ion-content>

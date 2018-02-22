@@ -1,0 +1,71 @@
+<ion-content class="has-header-tabs">
+  <div class="card" flex>
+    <form name="formCreateCreatepilihProduk" class="default-form">
+      <div class="dual-column" layout="row" layout-xs="column">
+        <div class="first-column marg-right-md-10" flex="50" flex-xs="100">
+          <md-input-container class="md-icon-float md-block">
+            <label>Nomor SPAJ/Polis</label>
+            <md-icon aria-label="person" class="material-icons"><i class="pru-icons pf-icon-pru-icon_agreement"></i></md-icon>
+            <input ng-model="CreatepilihProduk.nospaj" type="text" required>
+            <div ng-messages="noSpaj.nospaj.$error">
+              <div ng-message="required">Harus diisi.</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-icon-float md-block">
+            <label>Jenis Produk</label>
+            <md-icon aria-label="person" class="material-icons"><i class="pru-icons pf-icon-pru-icon_contract"></i></md-icon>
+            <input ng-model="CreatepilihProduk.jenisProduk" type="text" required>
+            <div ng-messages="formPillihProduk.jenisProduk.$error">
+              <div ng-message="required">Harus diisi.</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-icon-float md-block">
+            <label>Nama Produk</label>
+            <md-icon aria-label="person" class="material-icons"><i class="pru-icons pf-icon-pru-icon_contract"></i></md-icon>
+            <input ng-model="CreatepilihProduk.name" type="text" required>
+            <div ng-messages="CreatepilihProduk.name.$error">
+              <div ng-message="required">Harus diisi.</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-icon-float md-block marg-bot-0">
+            <label>Frekuensi Pembayaran</label>     
+            <md-icon aria-label="person" class="material-icons"><i class="pru-icons pf-icon-pru-icon_money"></i></md-icon>
+            <input  value="{{pilihProduk.pembayaranFrekuensi}}" type="text" required>
+            <div ng-messages="pilihProduk.frekuensiPembayaran.$error">
+              <div ng-message="required">Harus diisi.</div>
+            </div>
+            <div class="form-group marg-bot-20 marg-top-10 icon-check marg-left-0">
+              <md-radio-group ng-model="pilihProduk.pembayaranFrekuensi" class="marg-bot-10" layout="row">
+                <md-radio-button ng-value="'Bulanan'" flex-xs="60" flex="50" class="md-primary small">Bulanan</md-radio-button>
+                <md-radio-button ng-value="'Tiga Bulanan'" flex-xs="40" flex="50" class="small"> Tiga Bulanan </md-radio-button>
+              </md-radio-group>
+              <md-radio-group ng-model="pilihProduk.pembayaranFrekuensi" class="" layout="row">
+                <md-radio-button ng-value="'Setengah Tahunan'" flex-xs="60" flex="50" class="md-primary small">Setengah Tahunan</md-radio-button>
+                <md-radio-button ng-value="'Tahunan'" flex-xs="40" flex="50" class="small"> Tahunan </md-radio-button>
+              </md-radio-group>
+            </div>
+          </md-input-container>
+        </div>
+        <div class="second-column marg-left-md-10" flex="50" flex-xs="100">
+          <v-accordion multiple class="vAccordion--default custom-pru">
+            <v-pane expanded="true">
+              <v-pane-header class="header-icon compact">
+                <md-icon aria-label="person" class="material-icons font-white">&#xE7FD;</md-icon> Alokasi Dana 
+              </v-pane-header>
+              <v-pane-content class="pad-bot-0">
+              <div class="sub-lists accordion-body pad-top-10 pad-left-10 pad-right-10">
+                <p>
+                  Pilih produk untuk alokasi dana tidak tersedia. Pillih nama produk untuk melihat daftar produk yang tersedia untuk mengalokasikan dana 
+                </p>
+              </div>
+              </v-pane-content>
+            </v-pane>
+          </v-accordion>
+          <div class="form-group">
+            <button class="button button-block button-assertive next-tab" type="submit">Lanjut</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</ion-content>

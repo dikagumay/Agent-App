@@ -1,0 +1,29 @@
+<ion-view view-title="Ujian Kode Etik Perusahaan Question 1" ng-controller="calonAgenCtrl">
+  <ion-header-bar align-title="left" class="bar-assertive">
+    <a class="left-buttons" ng-href="#/ujian-peraturan-dan-kode-etik">
+      <button menu-toggle="left" class="button button-icon icon ion-ios-arrow-back"></button>
+    </a>
+    <h1 class="title multiple-line title-left">UJIAN PERATURAN DAN KODE ETIK PERUSAHAAN</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <div class="content-profile-head content-white-head profile-name small-header">
+      <div class="center-content">
+        <h5 class="text-center font-gray"> PERTANYAAN 1 DARI 20</h5>
+      </div>
+    </div>
+    <div class="content-standard">
+      <p class="font-black">
+        Berapa lamakah masa tunggu seorang agen jika ingin pindah dari suatu perusahaan asuransi ke perusahaan asuransi lain, setelah dikeluarkan secara resmi dari perusahaan lamanya?
+      </p>
+      <form action="" class="custom-radio-btn form-quest">
+        <div class="form-group" ng-repeat="data in dataQuest1">
+          <input type="radio" id="radio{{data.id}}" name="quest1" />
+          <label for="radio{{data.id}}"><span></span>{{data.quest}}</label>
+        </div>
+      </form>
+    </div>
+    <div class="content-standard">
+      <button class="button button-assertive button-block" ng-click="ujianPeraturanDanKodeEtikQ2()">Lanjut</button>
+    </div>
+  </ion-content>
+</ion-view>

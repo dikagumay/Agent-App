@@ -1,0 +1,203 @@
+<div class="calc-container card pad-0 width-100 marg-top-0 marg-bot-0 bg-light-gray-ebebeb">
+  <div class="pull-left width-100 calc-wrapper" ng-class="{'hide-active': calcHide}">
+    <span class="width-100 b-border-white pull-left marg-bot-10"> 
+      <div class="block-container b-border-none marg-bot-0"> 
+        <div>
+          <span class="display-inline-block width-50">
+            <h6 class="font-gray marg-bot-5">Minimum Uang Pertanggungan</h6>
+            <h4 class="mup-font marg-top-0" ng-init="manfaat.minimumUangPertanggungan = manfaat.minimumUangPertanggungan || 0" >{{manfaat.minimumUangPertanggungan | currency:"Rp ":2}}</h4>
+          </span>
+          <span class="pull-right width-50">
+            <h6 class="font-gray marg-bot-5 text-right">Maksimum Uang Pertanggungan</h6>
+            <h4 class="mup-font marg-top-0 text-right" ng-init="manfaat.maksimumUangPertanggungan = manfaat.maksimumUangPertanggungan || 0">{{manfaat.maksimumUangPertanggungan | currency:"Rp ":2}}</h4>
+          </span>
+        </div>
+      </div>
+    </span>
+    <span class="width-100 pull-left b-border-white-md marg-bot-10"> 
+      <div class="block-container b-border-none marg-bot-0"> 
+        <div class="content-header pad-0 marg-top-5 marg-bot-5 marg-left-0">
+          <span class="display-inline-block width-60 pad-left-10 bg-gray">
+            <h6 class="font-gray marg-bot-5 font-white marg-top-5">Premi Unaplied</h6>
+            <h4 ng-init="manfaat.premiUnapplied = manfaat.premiUnapplied || 0" class="font-size-16 marg-top-0 font-white marg-bot-5">{{manfaat.premiUnapplied | currency:"Rp ":2}}</h4>
+          </span>
+          <span class="pull-right text-right width-40 font-white bg-red text-center">
+            <h5 class="font-white marg-top-15 marg-bot-17">HITUNG</h5>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>
+  <a href="" class="pull-left width-100 bg-light-gray-ebebeb" ng-click="calcHide = !calcHide">
+    <h6 class="font-red text-center text-uppercase">
+      <span ng-if="calcHide == false">Tutup Kalkulator</span>
+      <span ng-if="calcHide == true">Hitung</span>
+    </h6>
+  </a>
+</div>
+<ion-content class="has-header-tabs" ng-cloak>
+  <div class="card pad-0 pad-top-20">
+    <form name="formCreatemanfaat" class="default-form">
+      <div layout="column">
+        <div class="card-list marg-0 pad-0 border-radius-0 no-border-bottom">
+          <div class="body-card pad-10">
+            <div layout="column">
+              <div class="marg-right-md-10" flex="100">
+                <div class="card-info-list">
+                  <h4 class="marg-bot-5 marg-top-0">Jenis Produk</h4>
+                  <p class="marg-0">Besar Premi Tahunan</p>
+                </div>
+                <div class="card-info-list">
+                  <h4 class="marg-bot-5 marg-top-10">PRUsaver</h4>
+                  <div class="h6 marg-0">
+                    <span class="font-gray h6 marg-0">Premi Tahunan</span>
+                    <input class="width-100 text-left marg-top-5" value="{{createManfaat.premiTahunan}}" type="text" />
+                  </div>
+                </div>
+                <div class="card-info-list">
+                  <p>
+                    Rencana Masa Pembayaran yang dikehendaki Nasabah (dalam tahun)
+                  </p>
+                </div>
+              </div>
+              <div class="first-column marg-left-md-10" flex="100">
+                <div class="card-info-list no-border-bottom  pad-bot-0 marg-bot-0">
+                  <md-input-container class="md-block marg-bot-0" flex-gt-sm>
+                    <label>Alternatif Rencana Pembayaran</label>
+                    <md-select ng-model="polis.alternative">
+                      <md-option value="none">None</md-option>
+                    </md-select>
+                  </md-input-container>
+                  <h4 class="marg-bot-5 marg-top-10">Halaman Ringkas Manfaat, Asumsi Nilai Tunai di Masa Depan</h4>
+                  <div layout="row">
+                    <div flex-xs="33" flex="20" class="pad-right-20">
+                      <md-input-container class="md-block marg-bot-0" flex-gt-sm>
+                        <label>Usia 1</label>
+                        <md-select ng-model="polis.alternative">
+                          <md-option value="none">None</md-option>
+                        </md-select>
+                      </md-input-container>
+                    </div>
+                    <div flex-xs="33" flex="20" class="pad-left-10 pad-right-10">
+                      <md-input-container class="md-block marg-bot-0" flex-gt-sm>
+                        <label>Usia 2</label>
+                        <md-select ng-model="polis.alternative">
+                          <md-option value="none">None</md-option>
+                        </md-select>
+                      </md-input-container>
+                    </div>
+                    <div flex-xs="33" flex="20" class="pad-left-20">
+                      <md-input-container class="md-block marg-bot-0" flex-gt-sm>
+                        <label>Usia 3</label>
+                        <md-select ng-model="polis.alternative">
+                          <md-option value="none">None</md-option>
+                        </md-select>
+                      </md-input-container>
+                    </div>
+                  </div>
+                  <v-accordion multiple class="vAccordion--default custom-pru marg-top-10">
+                    <v-pane expanded="true" class="marg-bot-10">
+                      <v-pane-header class="header-icon">
+                       <md-icon aria-label="person" class="material-icons font-white">&#xE7FD;</md-icon> Manfaat
+                      </v-pane-header>
+                      <v-pane-content>
+                        <div class="sub-lists accordion-body pad-top-5 pad-left-10 pad-right-10">
+                          <i class="icon ion-edit h6 font-gray"></i> <span class="font-red font-size-10 marg-right-20">EDIT</span>
+                          <i class="icon ion-android-person-add h6 font-gray"></i> <span class="font-red font-size-10">TAMBAH</span>
+                          <md-input-container class="md-block marg-bot-0" flex-gt-sm>
+                            <label>PRUlink assurance account</label>
+                            <md-select ng-model="polis.alternative">
+                              <md-option value="none">None</md-option>
+                            </md-select>
+                          </md-input-container>
+                        </div>
+                      </v-pane-content>
+                    </v-pane>
+                    <v-pane expanded="true" class="marg-bot-10">
+                      <v-pane-header class="header-icon">
+                       <md-icon aria-label="person" class="material-icons font-white">&#xE7FD;</md-icon> top up/penarikan
+                      </v-pane-header>
+                      <v-pane-content>
+                        <div class="sub-lists accordion-body pad-top-5 pad-left-10 pad-right-10">
+                          <i class="icon ion-edit h6 font-gray"></i> <span class="font-red font-size-10 marg-right-20">EDIT</span>
+                          <i class="icon ion-android-person-add h6 font-gray"></i> <span class="font-red font-size-10">TAMBAH</span>
+                          <div class="list list-empty" layout-xs="column" layout-gt-xs="row">
+                            <div flex="" class="flex">
+                              <div class="block-container marg-0 b-border-white">
+                                <div class="item item-wrapper no-border-bottom" href="#">
+                                  <span class="item pad-left-0 item-icon-right b-border-gray">
+                                    <h2 class="text-uppercase">TOP UP</h2>
+                                    <i class="icon ion-play font-size-16 pull-right font-red" ng-click="openSublist = !openSublist" ng-class="{'rotate-30':openSublist == true, 'rotate-90':openSublist != true}"></i>
+                                  </span>
+                                  <ul class="list sub-list pad-left-0" ng-show="openSublist">
+                                    <li class="item pad-left-0 b-border-gray marg-top-1">
+                                      <div layout="row" class="marg-bot-10">
+                                        <div flex-xs="50" flex="50" class="pad-right-20">
+                                          <div class="h6 marg-0">
+                                            <span class="font-gray h6 marg-0">Tahun Polis Sejak</span>
+                                            <input class="input-little-box marg-top-5" value="{{createManfaat.tahunPolisSejak}}" type="text" value="0" size="1" maxlength="1" />
+                                          </div>
+                                        </div>
+                                        <div flex-xs="50" flex="50" class="pad-right-20">
+                                          <div class="h6 marg-0">
+                                            <span class="font-gray h6 marg-0">Tahun Polis Sampai</span>
+                                            <input class="input-little-box marg-top-5" value="{{createManfaat.tahunPolisSampai}}" type="text" value="0" size="1" maxlength="1" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div layout="row">
+                                        <md-input-container class="md-block md-errors-hide" flex>
+                                          <label>Jumlah</label>
+                                          <input ng-model="createManfaat.jumlah" type="text" required>
+                                        </md-input-container>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="item item-wrapper no-border-bottom" href="#">
+                                  <span class="item pad-left-0 item-icon-right b-border-gray">
+                                    <h2 class="text-uppercase">Penarikan</h2>
+                                    <i class="icon ion-play font-size-16 pull-right font-red" ng-click="openSublist2 = !openSublist2" ng-class="{'rotate-30':openSublist2 == true, 'rotate-90':openSublist2 != true}"></i>
+                                  </span>
+                                  <ul class="list sub-list pad-left-0" ng-show="openSublist2">
+                                    <li class="item pad-left-0 marg-top-1">
+                                      <div layout="row" class="marg-bot-10">
+                                        <div flex-xs="50" flex="50" class="pad-right-20">
+                                          <div class="h6 marg-0">
+                                            <span class="font-gray h6 marg-0">Tahun Polis Sejak</span>
+                                            <input class="input-little-box marg-top-5" value="{{createManfaat.tahunPolisSejak}}" type="text" value="0" size="1" maxlength="1" />
+                                          </div>
+                                        </div>
+                                        <div flex-xs="50" flex="50" class="pad-right-20">
+                                          <div class="h6 marg-0">
+                                            <span class="font-gray h6 marg-0">Tahun Polis Sampai</span>
+                                            <input class="input-little-box marg-top-5" value="{{createManfaat.tahunPolisSampai}}" type="text" value="0" size="1" maxlength="1" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div layout="row">
+                                        <md-input-container class="md-block md-errors-hide" flex>
+                                          <label>Jumlah</label>
+                                          <input ng-model="createManfaat.jumlah" type="text" required>
+                                        </md-input-container>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </v-pane-content>
+                    </v-pane>
+                  </v-accordion>
+                  <button class="button button-block marg-0 marg-top-0 button-assertive text-uppercase" ng-click="saveTemplate($event)">Simpan template</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,84 @@
+<ion-content class="has-header-tabs-validation" ng-cloak delegate-handle="content">
+  <div layout="row">
+    <div class="card">
+      <form name="formPolis" class="default-form">
+        <md-input-container class="md-icon-float md-block first-column">
+          <label>Nama Lengkap Sesuai KTP</label>
+          <md-icon aria-label="person" class="material-icons">&#xE7FD;</md-icon>
+          <input ng-model="polis.nameHolder" id="nameHolder" type="text" required>
+          <div ng-messages="formPolis.nameHolder.$error">
+            <div ng-message="required">Harus diisi.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block marg-bot-0">
+          <label>Tipe</label>
+          <md-icon aria-label="person" class="material-icons">&#xE7FD;</md-icon>
+          <md-select ng-model="polis.tipe">
+            <md-option value="individu">Individu</md-option>
+            <md-option value="korporat">Korporat</md-option>
+          </md-select>
+          <div class="md-errors-spacer"></div>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+          <label>Pemegang polis juga sebagai</label>
+          <md-icon aria-label="person" class="material-icons">&#xE7FD;</md-icon>
+          <md-select ng-model="pemegangPolis">
+            <md-option ng-repeat="option in registerPolicyHolders" ng-value="option.key">{{option.value}}</md-option>
+          </md-select>
+          <div class="md-errors-spacer"></div>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block" >
+          <md-datepicker ng-required class="md-icon-float md-block" id="tanggalLahir" ng-model="polis.tanggalLahir" md-open-on-focus md-placeholder="Tanggal Lahir">
+            <div ng-messages="formPolis.born_date.$error">
+            </div>
+          </md-datepicker>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block marg-bot-0">
+          <label>Pekerjaan</label>
+          <md-icon aria-label="person" class="material-icons">&#xE8F9;</md-icon>
+          <md-select ng-model="polis.work">
+            <md-option value="none">None</md-option>
+            <md-option value="pelayantoko">Pelayan Toko</md-option>
+          </md-select>
+          <div class="md-errors-spacer"></div>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+          <label>Kelas Pekerjaan</label>
+          <md-icon aria-label="person" class="material-icons">&#xE8F9;</md-icon>
+          <input value="{{profileTertanggung.kelasPekerjaan}}" type="text" value="0" size="1" maxlength="1" required>
+          <div ng-messages="formPolis.descriptionWork.$error">
+            <div ng-message="required">Harus diisi.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+          <label>Deskripsi Pekerjaan</label>
+          <md-icon aria-label="person" class="material-icons">&#xE8F9;</md-icon>
+          <input ng-model="polis.descriptionWork" id="jobDescription" type="text" required>
+          <div ng-messages="formPolis.descriptionWork.$error">
+            <div ng-message="required">Harus diisi.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block" flex-gt-sm>
+          <label>Bidang Usaha</label>
+          <md-icon aria-label="person" class="material-icons">&#xE8F9;</md-icon>
+          <md-select ng-model="polis.bidang">
+            <md-option value="none">None</md-option>
+            <md-option value="toko"> Toko/pengecer lainnya</md-option>
+          </md-select>
+          <div class="md-errors-spacer"></div>
+        </md-input-container>
+        <div class="form-group pad-right-10">
+          <label class="text-uppercase">Catatan Khusus</label>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.
+          </p>
+        </div>
+        <div class="form-group">
+          <button type="button" class="button button-block button-assertive" ng-click="nextFunction($event)" type="submit">Lanjut</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

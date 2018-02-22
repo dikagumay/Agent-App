@@ -1,0 +1,149 @@
+<ion-content class="has-header-tabs">
+  <form name="formKeagenan" class="default-form" ng-submit="sendData($event,currentMenuTab)">
+    <md-input-container class="md-icon-float md-block" flex-gt-sm>
+      <label>Status Keagenan</label>
+      <md-icon class="material-icons">&#xE8F9;</md-icon>
+      <md-select ng-model="candidatePack.dataKeagenan.AgentStatus" ng-change="save()">
+        <md-option value="1">1</md-option>
+        <md-option value="2">2</md-option>
+      </md-select>
+      <div class="md-errors-spacer"></div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Kode Agen</label>
+      <md-icon class="material-icons">&#xE8AA;</md-icon>
+      <input ng-model="candidatePack.dataKeagenan.agentCode" ng-blur="save()" type="text" required>
+      <div ng-messages="formkeagenan.agentCode.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block" flex-gt-sm>
+      <label>Apakah Istri/Suami Anda adalah agen atau manager keagenan di PT Prudential Life Assurance?</label>
+      <md-icon class="material-icons">&#xE8F9;</md-icon>
+      <md-select ng-model="candidatePack.dataKeagenan.matesAlreadyAgent" ng-change="save()">
+        <md-option value="Ya">Ya</md-option>
+        <md-option value="Tidak">Tidak</md-option>
+      </md-select>
+      <div class="md-errors-spacer"></div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Sebutkan kode agen Istri/Suami Anda</label>
+      <md-icon class="material-icons">&#xE8AA;</md-icon>
+      <input ng-model="candidatePack.dataKeagenan.matesAgentCode" ng-blur="save()" type="text" required>
+      <div ng-messages="formkeagenan.matesAgentCode.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Kantor pemasaran mandiri kandidat</label>
+      <md-icon class="material-icons">&#xE84F;</md-icon>
+      <input ng-model="candidatePack.dataKeagenan.candidateOfficeMarketing" ng-blur="save()" type="text" required>
+      <div ng-messages="formkeagenan.candidateOfficeMarketing.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Nama Perekrut</label>
+      <md-icon class="material-icons">&#xE8D3;</md-icon>
+      <input ng-model="candidatePack.dataKeagenan.recruitersName" ng-blur="save()" type="text" required>
+      <div ng-messages="formkeagenan.recruitersName.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Kode Agen Perekrut</label>
+      <md-icon class="material-icons">&#xE8AA;</md-icon>
+      <input ng-model="candidatePack.dataKeagenan.recruitersCode" ng-blur="save()" type="text" required>
+      <div ng-messages="formkeagenan.recruitCode.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Kantor pemasaran mandiri perekrut</label>
+      <md-icon class="material-icons">&#xE84F;</md-icon>
+      <input ng-model="candidatePack.dataKeagenan.recruitersOffice" ng-blur="save()" type="text" required>
+      <div ng-messages="formkeagenan.recruitersOffice.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Nama Manager Keagenan</label>
+      <md-icon class="material-icons">&#xE8D3;</md-icon>
+      <input ng-model="candidatePack.dataKeagenan.managerName" ng-blur="save()" type="text" required>
+      <div ng-messages="formkeagenan.managerName.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Kode Agen Manager Keagenan</label>
+      <md-icon class="material-icons">&#xE8AA;</md-icon>
+      <input ng-model="candidatePack.dataKeagenan.managerCode" ng-blur="save()" type="text" required>
+      <div ng-messages="formkeagenan.managerCode.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Kantor pemasaran mandiri perekrut</label>
+      <md-icon class="material-icons">&#xE84F;</md-icon>
+      <input ng-model="candidatePack.dataKeagenan.recruitersManagerOffice" ng-blur="save()" type="text" required>
+      <div ng-messages="formkeagenan.recruitersManagerOffice.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block" flex-gt-sm>
+      <label>Apakah Anda sebelumnya telah memiliki polis asuransi PT Prudential Life Assurance sebagai tertanggung jawab utama, tertanggung tambahan, pemegang polis, atau penerima manfaat polis?</label>
+      <md-icon class="material-icons">&#xE8F9;</md-icon>
+      <md-select ng-model="candidatePack.dataKeagenan.havePolis" ng-change="save()">
+        <md-option value="Ya">Ya</md-option>
+        <md-option value="Tidak">Tidak</md-option>
+      </md-select>
+      <div class="md-errors-spacer"></div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Sebutkan nomor polis Anda</label>
+      <md-icon class="material-icons">&#xE84F;</md-icon>
+      <input ng-model="candidatePack.dataKeagenan.polisNumber" ng-blur="save()" type="number" required>
+      <div ng-messages="formkeagenan.polisNumber.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Nomor Polis 2</label>
+      <md-icon class="material-icons">&#xE84F;</md-icon>
+      <input ng-model="candidatePack.dataKeagenan.polisNumber2" ng-blur="save()" type="number" required>
+      <div ng-messages="formkeagenan.polisNumber2.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Nomor Polis 3</label>
+      <md-icon class="material-icons">&#xE84F;</md-icon>
+      <input ng-model="candidatePack.dataKeagenan.polisNumber3" ng-blur="save()" type="number" required>
+      <div ng-messages="formkeagenan.polisNumber3.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block" flex-gt-sm>
+      <label>Apakah Anda pernah bekerja di perusahaan asuransi? Jika ya tolong sebutkan nama perusahaan asuransi Anda bekerja</label>
+      <md-icon class="material-icons">&#xE84F;</md-icon>
+      <md-select ng-model="candidatePack.dataKeagenan.workInInsuranceCompany" ng-change="save()">
+        <md-option value="Ya">Ya</md-option>
+        <md-option value="Tidak">Tidak</md-option>
+      </md-select>
+      <div class="md-errors-spacer"></div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block" flex-gt-sm>
+      <label>Anda direkrut melaui</label>
+      <md-icon class="material-icons">&#xE8D3;</md-icon>
+      <md-select ng-model="candidatePack.dataKeagenan.recruitVia" ng-change="save()">
+        <md-option value="Ya">Ya</md-option>
+        <md-option value="Tidak">Tidak</md-option>
+      </md-select>
+      <div class="md-errors-spacer"></div>
+    </md-input-container>
+
+    <div class="form-group">
+      <button class="button button-assertive button-block next-tab" type="submit">Lanjut</button>
+    </div>
+  </form>
+</ion-content>

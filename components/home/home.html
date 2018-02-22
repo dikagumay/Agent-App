@@ -1,0 +1,296 @@
+<ion-view view-title="homepage"> <ion-nav-title>
+<div id="logo">
+	<img src="img/ionic/LadyPRU.png" />
+	<h1>
+		<a href="#"> <img src="img/ionic/PRUforce.png" alt="PRUforce" />
+		</a>
+	</h1>
+
+</div>
+
+<div class="left-nav">
+	<button class="button button-icon button-clear ion-navicon" ng-click="showLeftNav()"></button>
+</div>
+<div class="right-nav" ng-controller="SetNotif" id="rightNotif">
+	<a href="#"> <i class="button button-icon button-clear ion-ios-bell" ng-click="showNotif()"></i> <span class="new-notif hide" id="messaging" ng-show="{{showMessage}}"></span>
+	</a>
+</div>
+</ion-nav-title> <span class="grey-space"></span> <ion-content>
+<div class="container home" ng-controller="HomeListCtrl">
+	<ion-refresher on-refresh="doRefresh()"> </ion-refresher>
+	<div class="image-wrapper">
+		<img src="img/ionic/concept2-mini.png" alt="image" />
+	</div>
+	<!-- Request Pru 21-07-16  -->
+	<!-- <div id="idWidgetHome" class="content" ng-controller="Ctrl" ng-init="init(ListUserWidgetToggle,ListUserAppConfigFinal)" ng-if="permitted"> -->
+	<div id="idWidgetHome" class="content" ng-controller="Ctrl" ng-init="init(ListUserWidgetToggle,ListUserAppConfigFinal)">
+		<div sortable draggable=".card" sorted="onReorder($fromIndex, $toIndex)">
+			<div ng-repeat="widgetItem in widgetItems">
+				<div ng-include src="widgetItem"></div>
+			</div>
+		</div>
+		<script type="text/ng-template" id="1">
+             	<div class="widget card" ng-controller="ComissionEstimationCtrl" ng-init="init(ComissionEstimationByAgentNumber)" ng-show="{{statusViewComission}}" id="{{widgetItems[0]}}">        
+                <div class="widget-head collapse1 custom-toggle">
+                        <i class="ion-minus-round" home-widget></i>
+                        <font color="white" translate>COMMISSION_ESTIMATION</font>
+                         <span class="icon-png icon-money-white"></span>
+                    </div>
+                <div class="widget-content collapse1" id='wc-3'>
+                    <p class="small mBottom20">{{'DATA_UPDATE' | translate}} {{lastUpdate}}</p>
+                    <label class="curr error">Rp <span>{{comissionIDR}}</span></label>
+                    <label class="curr success">US$ <span>{{comissionUSD}}</span></label>
+                    <p class="mTop10 mBottom5" style="line-height:0.9em">
+                        <i class="italic f12" translate>COMM_DESCRIPTION</i>
+                    </p>
+                </div>
+            	</div><script type="text/javascript" src="js/ionic/toggle-icon.js"></script>
+		</script>
+		<script type="text/ng-template" id="2">
+            <div class="widget production-widget card" ng-controller="AchievementProdIndividuCtrl" ng-init="init(InquiriesProductionIndividu)" ng-show="{{statusViewProduction}}" id="{{widgetItems[1]}}">
+                <div class="widget-head collapse1 custom-toggle">
+                   <i class="ion-minus-round" home-widget></i></font>
+                    	<a href="#/achievement_production">
+	                    	 <font color="white" translate>HOME_HEADER_PRODUCTION</font>
+	                    	<span class="icon-png icon-gear"></span>
+                    	</a>
+                </div>
+                <div class="widget-content collapse1" id='wc-4'>
+                    <p class="small mBottom10 mTop10">{{'DATA_UPDATE' | translate}} {{lastUpdate}}</p>
+                  
+                    <ul class="tab-opt">
+                        <li ng-repeat="widgetProductionTab in widgetProductionTabs" ng-class="{active:isActiveTab(widgetProductionTab.url)}" ng-click="onClickTab(widgetProductionTab)">{{widgetProductionTab.title}}</li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="widgetProductionTab">
+                            <div ng-include="currentwidgetProductionTab"></div>
+                        </div>
+                        <div>
+                        <script type="text/ng-template" id="mtd">
+                            <h3 class="mTop5">APE NET</h3>
+							<ul>
+								<div ng-controller="AchievementProdIndividuCtrl" ng-init="init(InquiriesProductionIndividu)" >
+								 <li>
+                                    <a href="#/detail_individu_transaction/mtd">
+                                       <i class="li ion-person"></i>
+                                         <span><font translate>PERSISTENCY_INDIVIDU</font></span><span class="aom"><span class="currency">Rp</span>{{APENETMTD}}</span>
+                                        <i class="ri ion-ios-arrow-forward"></i>
+                                    </a>
+                                </li>
+							</div>                               
+								<div ng-controller="AchievementProdUnitCtrl" ng-init="init(MTDProductionUnitByAgentNumber)" ng-show="UnitByAgentType">
+                                <li>
+                                    <!-- Request Pru 21-07-16 -->
+                                    <!--<a href="#/group_production/mtd">-->
+										<a href="">
+                                        <i class="li ion-person-stalker"></i>
+                                        <span><font translate>PERSISTENCY_UNIT</font></span><span class="aom"><span class="currency">Rp</span>{{APENETMTD}}</span>
+                                        <!--<i class="ri ion-ios-arrow-forward"></i>-->
+                                    </a>
+                                </li>
+                              </div>
+                            </ul>
+					<p class="mTop10 mBottom5" style="line-height:0.9em">
+                        <i class="italic f12" translate>PRODUCTION_NOTED</i>
+                    </p>
+                        </script>
+		<script type="text/ng-template" id="ytd">
+                            <h3 class="mTop5">APE NET</h3>
+                            <ul>
+								<div ng-controller="AchievementProdIndividuCtrl" ng-init="init(InquiriesProductionIndividu)">
+                                <li>
+                                    <a href="#/detail_individu_transaction/ytd">
+                                         <i class="li ion-person"></i>
+                                        <span><font translate>PERSISTENCY_INDIVIDU</font></span><span class="aom"><span class="currency">Rp</span> {{APENETYTD}}</span>
+                                        <i class="ri ion-ios-arrow-forward"></i>
+                                    </a>
+                                </li>
+								</div>
+								<div ng-controller="AchievementProdUnitCtrl"  ng-init="init(MTDProductionUnitByAgentNumber)" ng-show="UnitByAgentType">
+                                <li>
+                                    <!-- Request Pru 21-07-16 -->
+                                    <!--<a href="#/group_production/ytd">-->
+                                    <a href="">
+                                        <i class="li ion-person-stalker"></i>
+                                          <span><font translate>PERSISTENCY_UNIT</font></span><span class="aom"><span class="currency">Rp</span>{{APENETYTD}}</span>
+                                        <!--<i class="ri ion-ios-arrow-forward"></i>-->
+                                    </a>
+                                </li>
+                              </div>
+                            </ul>
+					<p class="mTop10 mBottom5" style="line-height:0.9em">
+                        <i class="italic f12" translate>PRODUCTION_NOTED</i>
+                    </p>
+		<script type="text/javascript" src="js/ionic/toggle-icon.js"></script>
+		</script>
+		<script type="text/ng-template" id="3">
+            <div class="widget card" ng-controller="PersistencyChartCtrl" ng-init="init(AllPersistencyGraphByAgentNumber)" ng-show="{{statusViewPersistency}}" id="{{widgetItems[2]}}">
+                <div class="widget-head collapse1 custom-toggle">
+                    <i class="ion-minus-round" home-widget></i>
+                    <a href="#/achievement_persistency">
+                     <font color="white" translate>HOME_HEADER_PERSISTENCY</font>
+                    </a>
+                    <span class="ion-arrow-graph-up-right"></span>
+                </div>
+                <div class="widget-content collapse1">	
+
+ 				<span ng-show="lastUpdate2 != undefined">
+                        <p class="small mBottom5 mTop10">{{'DATA_UPDATE' | translate}} {{lastUpdate2}}</p>		
+          		</span>				
+                   		 
+                    <ul>
+                    	<div ng-controller="PersistencyChartCtrlIndividu" ng-init="init(AllPersistencyGraphByAgentNumber)">
+						
+						<span ng-show="PersistenceLevel1 > 0">
+                        <li>
+                            <a href="#/detail_individu_persistency">
+                                <i class="li ion-person"></i>
+                                <font translate>PERSISTENCY_INDIVIDU</font>
+	                					<span ng-show="PersistenceLevel1 < 0" >N/A</span>
+ 	                    				<span ng-show="PersistenceLevel1 == 0" >0%</span>
+		                				<span ng-show="PersistenceLevel1 > 0" >{{PersistenceLevel1}}%</span>
+                                <i class="ri ion-ios-arrow-forward"></i>
+                            </a>
+                        </li>
+						</span>
+                        </div>
+
+						<div ng-controller="PersistencyChartCtrlIndividu" ng-init="init(AllPersistencyGraphByAgentNumber)">
+						<span ng-show="PersistenceLevel1 < 0">
+                        <li>
+                            <a href="">
+                                <i class="li ion-person"></i>
+                                <font translate>PERSISTENCY_INDIVIDU</font>
+	                					<span ng-show="PersistenceLevel1 < 0" >N/A</span>
+ 	                    				<span ng-show="PersistenceLevel1 == 0" >0%</span>
+		                				<span ng-show="PersistenceLevel1 > 0" >{{PersistenceLevel1}}%</span>
+                                <i class="ri ion-ios-arrow-forward"></i>
+                            </a>
+                        </li>
+						</span>
+                        </div>
+
+						<div ng-controller="PersistencyChartCtrlIndividu" ng-init="init(AllPersistencyGraphByAgentNumber)">
+						<span ng-show="PersistenceLevel1 == 0">
+                        <li>
+                            <a href="#/detail_individu_persistency">
+                                <i class="li ion-person"></i>
+                                <font translate>PERSISTENCY_INDIVIDU</font>
+	                					<span ng-show="PersistenceLevel1 < 0" >N/A</span>
+ 	                    				<span ng-show="PersistenceLevel1 == 0" >0%</span>
+		                				<span ng-show="PersistenceLevel1 > 0" >{{PersistenceLevel1}}%</span>
+                                <i class="ri ion-ios-arrow-forward"></i>
+                            </a>
+                        </li>
+						</span>
+                        </div>
+						
+                        <div ng-controller="PersistencyChartCtrlUnit" ng-init="init(AllPersistencyGraphUnitByAgentNumber)" ng-show="UnitByAgentType">
+						<span ng-show="PersistenceLevel2 > 0">
+                        <li>
+                        <li>
+                             <a href="#/unit_persistency">
+                                <i class="li ion-person-stalker"></i>
+                                <font translate>PERSISTENCY_UNIT</font>
+									<span ng-show="PersistenceLevel2 < 0" >N/A</span>
+ 	                    			<span ng-show="PersistenceLevel2 == 0" >0%</span>
+		                			<span ng-show="PersistenceLevel2 > 0" >{{PersistenceLevel2}}%</span>
+                                <i class="ri ion-ios-arrow-forward"></i>
+                            </a>
+                        </li>
+						</span>
+                        </div>
+
+						<div ng-controller="PersistencyChartCtrlUnit" ng-init="init(AllPersistencyGraphUnitByAgentNumber)" ng-show="UnitByAgentType">
+						<span ng-show="PersistenceLevel2 < 0">
+                        <li>
+                        <li>
+                             <a href="">
+                                <i class="li ion-person-stalker"></i>
+                                <font translate>PERSISTENCY_UNIT</font>
+									<span ng-show="PersistenceLevel2 < 0" >N/A</span>
+ 	                    			<span ng-show="PersistenceLevel2 == 0" >0%</span>
+		                			<span ng-show="PersistenceLevel2 > 0" >{{PersistenceLevel2}}%</span>
+                                <i class="ri ion-ios-arrow-forward"></i>
+                            </a>
+                        </li>
+						</span>
+                        </div>
+
+						<div ng-controller="PersistencyChartCtrlUnit" ng-init="init(AllPersistencyGraphUnitByAgentNumber)" ng-show="UnitByAgentType">
+						<span ng-show="PersistenceLevel2 == 0">
+                        <li>
+                        <li>
+                             <a href="#/unit_persistency">
+                                <i class="li ion-person-stalker"></i>
+                                <font translate>PERSISTENCY_UNIT</font>
+									<span ng-show="PersistenceLevel2 < 0" >N/A</span>
+ 	                    			<span ng-show="PersistenceLevel2 == 0" >0%</span>
+		                			<span ng-show="PersistenceLevel2 > 0" >{{PersistenceLevel2}}%</span>
+                                <i class="ri ion-ios-arrow-forward"></i>
+                            </a>
+                        </li>
+						</span>
+                        </div>
+						
+                        <div ng-controller="PersistencyChartCtrlGroup" ng-init="init(AllPersistencyGraphGroupByAgentNumber)" ng-show="GroupByAgentType">
+						<span ng-show="PersistenceLevel3 > 0">
+                        <li>
+                        <li>
+                            <a href="#/group_persistency">
+                                <i class="li ion-ios-people"></i>
+                                <font translate>PERSISTENCY_GROUP</font>
+									<span ng-show="PersistenceLevel3 < 0" >N/A</span>
+ 	                    			<span ng-show="PersistenceLevel3 == 0" >0%</span>
+		                			<span ng-show="PersistenceLevel3 > 0" >{{PersistenceLevel3}}%</span>
+                                <i class="ri ion-ios-arrow-forward"></i>
+                            </a>
+                        </li>
+                        </span>
+						</div>
+
+
+						<div ng-controller="PersistencyChartCtrlGroup" ng-init="init(AllPersistencyGraphGroupByAgentNumber)" ng-show="GroupByAgentType">
+						<span ng-show="PersistenceLevel3 < 0">
+                        <li>
+								<a href="">
+                                <i class="li ion-ios-people"></i>
+                                <font translate>PERSISTENCY_GROUP</font>
+									<span ng-show="PersistenceLevel3 < 0" >N/A</span>
+ 	                    			<span ng-show="PersistenceLevel3 == 0" >0%</span>
+		                			<span ng-show="PersistenceLevel3 > 0" >{{PersistenceLevel3}}%</span>
+                                <i class="ri ion-ios-arrow-forward"></i>
+								</a>
+                        </li>
+                        </span>
+						</div>
+
+						<div ng-controller="PersistencyChartCtrlGroup" ng-init="init(AllPersistencyGraphGroupByAgentNumber)" ng-show="GroupByAgentType">
+						<span ng-show="PersistenceLevel3 == 0">
+                        <li>
+                        <li>
+                            <a href="#/group_persistency">
+                                <i class="li ion-ios-people"></i>
+                                <font translate>PERSISTENCY_GROUP</font>
+									<span ng-show="PersistenceLevel3 < 0" >N/A</span>
+ 	                    			<span ng-show="PersistenceLevel3 == 0" >0%</span>
+		                			<span ng-show="PersistenceLevel3 > 0" >{{PersistenceLevel3}}%</span>
+                                <i class="ri ion-ios-arrow-forward"></i>
+                            </a>
+                        </li>
+                        </span>
+						</div>
+
+                    </ul>
+                </div>
+            				</div><script type="text/javascript" src="js/ionic/toggle-icon.js"></script>
+							</script>
+							<a href="#/widget_setting" class="add-widget-btn waves-effect">
+						<iclass="ion-android-apps"></i>{{buttonSettingText}}</a>
+					</div>
+				</div>
+		 	</script> 
+		</ion-content> 
+	</ion-view>
+<script type="text/javascript">
+</script>

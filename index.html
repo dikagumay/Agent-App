@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html ng-app="PruForce">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<title></title>
+
+	<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+	<link href="css/ionic-customized.css" rel="stylesheet">
+	<link href="css/ionic-platform-customized.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<!-- components -->
+    <link href="css/components/typography.css" rel="stylesheet">
+    <link href="css/components/header.css" rel="stylesheet">
+    <link href="css/components/tabs.css" rel="stylesheet">
+    <link href="css/components/list.css" rel="stylesheet">
+    <link href="css/components/content.css" rel="stylesheet">
+    <link href="css/components/images.css" rel="stylesheet">
+    <link href="css/components/form.css" rel="stylesheet">
+    <link href="css/components/icons.css" rel="stylesheet">
+    <link href="css/components/button.css" rel="stylesheet">
+    <link href="css/components/popup.css" rel="stylesheet">
+    <link href="css/components/table.css" rel="stylesheet">
+    <link href="css/components/utilities.css" rel="stylesheet">
+    <link href="css/components/layout.css" rel="stylesheet">
+    <link href="css/components/grids.css" rel="stylesheet">
+    <link href="css/components/modal.css" rel="stylesheet">
+	<!-- library -->
+	<link href="css/libs/angular-material.min.css" rel="stylesheet">
+	<link href="css/libs/ng-croppie.css" rel="stylesheet">
+	<link href="css/libs/v-accordion.min.css" rel="stylesheet">
+	<link href="css/libs/bootstrap-select.css" rel="stylesheet">
+	<link href="css/libs/progress.css" rel="stylesheet">
+  	<link href="css/angular-material-customized.css" rel="stylesheet">
+	<link href="css/libs/export.css" rel="stylesheet">
+
+
+	<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+
+	<!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+  -->
+
+	<!-- ionic/angularjs js -->
+	<script src="lib/ionic/js/ionic.bundle.js"></script>
+
+	<!-- cordova script (this will be a 404 during development) -->
+	<script src="cordova.js"></script>
+
+</head>
+
+<body ng-controller="baseCtrl">
+	<div class="ios-header-bar"></div>
+	<ion-nav-view></ion-nav-view>
+	<!-- Libraries JS -->
+	<script src="js/libs/angular-aria.min.js"></script>
+	<script src="js/libs/angular-animate.min.js"></script>
+	<script src="js/libs/angular-material.min.js"></script>
+	<script src="js/libs/angular-messages.min.js"></script>
+	<script src="js/libs/angular-ui-router.js"></script>
+  
+
+	<script src="js/libs/jquery-1.11.3.js" type="text/javascript"></script>
+	<script src="js/libs/ngcroppie.js"></script>
+
+	<script src="js/libs/jquery.material.form.js" type="text/javascript"></script>
+	<script src="js/libs/resample.js" type="text/javascript"></script>
+	<script src="js/libs/bootstrap-select.js" type="text/javascript"></script>
+	<script src='js/libs/signature_pad.js'></script>
+	<script src="js/libs/v-accordion.min.js" type="text/javascript"></script>
+    <script src="js/libs/moment.min.js" type="text/javascript"></script>
+  	<script src="js/libs/angular-moment.min.js" type="text/javascript"></script>
+  	<!-- PDF MAke -->
+    <script src="js/libs/pdf/pdfmake.min.js"></script>
+    <script src="js/libs/pdf/vfs_fonts.js"></script>
+    <script src="js/libs/pdf/pdf.js"></script>
+    <script src="js/libs/pdf/pdf.worker.js"></script>
+    <script src="js/libs/pdf/angular-pdf.js"></script>
+    <script src="js/libs/pdf/chance.js"></script>
+    <!-- Chart -->
+    <script src="js/libs/chart/amcharts.js"></script>
+    <script src="js/libs/chart/export.min.js"></script>
+    <script src="js/libs/chart/patterns.js"></script>
+    <script src="js/libs/chart/serial.js"></script>
+    <script src="js/libs/chart/amstock.js"></script>
+    <script src="js/libs/chart/amexport.js"></script>
+  	<!-- barcode -->
+    <script src="js/libs/bcmath-min.js"></script>
+    <script src="js/libs/pdf417-min.js"></script>
+    <script type="text/javascript" src="js/libs/barcode.es5.js"></script>
+
+	<script src="js/libs/utilities.js" type="text/javascript"></script>
+	<script src="js/libs/ngStorage.js" type="text/javascript"></script>
+
+	<!-- systemJS -->
+	<script src="js/AppsLog.js"></script>
+	<!--<script src="js/initOptions.js"></script>-->
+	<!--<script src="js/main.js"></script>
+    <script src="js/offlinemode/initialize.js"></script>-->
+	<script src="js/offlinemode/jsonStoreInit.js"></script>
+	<script src="js/offlinemode/persistence.js"></script>
+	<script src="js/offlinemode/SalesForce.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/factories/DataFactory.js"></script>
+	<script src="js/factories/CandidateFactory.js"></script>
+	<script src="js/routes.js"></script>
+	<script src="js/messages.js"></script>
+	<script src="js/service/CandidatePackService.js"></script>
+	<script src="js/service/MasterDataService.js"></script>
+	<script src="js/service/PhotoUploaderService.js"></script>
+	<script src="js/directives/PhotoUploaderDirective.js"></script>
+	<script src="js/controllers/baseCtrl.js"></script>
+	<script src="js/controllers/homeCtrl.js"></script>
+	<script src="js/controllers/dataCandidatePackCtrl.js"></script>
+	<script src="js/controllers/dataCandidateCtrl.js"></script>
+	<script src="js/controllers/registerCtrl.js"></script>
+	<script src="js/controllers/recruitCtrl.js"></script>
+	<script src="js/controllers/passwordCtrl.js"></script>
+	<script src="js/controllers/calonAgenCtrl.js"></script>
+	<script src="js/controllers/listChecklistCtrl.js"></script>
+	<script src="js/controllers/lampiranPerjanjianCtrl.js"></script>
+	<script src="js/controllers/tandaTanganCtrl.js"></script>
+	<script src="js/controllers/NewSQSCtrl.js"></script>
+	<script src="js/services.js"></script>
+	<script src="components/login/controllers/LoginCtrl.js"></script>
+	<script src="components/home/controllers/HomeCandidateCtrl.js"></script>
+	<script src="components/setting/controllers/SettingCtrl.js"></script>
+	<script src="components/ganti_password/controllers/ChangePasswordCtrl.js"></script>
+	<script src="components/ganti_password/service/ChangePasswordService.js"></script>
+	<script src="components/prufaststart_agent/controllers/PruFastCtrl.js"></script>
+	<script src="components/login/services/LoginService.js"></script>
+	<script src="components/login/services/DetailProfileService.js"></script>
+	<script src="components/lupa_password/controllers/LupaPasswordCtrl.js"></script>
+	<script src="components/new_password/controllers/NewPasswordCtrl.js"></script>
+	<script src="components/new_password/service/NewPasswordService.js"></script>
+	<script src="components/recruitment/service/DaftarRekrutmentService.js"></script>
+	<script src="components/recruitment/service/GenerateNPAService.js"></script>
+	<script src="components/recruitment/controllers/DaftarRekrutmentCtrl.js"></script>
+	<script src="components/recruitment/controllers/FormulirRegistrasiCtrl.js"></script>
+	<script src="components/recruitment/controllers/NPAReceivedCtrl.js"></script>
+	<script src="components/newSqs/getPublishCtrl.js"></script>
+	<script src="components/newSqs/homepage/services/sqsService.js"></script>
+	<script src="components/newSqs/homepage/controllers/SqsCtrl.js"></script>
+	<script src="components/newSqs/profil_pemegang_polis/controllers/profilePemegangPolisCtrl.js"></script>
+	<script src="components/newSqs/search/controllers/searchSqsCtrl.js"></script>
+  	<script src="components/newSqs/ilustrasi/controllers/ilustrasiCtrl.js"></script>
+  	<script src="components/newSqs/products/controllers/productCtrl.js"></script>
+  	<script src="components/newSqs/templates/controllers/templatesCtrl.js"></script>
+  	<script src="components/newSqs/send_email/controllers/sendEmailSqsCtrl.js"></script>
+  	<script src="components/newSqs/output/pdf/invoice.service.js"></script>
+  	<script src="components/newSqs/output/pdf/document.controller.js"></script>
+	<script src="components/menu/ManagemenMenu.js"></script>
+	<script src="components/login/services/UserData.js"></script>
+	<script src="components/ujian_kode_etik/controllers/UjianKodeEtikCtrl.js"></script>
+	<script src="components/ujian_kode_etik/service/UjianKodeEtikService.js"></script>
+	<script src="components/ujian_kode_etik/controllers/ScoreUjianCtrl.js"></script>
+	<script src="components/ujian_kode_etik/service/SubmitUjianService.js"></script>
+	<script src="components/aml_training/controllers/AMLTrainingCtrl.js"></script>
+	<script src="components/aml_training/service/AMLTrainingService.js"></script>
+	<script src="components/recruitment/service/FormulirPerekrutanService.js"></script>
+	<script src="components/recruitment/controllers/FormulirPerekrutanCtrl.js"></script>
+	<script src="components/inbox/controllers/InboxCtrl.js"></script>
+	<script src="components/inbox/service/InboxService.js"></script>
+	<script src="components/inbox/controllers/DetailNotifSignCtrl.js"></script>
+	<script src="components/inbox/service/GetCandidatePackService.js"></script>
+	<script src="components/inbox/service/CollectPackStatusDataService.js"></script>
+	<script src="components/inbox/service/GetCreateDateAgentJourneyService.js"></script>
+	<script src="components/sign/controllers/SignatureCtrl.js"></script>
+	<script src="components/sign/service/SignatureService.js"></script>
+	<script src="components/lupa_pruforceId/controllers/CandidateForgetPRUForceIDCtrl.js"></script>
+	<script src="components/lupa_pruforceId/service/CandidateVerifyForgetPRUForceIDService.js"></script>
+	<script src="components/lupa_pruforceId/controllers/AgentForgetPRUForceIDCtrl.js"></script>
+	<script src="components/lupa_pruforceId/service/AgentVerifyForgetPRUForceIDService.js"></script>
+	<script src="components/lupa_pruforceId/service/SendForgetPRUForceIDService.js"></script>
+	<script src="components/daftar_pruforce/controllers/AgentDaftarPRUFCtrl.js"></script>
+	<script src="components/daftar_pruforce/controllers/CandidateDaftarPRUForceIDCtrl.js"></script>
+	<script src="components/daftar_pruforce/controllers/CreatePRUForceIDCtrl.js"></script>
+	<script src="components/daftar_pruforce/controllers/DaftarPRUForceIDNoSFACtrl.js"></script>
+	<script src="components/daftar_pruforce/controllers/DaftarPRUForceIDWithSFACtrl.js"></script>
+	<script src="components/daftar_pruforce/service/VerifyAgentWithSFAService.js"></script>
+	<script src="components/daftar_pruforce/service/GetPRUForceIDService.js"></script>
+	<script src="components/daftar_pruforce/service/VerifyAgentNoSFAService.js"></script>
+	<script src="components/daftar_pruforce/service/CandidateVerifyDaftarPRUFService.js"></script>
+	<script src="components/daftar_pruforce/service/CreatePRUForceIDService.js"></script>
+	<script src="components/daftar_pruforce/service/VerifyAgentSFAService.js"></script>
+	<script src="components/sms_verification/controllers/SMSVerificationCtrl.js"></script>
+	<script src="components/sms_verification/service/SMSVerificationService.js"></script>
+	<script src="components/security_question/service/SecurityQuestionService.js"></script>
+	<script src="components/security_question/controllers/SecurityQuestionCtrl.js"></script>
+	<script src="components/security_question/service/VerifySecurityQuestionService.js"></script>
+	<script src="components/access_option/controllers/AccessCtrl.js"></script>
+	<script src="components/check_email/service/CheckIDEmailService.js"></script>
+	<script src="components/check_email/service/CheckEmailExistService.js"></script>
+	<script src="components/lupa_pruforceId/service/ForgetIDPRUForceIDService.js"></script>
+	<script src="components/verify_data/service/ForgetIDPRUForceIDService.js"></script>
+	<script src="components/verify_data/service/AgentVerifyingDataService.js"></script>
+	<script src="components/verify_data/service/CandidateVerifyingDataService.js"></script>
+
+</body>
+
+</html>

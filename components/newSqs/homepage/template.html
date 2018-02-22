@@ -1,0 +1,41 @@
+<ion-view>
+  <ion-content class="has-header-tabs marg-bot-50">
+    <div class="card pad-0">
+      <div class="content spaced-area">
+        <md-chips class="md-block width-100 custom-gray-searchbox marg-bot-15 display-block" ng-model="selectedCode" md-autocomplete-snap="">
+          <md-autocomplete 
+                           md-selected-item="selectedItem" 
+                           md-search-text="searchText1" 
+                           md-items="item in querySearch(searchText1, memberTemplateDatas)" 
+                           md-item-text="item.name" 
+                           md-selected-item-change="chipSearch(item, 'templateDatas')"
+                           placeholder="ketik nama template">
+            <span md-highlight-text="searchText1">{{item.name}}</span>
+          </md-autocomplete>
+          <md-chip-template>
+            <span>
+              <strong>{{$chip.name}}</strong>
+            </span>
+          </md-chip-template>
+          <button class="md-chip-remove" ng-click="removeChips('templateDatas')" md-chip-remove> <i class="material-icons">&#xE14C;</i> </button>
+        </md-chips>
+        <span class="width-100 pull-left" ng-repeat="item in templateDatas">
+          <div class="block-container with-user-level-agent marg-bot-10 position-relative">
+            <h5 class="marg-top-5 marg-bot-0 text-uppercase">
+              {{item.name}}
+              <a href class="pull-right">
+                <i class="h4 font-gray ion-android-more-horizontal" ng-click="morePopup('template')"></i>
+              </a>
+            </h5>
+            <h5 class="font-gray marg-top-5 marg-bot-0">Dibuat  {{item.dateCreate | amDateFormat:'DD MMMM YYYY'}}</h5>
+            <h5 class="font-gray marg-top-5 marg-bot-15">{{item.type}}</h5>
+          </div>
+        </span>
+      </div>
+    </div>
+  </ion-content>
+  <a href="" ng-click="buattemplate()" class="button button-assertive button-fixed-bottom">
+    <i class="ion-android-add-circle"></i>
+    Buat template baru
+  </a>
+</ion-view>

@@ -1,0 +1,49 @@
+<ion-view view-title="Lembar Persetujuan Tanda Tangan" ng-controller="tandaTanganCtrl">
+  <ion-header-bar align-title="left" class="bar-assertive">
+    <a class="left-buttons" ng-href="#/syarat-dan-ketentuan-keagenan-checked">
+      <button class="button button-icon icon ion-ios-arrow-back"></button>
+    </a>
+    <h1 class="title">LEMBAR PERSETUJUAN</h1>
+  </ion-header-bar>
+
+  <ion-content class="has-header">
+    <div class="content-main-description">
+      <div class="landing">
+        <p>Dengan mendatangani lembar persetujuan ini, saya menyatakan telah membaca ilustrasi produk dan memahami penjelasan yang disampaikan oleh Agen terkait produk.</p>
+      </div>
+      <div class="sign-wrap">
+        <p class="text-black font-gray">Tanda Tangan Klien</p>
+        <a href="#/sqs/tanda-tangan" class="font-red">
+          <div ng-if="signature[0]" class="sign">
+            <img ng-src="{{signature[0]}}" height="auto" width="100%" />
+          </div>
+          <div ng-if="!signature[0]" class="sign">
+            Tanda Tangan Disini
+          </div>
+        </a>
+        <div class="font-gray pad-top-20">
+          <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="search.illustrasi" md-colors="red">
+          Saya telah membaca, memahami dan menyetujui atas segala informasi, keterangan dan ilustrasi yang diberikan, disajikan dan dijelaskan di dalam dokumen ini.
+          </md-checkbox>
+        </div>
+      </div>
+      <hr/>
+      <div class="sign-wrap">
+        <p class="text-black font-gray">Tanda Tangan Agen</p>
+        <a href="#/sqs/tanda-tangan" class="font-red">
+          <div ng-if="signature[1]" class="sign">
+            <img ng-src="{{signature[1]}}" height="auto" width="100%" />
+          </div>
+          <div ng-if="!signature[1]" class="sign">
+            Tanda Tangan Disini
+          </div>
+        </a>
+      </div>
+      <div class="padd-syarat m-bottom-15" ng-controller="submitCtrl">
+        <button class="button button-assertive margin-0 button-full" ng-click="appNext('aplikasi-berhasil-dikirim')">
+          SIMPAN DAN KIRIM
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

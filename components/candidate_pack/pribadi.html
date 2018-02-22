@@ -1,0 +1,241 @@
+<ion-content class="has-header-tabs">
+  <form name="formPribadi" class="default-form" ng-submit="sendData($event,currentMenuTab)">
+    <md-input-container class="md-icon-float md-block">
+      <label>Nama lengkap sesuai KTP</label>
+      <md-icon aria-label="person" class="material-icons">&#xE7FD;</md-icon>
+      <input ng-model="pribadi.name" type="text" required readonly>
+      <div ng-messages="formPribadi.name.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block" flex-gt-sm>
+      <label>Gelar</label>
+      <md-icon aria-label="person" class="material-icons">&#xE885;</md-icon>
+      <md-select ng-model="pribadi.degree" ng-readonly="true">
+        <md-option value="Mr">Mr</md-option>
+        <md-option value="Mrs">Mrs</md-option>
+      </md-select>
+      <div class="md-errors-spacer"></div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Tempat Lahir</label>
+      <md-icon aria-label="person" class="material-icons">&#xE0C8;</md-icon>
+      <input ng-model="pribadi.born" type="text" readonly required>
+      <div ng-messages="formPribadi.born.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Tanggal Lahir</label>
+      <md-icon aria-label="person" class="material-icons">&#xE878;</md-icon>
+      <input ng-model="pribadi.born_date" type="date" readonly required>
+      <div ng-messages="formPribadi.born_date.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block" flex-gt-sm>
+      <label>Jenis Kelamin</label>
+      <md-icon aria-label="person" class="material-icons">&#xE63D;</md-icon>
+      <md-select name="gender" ng-model="candidatePack.dataPribadi.gender" ng-change="save()" ng-required="true">
+        <md-option ng-value="gender.value" ng-repeat="gender in dataGender">
+              {{gender.label}}
+        </md-option>
+      </md-select>
+      <div ng-messages="formPribadi.gender.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+      <div class="md-errors-spacer"></div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block" flex-gt-sm>
+      <label>Agama</label>
+      <md-icon aria-label="person" class="material-icons">&#xE3E3;</md-icon>
+      <md-select name="religion" ng-model="candidatePack.dataPribadi.religion" ng-change="save()" ng-required="true">
+        <md-option ng-value="religion.value" ng-repeat="religion in dataReligion">
+              {{religion.label}}
+        </md-option>
+      </md-select>
+      <div ng-messages="formPribadi.religion.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+      <div class="md-errors-spacer"></div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Alamat 1</label>
+      <md-icon aria-label="person" class="material-icons">&#xE88A;</md-icon>
+      <input ng-model="candidatePack.dataPribadi.alamat1" name="address_1" ng-blur="save()" type="text" ng-maxlength="30" required>
+      <div ng-messages="formPribadi.address_1.$error">
+        <div ng-message="required">Harus diisi.</div>
+        <div ng-message="maxlength">Tidak bisa lebih dari 30 karakter.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Alamat 2</label>
+      <md-icon aria-label="person" class="material-icons">&#xE88A;</md-icon>
+      <input ng-model="candidatePack.dataPribadi.alamat2" name="address_2" ng-blur="save()" type="text" ng-maxlength="30">
+      <div ng-messages="formPribadi.address_2.$error">
+        <div ng-message="required">Harus diisi.</div>
+        <div ng-message="maxlength">Tidak bisa lebih dari 30 karakter.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Alamat 3</label>
+      <md-icon aria-label="person" class="material-icons">&#xE88A;</md-icon>
+      <input ng-model="candidatePack.dataPribadi.alamat3" name="address_3" ng-blur="save()" type="text" ng-maxlength="30">
+      <div ng-messages="formPribadi.address_3.$error">
+        <div ng-message="required">Harus diisi.</div>
+        <div ng-message="maxlength">Tidak bisa lebih dari 30 karakter.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block" flex-gt-sm>
+      <label>Kota</label>
+      <md-icon aria-label="person" class="material-icons">&#xE0AF;</md-icon>
+      <md-select ng-model="candidatePack.dataPribadi.city" name="city" ng-change="save()" ng-required="true">
+        <md-option value="Bandung">Bandung</md-option>
+        <md-option value="Bogor">Bogor</md-option>
+        <md-option value="Bekasi">Bekasi</md-option>
+        <md-option value="Jakarta">Jakarta</md-option>
+      </md-select>
+      <div ng-messages="formPribadi.city.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+      <div class="md-errors-spacer"></div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block" flex-gt-sm>
+      <label>Provinsi</label>
+      <md-icon aria-label="person" class="material-icons">&#xE0AF;</md-icon>
+      <md-select ng-model="candidatePack.dataPribadi.province" name="province" ng-change="save()" ng-required="true">
+        <md-option ng-value="province.value" ng-repeat="province in dataProvince">
+              {{province.label}}
+        </md-option>
+      </md-select>
+      <div ng-messages="formPribadi.province.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+      <div class="md-errors-spacer"></div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Kode POS</label>
+      <md-icon aria-label="person" class="material-icons">&#xE554;</md-icon>
+      <input ng-model="candidatePack.dataPribadi.zipcode" ng-blur="save()" name="pos_code" type="number" maxlength="10" required>
+      <div ng-messages="formPribadi.pos_code.$error">
+        <div ng-message="required">Harus diisi.</div>
+        <div ng-message="maxlength">Tidak bisa lebih dari 10 karakter.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Telepon Rumah</label>
+      <md-icon aria-label="person" class="material-icons">&#xE0CD;</md-icon>
+      <input ng-model="candidatePack.dataPribadi.homePhone" ng-blur="save()" name="house_phone" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{0,4}$/" type="text">
+      <div ng-messages="formPribadi.house_phone.$error">
+        <div ng-message="pattern">Nomor Telpon tidak valid.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Telepon Kantor</label>
+      <md-icon aria-label="person" class="material-icons">&#xE0AF;</md-icon>
+      <input ng-model="candidatePack.dataPribadi.officePhone" ng-blur="save()" name="office_phone" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{0,4}$/" type="text">
+      <div ng-messages="formPribadi.office_phone.$error">
+        <div ng-message="pattern">Nomor Telpon tidak valid.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Faximile</label>
+      <md-icon aria-label="person" class="material-icons">&#xE8AD;</md-icon>
+      <input ng-model="candidatePack.dataPribadi.faxNumber" ng-blur="save()" name="faximile" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{0,4}$/" type="text">
+      <div ng-messages="formPribadi.faximile.$error">
+        <div ng-message="pattern">Nomor Telpon tidak valid.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block" ng-repeat="celular in pribadiCelularPhones">
+	    <label>Telepon Seluler {{celular.id}}</label>
+	    <md-icon aria-label="person" class="material-icons">&#xE0D4;</md-icon>
+	    <input ng-model="candidatePack.dataPribadi.cellPhone['phone' + celular.id]" name="cellphone{{celular.id}}" ng-blur="save()" ng-pattern="/^[\+]?[(]?[0-9]{4,5}[)]?[-\s\.]?[0-9]{4}[-\s\.]?[0-9]{0,8}$/"  type="text" ng-required="celular.id == 1">
+      <div ng-messages="formPribadi['cellphone' + celular.id].$error" >
+        <div ng-message="required" ng-if="celular.id == 1">Harus diisi.</div>
+        <div ng-message="pattern">Nomor Telpon tidak valid.</div>
+      </div>
+	</md-input-container>
+    <div class="form-group center-button">
+      <a class="button button-dark button-small add-phone" ng-click="addNewCelularPhone($event)">tambah nomor telepon seluler</a>
+    </div>
+    <md-input-container class="md-icon-float md-block">
+      <label>Alamat Email</label>
+      <md-icon aria-label="person" class="material-icons">&#xE0BE;</md-icon>
+      <input ng-model="pribadi.email" type="email" required readonly>
+      <div ng-messages="formPribadi.email.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Nomor KTP</label>
+      <md-icon aria-label="person" class="material-icons">&#xE8AA;</md-icon>
+      <input ng-model="pribadi.ktpNumber" type="number" required readonly>
+      <div ng-messages="formPribadi.ktpNumber.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <div class="form-group image-editor ktpImage" data-photo-type="landscape">
+      <div class="image-holder ktp">
+        <i class="material-icons" ng-if='candidatePack.dataPribadi.ktpImage == undifined'>&#xE3F4;</i>
+        <img class="image-result" ng-src="{{candidatePack.dataPribadi.ktpImage}}" ng-if='candidatePack.dataPribadi.ktpImage != undefined'>
+      </div>
+      <div class="upload-wrap">
+        <input type="file" id="ktpImage" class="cropit-image-input" ng-model="candidatePack.dataPribadi.ktpImage" landscape-photo-uploader/>
+        <a class="button button-assertive button-block">upload foto KTP Anda</a>
+      </div>
+      <a class="button button-dark button-block" ng-model="candidatePack.dataPribadi.ktpImage" take-landscape-photo>Ambil gambar</a>
+    </div>
+
+    <div class="form-group image-editor profileImage" data-photo-type="potrait">
+      <div class="image-holder image-potrait">
+        <i class="material-icons" ng-if='candidatePack.dataPribadi.profileImage == undifined'>&#xE3F4;</i>
+        <img class="image-result" ng-src="{{candidatePack.dataPribadi.profileImage}}" ng-if='candidatePack.dataPribadi.profileImage != undefined'>
+      </div>
+      <div class="upload-wrap">
+        <input type="file" id="profileImage" class="cropit-image-input" ng-model="candidatePack.dataPribadi.profileImage" potrait-photo-uploader />
+        <a class="button button-assertive button-block">upload Pas Foto</a>
+      </div>
+      <a class="button button-dark button-block" ng-model="candidatePack.dataPribadi.profileImage" take-potrait-photo>Ambil gambar</a>
+    </div> 
+
+
+    <div class="form-group left">
+      <input type="checkbox" name="forever" placeholder="Seumur hidup" ng-model="candidatePack.dataPribadi.isIdCardUnExpired" ng-blur="save()" id="forever"/>
+    </div>
+    <md-input-container class="md-icon-float md-block">
+      <label>Masa berlaku KTP</label>
+      <md-icon aria-label="person" class="material-icons">&#xE878;</md-icon>
+      <input ng-model="pribadicandidatePack.dataPribadi.idCardExpDate" ng-blur="save()" ng-readonly="candidatePack.dataPribadi.isIdCardUnExpired" type="date" ng-required="!candidatePack.dataPribadi.isIdCardUnExpired">
+      <div ng-messages="formPribadi.ktp_expire.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Pendidikan Formal</label>
+      <md-icon aria-label="person" class="material-icons">&#xE80C;</md-icon>
+      <input ng-model="candidatePack.dataPribadi.education" type="text" ng-blur="save()" required>
+      <div ng-messages="formPribadi.education.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Sekolah / Institusi</label>
+      <md-icon aria-label="person" class="material-icons">&#xE80C;</md-icon>
+      <input ng-model="candidatePack.dataPribadi.schoolName" type="text" ng-blur="save()" required>
+      <div ng-messages="formPribadi.school.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <label>Status Pernikahan</label>
+      <md-icon aria-label="person" class="material-icons">&#xE63D;</md-icon>
+      <input ng-model="candidatePack.dataPribadi.maritalStatus" ng-blur="save()" type="text" required>
+      <div ng-messages="formPribadi.mariage_status.$error">
+        <div ng-message="required">Harus diisi.</div>
+      </div>
+    </md-input-container>
+    <div class="form-group">
+      <button class="button button-block button-assertive next-tab" type="submit">Lanjut</button>
+    </div>
+  </form>
+</ion-content>

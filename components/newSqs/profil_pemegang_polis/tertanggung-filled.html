@@ -1,0 +1,292 @@
+<ion-content class="has-header-tabs" ng-cloak>
+  <div layout="row">
+    <div class="card pad-0" flex>
+      <form name="formProfileTertanggung" class="default-form">
+        <div class="pull-left width-100"> 
+          <div class="marg-top-10 pad-left-15"> 
+            <span ng-model="editInsuredName" class="pad-left-10" ng-click="editInsuredName = !editInsuredName"> 
+              <i class="icon ion-edit h6 font-gray"></i>  
+              <span class="font-red font-size-10 marg-right-20"> 
+                <span ng-if="editInsuredName === false">EDIT</span> 
+                <span ng-if="editInsuredName === true">SELESAI</span> 
+              </span> 
+            </span> 
+            <span ng-click="addInsuredData()"> 
+              <i class="icon ion-android-person-add h6 font-gray"></i> <span class="font-red font-size-10">TAMBAH</span>
+            </span> 
+            <span class="pull-right" ng-if="arrayForDeleteInsured.length > 0" ng-click="deleteInsured(editInsuredList)"> <i class="icon ion-ios-trash h5 font-gray"></i>  
+              <span class="font-red font-size-10 marg-right-20"> 
+                <span>HAPUS</span> 
+              </span> 
+            </span> 
+          </div> 
+          <div ng-if="editInsuredName === true" class="block-container b-border-white marg-bot-0 pad-sides-10"> 
+            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-change="addInsuredList(editInsuredList, item.id)" ng-model="editInsuredList" ng-repeat="item in insuredDatas" class="h6 width-50 pull-left font-gray marg-right-0"> 
+              {{item.alias}} 
+            </md-checkbox> 
+          </div> 
+          <div class="marg-left-25 block-container b-border-none marg-bot-0 width-100 clear">
+            <h5 class="marg-bot-5 font-gray">Data yang ditampilkan saat ini: {{profileTertanggung.alias}} </h5> 
+          </div>
+          <div class="block-container b-border-white marg-bot-0">
+            <v-accordion multiple class="vAccordion--default"> 
+              <v-pane expanded="insuredName.isExpanded"> 
+                <v-pane-header class="marg-0 content-header no-border no-icon text-uppercase pad-left-15 pad-right-10 pad-top-10 light-gray">
+                  <i class="ion ion-person marg-0 marg-right-10 font-gray h4"></i> 
+                  <span class="font-black">{{profileTertanggung.alias}}</span> 
+                  <i class="ion ion-arrow-down-b pull-right font-red h4 marg-0"></i> 
+                </v-pane-header> 
+                <v-pane-content> 
+                  <div class="pad-left-20 marg-top-15 font-gray" ng-repeat="item in insuredDatas">
+                    <a href="" ng-click="selectedItemChange(item)">{{item.alias}}</a>
+                  </div>
+                </v-pane-content> 
+              </v-pane> 
+            </v-accordion> 
+          </div> 
+          <div class="block-container b-border-white marg-bot-0"> 
+            <md-input-container class="md-icon-float md-block"> 
+              <label>Nama Lengkap Tertanggung</label> 
+              <md-icon aria-label="person" class="material-icons">&#xE7FD;</md-icon> 
+              <input ng-model="profileTertanggung.name" type="text" required> 
+              <div ng-messages="formProfileTertanggung.name.$error"> 
+                <div ng-message="required">Harus diisi.</div> 
+              </div> 
+            </md-input-container> 
+            <md-input-container class="md-icon-float md-block pad-0" ng-class="{'marg-bot-0':profileTertanggung.option != 'utama'}">
+              <label>Tanggal Lahir</label>
+              <md-datepicker ng-required ng-model="profileTertanggung.tanggalLahir" md-open-on-focus> 
+                <div ng-messages="formProfileTertanggung.tanggalLahir.$error"> 
+                </div> 
+              </md-datepicker> 
+            </md-input-container>
+            <md-input-container ng-if="profileTertanggung.option == 'utama'" class="md-icon-float md-block pad-0">
+              <label>Tanggal Perkiraan Lahir</label>
+              <md-datepicker ng-required ng-model="profileTertanggung.tanggalPerkiraanLahir" md-open-on-focus> 
+                <div ng-messages="formProfileTertanggung.tanggalPerkiraanLahir.$error"> 
+                </div> 
+              </md-datepicker> 
+              <div class="h6 marg-left-40 marg-top-0 font-gray">*Apabila tertanggung masih dalam usia kehamilan. Lorem ipsum is simply dummy text of the printing &amp; typesetting industry</div> 
+            </md-input-container>
+            <md-input-container ng-if="profileTertanggung.option == 'utama'" class="md-icon-float md-block marg-bot-0" flex-gt-sm> 
+              <label>Usia Kehamilan</label> 
+              <md-icon aria-label="person" class="material-icons">&#xE916;</md-icon> 
+              <md-select ng-model="profileTertanggung.usiaKehamilan"> 
+                <md-option value="1">9 Bulan</md-option> 
+              </md-select> 
+            </md-input-container> 
+            <md-input-container class="md-icon-float md-block" ng-class="{'marg-top-0':profileTertanggung.option != 'utama'}"> 
+              <label>Usia Tahun Berikutnya</label> 
+              <md-icon aria-label="person" class="material-icons">&#xE916;</md-icon>  
+              <input type="text" size="1" maxlength="1" value="{{profileTertanggung.usiaTahunBerikutnya}}" required> 
+              <div ng-messages="formProfileTertanggung.name.$error"> 
+                <div ng-message="required">Harus diisi.</div> 
+              </div> 
+            </md-input-container> 
+            <md-input-container class="md-icon-float md-block" flex-gt-sm> 
+              <label>Jenis Kelamin/Perokok</label> 
+              <md-icon aria-label="person" class="material-icons">&#xE63D;</md-icon> 
+              <md-select ng-model="profileTertanggung.jenisKelaminPerokok"> 
+                <md-option value="1">Perempuan/Bukan Perokok</md-option> 
+              </md-select> 
+              <div class="md-errors-spacer"></div> 
+            </md-input-container> 
+            <md-input-container class="md-icon-float md-block"> 
+              <label>Alamat 1</label> 
+              <md-icon aria-label="person" class="material-icons">&#xE88A;</md-icon> 
+              <input ng-model="profileTertanggung.alamat1" type="text" required> 
+              <div ng-messages="formProfileTertanggung.alamat1.$error"> 
+                <div ng-message="required">Harus diisi.</div> 
+              </div> 
+            </md-input-container> 
+            <md-input-container class="md-icon-float md-block"> 
+              <label>Alamat 2</label> 
+              <md-icon aria-label="person" class="material-icons"></md-icon> 
+              <input ng-model="profileTertanggung.alamat2" type="text"> 
+            </md-input-container> 
+            <md-input-container class="md-icon-float md-block"> 
+              <label>Alamat 3</label> 
+              <md-icon aria-label="person" class="material-icons"></md-icon> 
+              <input ng-model="profileTertanggung.alamat3" type="text"> 
+            </md-input-container> 
+            <md-input-container class="md-icon-float md-block" flex-gt-sm> 
+              <label>Kota</label> 
+              <md-icon aria-label="person" class="material-icons">&#xE55F;</md-icon> 
+              <md-select ng-model="profileTertanggung.kota"> 
+                <md-option value="Bandung">Bandung</md-option> 
+                <md-option value="Bogor">Bogor</md-option> 
+                <md-option value="Bekasi">Bekasi</md-option> 
+                <md-option value="1">Jakarta Timur</md-option> 
+              </md-select> 
+              <div class="md-errors-spacer"></div> 
+            </md-input-container> 
+            <md-input-container class="md-icon-float md-block" flex-gt-sm> 
+              <label>Propinsi</label> 
+              <md-icon aria-label="person" class="material-icons">&#xE55F;</md-icon> 
+              <md-select ng-model="profileTertanggung.city"> 
+                <md-option value="Bandung">Jawa Barat</md-option> 
+                <md-option value="Bogor">Jawa Timur</md-option> 
+                <md-option value="Bekasi">Jawa Tengah</md-option> 
+                <md-option value="Jakarta">DKI Jakarta</md-option> 
+              </md-select> 
+              <div class="md-errors-spacer"></div> 
+            </md-input-container> 
+            <md-input-container class="md-icon-float md-block"> 
+              <label>Kode Pos</label> 
+              <md-icon aria-label="person" class="material-icons"></md-icon> 
+              <input ng-model="profileTertanggung.address_3" type="text"> 
+            </md-input-container> 
+            <md-input-container class="md-icon-float md-block marg-bot-0" flex-gt-sm> 
+              <label>Pekerjaan</label> 
+              <md-icon aria-label="person" class="material-icons">&#xE63D;</md-icon> 
+              <md-select ng-model="profileTertanggung.pekerjaan"> 
+                <md-option value="1">Juru Ketik</md-option> 
+              </md-select> 
+              <div class="md-errors-spacer"></div> 
+            </md-input-container> 
+            <md-input-container class="md-icon-float md-block" ng-class="{'marg-top-0':profileTertanggung.option != 'utama'}"> 
+              <label>Kelas Pekerjaan</label> 
+              <md-icon aria-label="wokr" class="material-icons">&#xE8F9;</md-icon>
+              <input value="{{profileTertanggung.kelasPekerjaan}}" type="text" value="0" size="1" maxlength="1" required> 
+              <div ng-messages="formProfileTertanggung.name.$error"> 
+                <div ng-message="required">Harus diisi.</div> 
+              </div> 
+            </md-input-container>  
+            <md-input-container class="md-icon-float md-block"> 
+              <label>Deskripsi Pekerjaan</label> 
+              <md-icon aria-label="wokr" class="material-icons">&#xE8F9;</md-icon> 
+              <input ng-model="profileTertanggung.deskripsiPekerjaan" type="text" required> 
+              <div ng-messages="formProfileTertanggung.deskripsiPekerjaan.$error"> 
+                <div ng-message="required">Harus diisi.</div> 
+              </div> 
+            </md-input-container> 
+            <md-input-container class="md-icon-float md-block marg-bot-0" flex-gt-sm> 
+              <label>Bidang Usaha</label> 
+              <md-icon aria-label="person" class="material-icons">&#xE8F9;</md-icon> 
+              <md-select ng-model="profileTertanggung.bidangUsaha"> 
+                <md-option value="1">Makanan cepat saji</md-option> 
+              </md-select> 
+              <div class="md-errors-spacer"></div> 
+            </md-input-container> 
+          </div> 
+          <div class="block-container b-border-white marg-bot-0"> 
+            <md-input-container class="md-icon-float md-block" flex-gt-sm> 
+              <label>Instansi/Departemen</label> 
+              <md-icon aria-label="person" class="material-icons">&#xE0AF;</md-icon> 
+              <md-select ng-model="profileTertanggung.departemen"> 
+                <md-option value="1">Administrasi Negara</md-option> 
+              </md-select> 
+              <div class="md-errors-spacer"></div> 
+            </md-input-container> 
+            <md-input-container class="md-icon-float md-block" flex-gt-sm> 
+              <label>Jabatan/Pangkat/Golongan</label> 
+              <md-icon aria-label="person" class="material-icons">&#xE0AF;</md-icon> 
+              <md-select ng-model="profileTertanggung.pangkat"> 
+                <md-option value="1">Juru Ketik/3A</md-option> 
+              </md-select> 
+              <div class="md-errors-spacer"></div> 
+            </md-input-container> 
+            <md-input-container class="md-icon-float md-block marg-bot-0" flex-gt-sm> 
+              <label>Total Penghasilan Tertanggung Utama per Bulan</label> 
+              <md-icon aria-label="person" class="material-icons">&#xE8F9;</md-icon> 
+              <md-select ng-model="profileTertanggung.totalPenghasilanUtama"> 
+                <md-option value="1">Rp 7,500,000.00</md-option> 
+              </md-select> 
+              <div class="md-errors-spacer"></div> 
+            </md-input-container> 
+            <div class="form-group marg-bot-0 marg-left-3 pad-top-01"> 
+              <md-input-container class="md-icon-float md-block">
+                <div class="form-group marg-bot-0"> 
+                  <md-checkbox md-no-ink aria-label="Checkbox No Ink"  ng-model="profileTertanggung.berlakuSurut" value="profileTertanggung.berlakuSurut" md-colors="red">
+                   <span class="marg-left-5">Premi <em>Back-dated</em></span>
+                 </md-checkbox>
+               </div> 
+             </md-input-container> 
+           </div> 
+           <md-input-container class="md-icon-float md-block pad-0">
+            <label>Tanggal Premi Berlaku Surut</label>
+            <md-datepicker ng-required ng-model="profileTertanggung.tanggalBerlakuSurut" md-open-on-focus> 
+              <div ng-messages="formProfileTertanggung.tanggalBerlakuSurut.$error"> 
+              </div> 
+            </md-datepicker> 
+            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="polis.ooo" class="h6 marg-sub-filled marg-top-0 font-gray"> 
+              Saya dengan ini setuju bahwa Premi berlaku surut sejak tanggal tersebut diatas dan Saya memahami segala resiko yang dapat muncul atas pemilihan tungaal tersebut berlaku surut <span class="italic-font">(Back Dated)</span> 
+            </md-checkbox> 
+          </md-input-container>
+          <div class="form-group marg-bot-0 pad-top-01"> 
+            <md-checkbox class="marg-left-5" md-no-ink aria-label="Checkbox No Ink" ng-model="profileTertanggung.subStandard" md-colors="red">
+              <span class="marg-left-5"> Substandard </span>
+            </md-checkbox>
+          </div> 
+          <div ng-if="profileTertanggung.subStandard == true"> 
+              <!-- <div class="marg-top-10 pad-left-15"> 
+                <span ng-model="editSubstandardModel" ng-click="editSubstandard(editSubstandardModel)"> 
+                  <i class="icon ion-edit h6 font-gray"></i>  
+                  <span class="font-red font-size-10 marg-right-20"> 
+                    <span ng-if="editSubstandardModel === false">EDIT</span> 
+                    <span ng-if="editSubstandardModel === true">SELESAI</span> 
+                  </span> 
+                </span> 
+                <span ng-click="addSubstandards()"> 
+                  <i class="icon ion-android-person-add h6 font-gray"></i> <span class="font-red font-size-10">TAMBAH</span> 
+                </span> 
+                <span class="pull-right" ng-if="editSubstandardModel === true" ng-click="deleteSubStandard()"> 
+                  <i class="icon ion-ios-trash h5 font-gray"></i>  
+                  <span class="font-red font-size-10 marg-right-20"> 
+                    <span>HAPUS</span> 
+                  </span> 
+                </span> 
+              </div>  -->
+              <div class="marg-left-40 b-border-white marg-bot-0"> 
+                <div ng-repeat="item in profileTertanggung.substd" ng-if="editSubstandardModel === true || item.checked === true" layout="row">
+                  <!-- <md-checkbox ng-if="editSubstandardModel === true" md-no-ink aria-label="Checkbox No Ink" ng-model="item.checked" class="h6 font-gray marg-0" flex> 
+                </md-checkbox>  -->
+                <span class="display-inline-block" flex="50"> 
+                  <md-input-container class="marg-5 marg-left-0 md-block width-80"> 
+                    <md-select ng-model="item.data.val1" aria-label="Dropdown"> 
+                      <md-option value="{{item.data.val1}}">{{item.data.val1}}</md-option> 
+                      <md-option value="2">L2</md-option> 
+                    </md-select> 
+                  </md-input-container> 
+                </span> 
+                <span class="display-inline-block" flex="50"> 
+                  <md-input-container class="marg-5 marg-left-0 md-block width-80 pull-right"> 
+                    <md-select ng-model="item.data.val2" aria-label="Dropdown"> 
+                      <md-option value="1">L1</md-option> 
+                      <md-option value="{{item.data.val2}}">{{item.data.val2}}</md-option> 
+                    </md-select> 
+                  </md-input-container> 
+                </span> 
+              </div> 
+            </div> 
+            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="substandard.chkbok" class="h6 marg-sub-filled marg-left-5 font-gray"> 
+              Saya dengan ini setuju dengan pertanyaan substandard atas diri saya sebagaimana tertera diatas terkait dengan permohonan asuransi saya kepada Prudential. 
+            </md-checkbox> 
+          </div> 
+            <!-- <div class="content-header text-uppercase pad-left-15"> 
+              <i class="ion ion-android-list marg-right-10"></i> 
+              Pengecualian 
+              <i class="ion ion-plus pull-right font-white h4 marg-0"></i> 
+            </div>  -->
+            <md-input-container class="md-icon-float md-block"> 
+              <label>Catatan Khusus</label> 
+              <md-icon aria-label="person" class="material-icons">&#xE8F9;</md-icon>
+              <textarea  md-maxlength="150" ng-model="profileTertanggung.address_3"></textarea> 
+            </md-input-container> 
+            <div class="form-group"> 
+              <label>CATATAN KHUSUS</label>
+              <div class="font-gray marg-0"> 
+                <p>
+                  Lorem ipsum dolor sit amet, te euis fugit accusata nam. Dicam seruise duli bano, sit am to licut anasdi. Sea ne sumo um dre tu lsidfak bahdf. 
+                </p>
+              </div> 
+            </div>
+            <div class="form-group"> 
+              <button type="button" class="button button-block button-assertive next-tab" ng-click="produkmanfaat()">Lanjut</button> 
+            </div> 
+          </div> 
+        </span> 
+      </form> 
+    </div>
+  </div>
+</ion-content>

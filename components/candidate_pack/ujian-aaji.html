@@ -1,0 +1,56 @@
+<ion-content class="has-header-tabs">
+    <form action="" class="default-form" ng-submit="sendData($event,currentMenuTab)">
+    <div layout="column">
+      <md-input-container class="md-icon-float md-block label-black">
+        <label>Lokasi Ujian AAJI</label>
+        <md-icon aria-label="person" class="material-icons">&#xE0C8;</md-icon>
+        <md-select ng-model="candidatePack.dataUjian.testLocation" ng-change="save()">
+          <md-option><em>None</em></md-option>
+          <md-option ng-value="1" ng-disabled="$index === 1">
+            Jakarta
+          </md-option>
+          <md-option ng-value="2" ng-disabled="$index === 1">
+            Bandung
+          </md-option>
+          <md-option ng-value="3" ng-disabled="$index === 1">
+            Bogor
+          </md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+
+      <div ng-if="candidatePack.dataUjian.testLocation > 0">
+        <div class="sch-container">
+            <div class="label-accordion-head">jadwal ujian aaji</div>
+            <v-accordion multiple class="vAccordion--default custom-pru">
+              <v-pane expanded="pane.isExpanded" ng-repeat="day in aajiSchedule">
+                <v-pane-header>
+                  {{day.date}}
+                </v-pane-header>
+                <v-pane-content>
+                <div class="sub-lists accordion-body">
+                  <div class="schedule-box sch-{{schItem.id}}" ng-class="{choosed: choosingAaji{{schItem.id}} }"  ng-repeat="schItem in day.sch"  ng-click="chooseAajiSchedule($event, schItem.id)">
+                    <div class="sch-opt">
+                      <h1>{{schItem.number}}</h1>
+                    </div>
+                    <div class="sch-info">
+                      Waktu: {{schItem.time}} WIB<br>
+                      Lokasi: {{schItem.loc}}<br>
+                      Batas Pendaftaran {{schItem.endReg}}<br>
+                      <a>Pilih Jadwal</a>
+                      <a>Batal Pilih</a>
+                    </div>
+                    <ion-checkbox name="schedule" value="choosing{{schItem.id}}" ng-checked= "choosing{{schItem.id}}" class="choosing{{schItem.id}} hidden"></ion-checkbox>
+                  </div>
+                </div>
+                </v-pane-content>
+              </v-pane>
+            </v-accordion>
+          </div>
+    <hr class="marg-top-0 marg-bot-10"/>
+      </div>
+  <div class="form-group">
+    <button class="button button-block button-assertive next-tab" type="submit">Lanjut</button>
+  </div>
+    </form>
+</ion content>
